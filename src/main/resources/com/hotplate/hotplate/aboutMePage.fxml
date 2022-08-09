@@ -18,7 +18,7 @@
             <Image url="@HotPlateLogo2.png" />
          </image>
       </ImageView>
-      <Label text="Version: 1.0">
+      <Label text="Version: 1.1 Beta">
          <font>
             <Font name="Arial Rounded MT Bold" size="22.0" />
          </font>

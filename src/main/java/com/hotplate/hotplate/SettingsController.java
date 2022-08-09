@@ -54,11 +54,19 @@ public class SettingsController implements Initializable {
         else {
             HotPlateApp.automaticallyLoadData = false;
         }
-        if (HotPlateApp.userName.length() == 0 ||
-        HotPlateApp.pinNumber.length() == 0 ||
-        HotPlateApp.restaurantName.length() == 0){
+        if (settingsName.getText().length() == 0 ||
+        settingsPin.getText().length() == 0 ||
+        settingsRestaurant.getText().length() == 0){
             try {
-                new AlertBox("Error", "Please enter everything correctly");
+                new AlertBox("Error", "One of the text fields are empty");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            return;
+        }
+        else if (settingsPin.getText().length() < 4){
+            try {
+                new AlertBox("Error", "Please make sure that the pin is at least 4 digits");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
