@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="adminBorderPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hotplate.hotplate.AdminController">
+   <center>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="16.0" prefWidth="600.0" style="-fx-background-color: #e37249 #e37249;">
+               <children>
+                  <Label fx:id="adminNameLabel" prefHeight="17.0" prefWidth="283.0" style="-fx-text-fill: WHITE;" text="Hello Linda!">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="adminTimeLabel" style="-fx-text-fill: WHITE;" text="08:12 pm" textAlignment="CENTER">
+                     <font>
+                        <Font name="AppleGothic Regular" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="200.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="16.0" prefWidth="600.0">
+               <children>
+                  <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#addToTable" style="-fx-background-color: #FF7F50; -fx-border-radius: 90px; -fx-border-style: none; -fx-text-fill: White;" text="Add">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#deleteToTable" style="-fx-background-color: #FF7F50; -fx-border-radius: 90px; -fx-border-style: none; -fx-text-fill: White;" text="Delete">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#editTable" style="-fx-background-color: #FF7F50; -fx-border-radius: 90px; -fx-border-style: none; -fx-text-fill: White;" text="Edit">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#warnToTable" style="-fx-background-color: #FF7F50; -fx-border-radius: 90px; -fx-border-style: none; -fx-text-fill: White;" text="Warn">
+                     <HBox.margin>
+                        <Insets left="310.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#callToTable" style="-fx-background-color: #FF7F50; -fx-border-radius: 90px; -fx-border-style: none; -fx-text-fill: White;" text="Call">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </HBox>
+            <TableView fx:id="AdminTable" prefHeight="481.0" prefWidth="560.0">
+              <columns>
+                <TableColumn fx:id="name" prefWidth="114.0" text="Name" />
+                <TableColumn fx:id="partySize" prefWidth="106.0" text="Party Size" />
+                  <TableColumn fx:id="timeWaited" prefWidth="127.0" text="Time" />
+                  <TableColumn fx:id="phoneNumber" prefWidth="212.0" text="Phone Number" />
+              </columns>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="20.0" right="20.0" />
+               </VBox.margin>
+            </TableView>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+            <Menu mnemonicParsing="false" text="HotPlate">
+              <items>
+              <MenuItem mnemonicParsing="false" onAction="#transferToCustomer" text="Customer Portal" />
+                  <Menu mnemonicParsing="false" text="Options">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#adminCustomMessage" text="Custom Message" />
+                        <MenuItem mnemonicParsing="false" onAction="#transferToSettings" text="Settings" />
+                    </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#tarnsferToAbout" text="About" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#transferToExit" text="Exit" />
+              </items>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@HotPlateLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Menu>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#transferToSave" text="Save" />
+                  <MenuItem disable="true" mnemonicParsing="false" onAction="#transferToSaveAs" text="Save As" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#transferToLoad" text="Load" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#addToTable" text="Add" />
+                  <MenuItem mnemonicParsing="false" onAction="#editTable" text="Edit" />
+                  <MenuItem mnemonicParsing="false" onAction="#deleteToTable" text="Cut" />
+                  <MenuItem mnemonicParsing="false" onAction="#warnToTable" text="Warn" />
+                  <MenuItem mnemonicParsing="false" onAction="#callToTable" text="Call" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem mnemonicParsing="false" onAction="#transferToClearTable" text="Clear Table" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+                  <MenuItem fx:id="transferToHotPlateHelp" mnemonicParsing="false" text="HotPlate Help" visible="false" />
+              <MenuItem mnemonicParsing="false" onAction="#transferToGitHub" text="GitHub" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

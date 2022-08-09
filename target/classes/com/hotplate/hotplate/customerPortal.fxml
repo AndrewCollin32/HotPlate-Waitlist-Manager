@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hotplate.hotplate.customerPortalController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" style="-fx-font-family: Verdana" text="HotPlate">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#pressSignInButton" text="Sign In" />
+                  <MenuItem mnemonicParsing="false" onAction="#pressAboutButton" text="About" />
+                  <MenuItem mnemonicParsing="false" onAction="#pressCallWaiterButton" text="Call Waiter" />
+            </items>
+               <graphic>
+                  <ImageView fitHeight="54.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@HotPlateLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="customerPortalPhoto" fitHeight="262.0" fitWidth="306.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@RestaurantLogo3.png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="40.0" />
+               </VBox.margin>
+            </ImageView>
+            <Label fx:id="customerPortalWaitlistLabel" text="Current Waitlist: 0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="30.0" />
+               </VBox.margin>
+            </Label>
+            <Button fx:id="customerPortalReserveButton" mnemonicParsing="false" onAction="#pressReserveButton" style="-fx-background-color: #FF7F50; -fx-border-radius: 90px; -fx-border-style: none; -fx-text-fill: White;" text="Reserve Your Seat">
+               <font>
+                  <Font name="Skia" size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <ImageView fitHeight="47.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="TOP_LEFT">
+         <image>
+            <Image url="@HotPlateLogo2.png" />
+         </image>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </ImageView>
+   </bottom>
+</BorderPane>
