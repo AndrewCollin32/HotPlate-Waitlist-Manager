@@ -59,7 +59,7 @@ public class AdminController implements Initializable {
 
     @FXML
     public void transferToGitHub() throws URISyntaxException, IOException {
-        java.awt.Desktop.getDesktop().browse(new URI("https://github.com/AndrewCDiep"));
+        java.awt.Desktop.getDesktop().browse(new URI("https://github.com/AndrewCollin/HotPlate"));
     }
 
     @FXML
@@ -114,7 +114,6 @@ public class AdminController implements Initializable {
         textMessageWindow tmw = fxml.getController();
         tmw.textMessageRecieveLabel.setText("This is the text message " + selectedCustomer.getName() + " will recieve.");
         tmw.textMessage.setText(textMessage);
-        System.out.println(textMessage);
         //twilioClass.warnPerson(selectedCustomer, textMessage);
     }
 
@@ -279,7 +278,6 @@ public class AdminController implements Initializable {
         textMessageWindow tmw = fxml.getController();
         tmw.textMessageRecieveLabel.setText("This is the text message " + selectedCustomer.getName() + " will recieve.");
         tmw.textMessage.setText(textMessage);
-        System.out.println(textMessage);
         //twilioClass.warnPerson(selectedCustomer, textMessage);
     }
 
