@@ -180,12 +180,10 @@ public class AdminController implements Initializable {
             System.out.println(openFile.getName());
         }*/
 
-        SaveData sd = (SaveData) ResourceManager.load(HotPlateApp.pathFile);
-        HotPlateApp.pinNumber = sd.pin;
-        HotPlateApp.restaurantName = sd.restaurantName;
+        SaveData sd = (SaveData) ResourceManager.load(HotPlateApp.customerDataPathFile);
         HotPlateApp.waitListSize = sd.customersData.size();
         HotPlateApp.customerData = sd.customersData;
-        HotPlateApp.automaticallyLoadData = sd.autoLoadData;
+
 
         endTime = true;
 
@@ -195,16 +193,8 @@ public class AdminController implements Initializable {
     @FXML
     void transferToSave(ActionEvent event) {
 
-        SaveData sd = new SaveData(
-                HotPlateApp.customerData,
-                HotPlateApp.userName,
-                HotPlateApp.restaurantName,
-                HotPlateApp.pinNumber,
-                HotPlateApp.automaticallyLoadData,
-                HotPlateApp.warnMessage,
-                HotPlateApp.callMessag
-        );
-        ResourceManager.save(sd, HotPlateApp.pathFile);
+        SaveData sd = new SaveData(HotPlateApp.customerData);
+        ResourceManager.save(sd, HotPlateApp.customerDataPathFile);
     }
 
     @FXML

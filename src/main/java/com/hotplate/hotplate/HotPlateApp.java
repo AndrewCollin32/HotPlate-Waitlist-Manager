@@ -22,8 +22,9 @@ public class HotPlateApp extends Application {
     public static String restaurantName = "Ernie's";
     public static String warnMessage = "Hi {name}, this is {restaurant}, your table will be ready within 5 minutes.";
     public static String callMessag = "Hi {name}, this is {restaurant}, your table is ready.";
-    public static String pathFile = "DefaultSave.ser";
-    public static Boolean automaticallyLoadData = true;
+    public static String customerDataPathFile = "DefaultSave.ser";
+    public static String saveSettingsPathFile = "SaveSettings.ser";
+    public static Boolean automaticallyLoadData = false;
 
     public static ArrayList<Customer> customerData = new ArrayList<Customer>();
 
@@ -36,17 +37,26 @@ public class HotPlateApp extends Application {
         scene = new Scene(fxmlLoader.load(), 600, 600);
         this.stage = stage;
 
-        SaveData sd = (SaveData) ResourceManager.load(HotPlateApp.pathFile);
+        SaveSettings ss = (SaveSettings) ResourceManager.load(HotPlateApp.saveSettingsPathFile);
+        HotPlateApp.userName = ss.userName;
+        HotPlateApp.restaurantName = ss.restaurantName;
+        HotPlateApp.automaticallyLoadData = ss.autoLoadData;
+        HotPlateApp.pinNumber = ss.pin;
+        HotPlateApp.warnMessage = ss.warnMessage;
+        HotPlateApp.callMessag = ss.callMessage;
+        System.out.println(ss.warnMessage + " " + ss.callMessage);
 
-        if (automaticallyLoadData && sd != null){
-            HotPlateApp.pinNumber = sd.pin;
-            HotPlateApp.restaurantName = sd.restaurantName;
+        SaveData sd = new SaveData(new ArrayList<Customer>());
+        try {
+            sd = (SaveData) ResourceManager.load(HotPlateApp.customerDataPathFile);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+        if (HotPlateApp.automaticallyLoadData && sd != null){
+
             HotPlateApp.waitListSize = sd.customersData.size();
             HotPlateApp.customerData = sd.customersData;
-            HotPlateApp.userName = sd.userName;
-            HotPlateApp.automaticallyLoadData = sd.autoLoadData;
-            HotPlateApp.warnMessage = sd.warnMessage;
-            HotPlateApp.callMessag = sd.callMessage;
         }
 
         stage.setResizable(false);

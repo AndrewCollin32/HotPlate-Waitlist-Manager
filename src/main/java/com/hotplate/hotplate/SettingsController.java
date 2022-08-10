@@ -48,12 +48,6 @@ public class SettingsController implements Initializable {
 
     @FXML
     void settingsSaveButton(ActionEvent event) {
-        if (loadCheckBox.isSelected()){
-            HotPlateApp.automaticallyLoadData = true;
-        }
-        else {
-            HotPlateApp.automaticallyLoadData = false;
-        }
         if (settingsName.getText().length() == 0 ||
         settingsPin.getText().length() == 0 ||
         settingsRestaurant.getText().length() == 0){
@@ -76,6 +70,10 @@ public class SettingsController implements Initializable {
         HotPlateApp.userName = settingsName.getText();
         HotPlateApp.restaurantName = settingsRestaurant.getText();
         HotPlateApp.pinNumber = settingsPin.getText();
+        HotPlateApp.automaticallyLoadData = loadCheckBox.isSelected();
+
+        SaveSettings ss = new SaveSettings(HotPlateApp.userName, HotPlateApp.restaurantName, HotPlateApp.pinNumber, HotPlateApp.automaticallyLoadData, HotPlateApp.warnMessage, HotPlateApp.callMessag);
+        ResourceManager.save(ss, HotPlateApp.saveSettingsPathFile);
 
         try {
             AdminPage.homePage();
@@ -89,5 +87,6 @@ public class SettingsController implements Initializable {
         settingsName.setText(HotPlateApp.userName);
         settingsRestaurant.setText(HotPlateApp.restaurantName);
         settingsPin.setText(HotPlateApp.pinNumber);
+        loadCheckBox.setSelected(HotPlateApp.automaticallyLoadData);
     }
 }

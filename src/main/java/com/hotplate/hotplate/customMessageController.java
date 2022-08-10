@@ -26,6 +26,9 @@ public class customMessageController implements Initializable {
     void messageEditorSave(ActionEvent event) throws IOException {
         HotPlateApp.warnMessage = warnMessage.getText();
         HotPlateApp.callMessag = callMessage.getText();
+
+        SaveSettings ss = new SaveSettings(HotPlateApp.userName, HotPlateApp.restaurantName, HotPlateApp.pinNumber, HotPlateApp.automaticallyLoadData, HotPlateApp.warnMessage, HotPlateApp.callMessag);
+        ResourceManager.save(ss, HotPlateApp.saveSettingsPathFile);
         AdminPage.homePage();
     }
 
