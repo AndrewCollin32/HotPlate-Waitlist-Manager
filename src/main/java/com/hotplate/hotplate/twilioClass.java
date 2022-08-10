@@ -10,14 +10,14 @@ import com.twilio.type.PhoneNumber;
 
 public class twilioClass {
 
-    public static final String accountSID = "ACdcfa5249495f638b9b41de5e59f87c98";
-    public static final String authToken = "f0676df49a1499e491441e48fa1023ae";
+    public static final String accountSID = "";
+    public static final String authToken = "";
 
     public static void warnPerson(Customer customer, String textMessage){
         Twilio.init(accountSID, authToken);
         Message message = Message.creator(
-                new com.twilio.type.PhoneNumber("+16198182891"), //to
-                new com.twilio.type.PhoneNumber("+14172125590"), //from
+                new com.twilio.type.PhoneNumber(""), //to
+                new com.twilio.type.PhoneNumber(""), //from
                 textMessage
         ).create();
     }
