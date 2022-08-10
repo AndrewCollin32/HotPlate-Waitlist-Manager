@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -44,7 +45,6 @@ public class HotPlateApp extends Application {
         HotPlateApp.pinNumber = ss.pin;
         HotPlateApp.warnMessage = ss.warnMessage;
         HotPlateApp.callMessag = ss.callMessage;
-        System.out.println(ss.warnMessage + " " + ss.callMessage);
 
         SaveData sd = new SaveData(new ArrayList<Customer>());
         try {
@@ -61,6 +61,7 @@ public class HotPlateApp extends Application {
 
         stage.setResizable(false);
         stage.setTitle("HotPlate");
+        stage.getIcons().add(new Image(HotPlateApp.class.getResourceAsStream("HotPlateLogo.png")));
         stage.setScene(scene);
         ((customerPortalController) fxmlLoader.getController()).customerPortalWaitlistLabel.setText("WaitList Size: " + waitListSize);
         stage.show();
