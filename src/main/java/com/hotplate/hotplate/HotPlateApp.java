@@ -1,6 +1,7 @@
 /*
 HotPlateApp Software, created by Andrew Collin Diep 08/06/2022
 HotPlate is a wait-list restaurant manager
+Visit https://github.com/AndrewCollin/HotPlate for more info.
 */
 package com.hotplate.hotplate;
 import javafx.application.Application;
