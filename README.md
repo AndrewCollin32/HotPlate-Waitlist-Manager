@@ -29,7 +29,7 @@
 </ul>
 
 ![Untitled_Artwork 18](https://user-images.githubusercontent.com/109395254/184273779-28d0263f-5ae3-4352-b1c0-85cfac26fa87.jpg)
-
+<hr>
 <h3> Reservation Page </h3>
   When you first open your program, you will be greeted with this screen. This is the customer's screen, this is used for customers to reserve their seats. <br>
   The goal of this screen is to have customer's eyes drawn to the screen when they walk in so they will independently reserve their seats without any assistance.
