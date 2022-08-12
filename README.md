@@ -63,6 +63,7 @@
   <li>2: Submit Button - Validates the pin number and takes you to the admin page</li>
 </ul>
 
+![Image 8-11-22 at 8 33 PM](https://user-images.githubusercontent.com/109395254/184280691-124aff72-8b2b-4786-a823-abac8b668153.JPG)
 
 
 
