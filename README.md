@@ -34,15 +34,14 @@
   This page is for customers to input their information to reserve their seat.
   <ul>
   <li>0: Drop-down menu for party size (Min = 1, Max = 12)</li>
-  <li>1: Name textfield - Where customers enter their prefered name. Will be used in the text message </li>
-  <li>2: Phone number textfield - Customers have to enter thei phone number inorder to recieve the SMS message. Allowed fomat: <br>
+  <li>1: Name text field - Where customers enter their prefered name. Will be used in the text message </li>
+  <li>2: Phone number text field - Customers have to enter their phone number inorder to receive the SMS message. Allowed format: <br>
     <b>(123)-456-7890, 123-456-7890, 1234567890</b></li>
   <li>3: Submit Button - Saves all the entries including the time it was submitted </li>
   <li>4: Cancel Button - Deletes all the entries and takes you back to the customer's portal </li>
 </ul>
 
 ![Reservation Page](https://user-images.githubusercontent.com/109395254/184277390-15ad5f0d-28b5-453d-822a-618367a94812.png)
-
 
 <hr>
 <h3> Sign In Page </h3>
@@ -54,6 +53,15 @@
 </ul>
 
 <img width="596" alt="Screen_Shot_2022-08-11_at_8 18 53_PM 2" src="https://user-images.githubusercontent.com/109395254/184279071-b42b330d-92d0-470a-bb80-e8b3cc57b723.png">
+
+<hr>
+<h3> Sign In Page </h3>
+  The sign in page is used by employees to grant access to the admin page. 
+  <ul>
+  <li>0: Pin number textfield - Used for employees to enter their pin number. (The default pin number is 1111, but you can change it in the settings)
+  <li>1: Close Button - Takes you back to the customer portal </li>
+  <li>2: Submit Button - Validates the pin number and takes you to the admin page</li>
+</ul>
 
 
 
