@@ -41,7 +41,8 @@
   <li>4: Waitlist Label - Shows the current waitlist size. </li>
   <li>5: Reserve Your Seat Button - Takes you to an input page where you can fill in your information to reserve your seat</li>
 </ul>
-![Image_8-11-22_at_7 59_PM](https://user-images.githubusercontent.com/109395254/184277390-15ad5f0d-28b5-453d-822a-618367a94812.png)
+
+![Reservation Page](https://user-images.githubusercontent.com/109395254/184277390-15ad5f0d-28b5-453d-822a-618367a94812.png)
 
 
 
