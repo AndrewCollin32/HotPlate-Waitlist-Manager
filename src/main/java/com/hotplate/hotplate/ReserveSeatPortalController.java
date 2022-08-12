@@ -64,7 +64,7 @@ public class ReserveSeatPortalController{
             AlertBox ab = new AlertBox("Name Error", "Please provide a name for \n this reservation");
         }
         else{
-            SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a");
+            SimpleDateFormat sdf = new SimpleDateFormat((HotPlateApp.britishTime)? "HH:mm": "hh:mm a");
             FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("confirmationPage.fxml"));
             HotPlateApp.stage.setScene(new Scene(fxml.load(), 600, 600));
             ConfirmationPageController cpc = fxml.getController();

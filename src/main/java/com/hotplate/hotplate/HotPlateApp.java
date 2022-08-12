@@ -11,7 +11,11 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.regex.Pattern;
 
 public class HotPlateApp extends Application {
 
@@ -28,38 +32,70 @@ public class HotPlateApp extends Application {
     public static String customerDataPathFile = "DefaultSave.ser";
     public static String saveSettingsPathFile = "SaveSettings.ser";
     public static Boolean automaticallyLoadData = false;
+    public static Boolean britishTime = false;
 
     public static ArrayList<Customer> customerData = new ArrayList<Customer>();
 
+    public boolean bypassSaveSettingsDeBug = false;
+    public boolean bypassSaveCustomersDebug = false;
+
     //Starting the program in the customer portal scene
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) throws IOException, ParseException {
         waitListSize = 0;
         FXMLLoader fxmlLoader = new FXMLLoader(HotPlateApp.class.getResource("customerPortal.fxml"));
 
         scene = new Scene(fxmlLoader.load(), 600, 600);
         this.stage = stage;
 
-        SaveSettings ss = (SaveSettings) ResourceManager.load(HotPlateApp.saveSettingsPathFile);
-        HotPlateApp.userName = ss.userName;
-        HotPlateApp.restaurantName = ss.restaurantName;
-        HotPlateApp.automaticallyLoadData = ss.autoLoadData;
-        HotPlateApp.pinNumber = ss.pin;
-        HotPlateApp.warnMessage = ss.warnMessage;
-        HotPlateApp.callMessag = ss.callMessage;
-
-        SaveData sd = new SaveData(new ArrayList<Customer>());
-        try {
-            sd = (SaveData) ResourceManager.load(HotPlateApp.customerDataPathFile);
-        } catch (Exception e){
-            e.printStackTrace();
+        if (!bypassSaveSettingsDeBug) {
+            SaveSettings ss = (SaveSettings) ResourceManager.load(HotPlateApp.saveSettingsPathFile);
+            HotPlateApp.userName = ss.userName;
+            HotPlateApp.restaurantName = ss.restaurantName;
+            HotPlateApp.automaticallyLoadData = ss.autoLoadData;
+            HotPlateApp.pinNumber = ss.pin;
+            HotPlateApp.warnMessage = ss.warnMessage;
+            HotPlateApp.callMessag = ss.callMessage;
+            HotPlateApp.britishTime = ss.britishTime;
         }
 
-        if (HotPlateApp.automaticallyLoadData && sd != null){
+        if (!bypassSaveCustomersDebug) {
+            SaveData sd = new SaveData(new ArrayList<Customer>());
+            try {
+                sd = (SaveData) ResourceManager.load(HotPlateApp.customerDataPathFile);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
-            HotPlateApp.waitListSize = sd.customersData.size();
-            HotPlateApp.customerData = sd.customersData;
+            if (HotPlateApp.automaticallyLoadData && sd != null) {
+
+                HotPlateApp.waitListSize = sd.customersData.size();
+                HotPlateApp.customerData = sd.customersData;
+
+                SimpleDateFormat britishTime = new SimpleDateFormat("HH:mm");
+                SimpleDateFormat americanTime = new SimpleDateFormat("hh:mm a");
+
+                boolean isBritishTime = false;
+
+                try{
+                    americanTime.parse(HotPlateApp.customerData.get(0).getTimeWaited());
+                }
+                catch(Exception e){
+                    isBritishTime = true;
+                }
+
+                if (HotPlateApp.britishTime && !isBritishTime || !HotPlateApp.britishTime && isBritishTime){
+                    for (int i = 0; i < HotPlateApp.customerData.size(); i++){
+                        Customer customer = HotPlateApp.customerData.get(i);
+                        String time = customer.getTimeWaited();
+                        Date date = ((HotPlateApp.britishTime)?americanTime:britishTime).parse(time);
+                        String newDate = ((HotPlateApp.britishTime)?britishTime:americanTime).format(date);
+                        customer.setTimeWaited(newDate);
+                    }
+                }
+            }
         }
+
 
         stage.setResizable(false);
         stage.setTitle("HotPlate");

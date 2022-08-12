@@ -10,12 +10,15 @@ public class SaveSettings implements Serializable {
     public String warnMessage;
     public String callMessage;
 
-    public SaveSettings(String userName, String restaurantName, String pin, boolean autoLoadData, String warnMessage, String callMessage){
+    public Boolean britishTime;
+
+    public SaveSettings(String userName, String restaurantName, String pin, boolean autoLoadData, String warnMessage, String callMessage, Boolean britishTime){
         this.userName = userName;
         this.restaurantName = restaurantName;
         this.autoLoadData = autoLoadData;
         this.warnMessage = warnMessage;
         this.callMessage = callMessage;
         this.pin = pin;
+        this.britishTime = britishTime;
     }
 }

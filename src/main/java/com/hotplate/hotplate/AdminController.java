@@ -20,6 +20,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
@@ -166,7 +167,7 @@ public class AdminController implements Initializable {
     }
 
     @FXML
-    public void transferToLoad(ActionEvent event) throws InterruptedException, InvocationTargetException, IOException {
+    public void transferToLoad(ActionEvent event) throws InterruptedException, InvocationTargetException, IOException, ParseException {
 
         /*
         JFileChooser chooser = new JFileChooser();
@@ -184,9 +185,29 @@ public class AdminController implements Initializable {
         HotPlateApp.waitListSize = sd.customersData.size();
         HotPlateApp.customerData = sd.customersData;
 
+        if (sd.customersData.size() != 0) {
+            SimpleDateFormat britishTime = new SimpleDateFormat("HH:mm");
+            SimpleDateFormat americanTime = new SimpleDateFormat("hh:mm a");
 
+            boolean isBritishTime = false;
+
+            try {
+                americanTime.parse(HotPlateApp.customerData.get(0).getTimeWaited());
+            } catch (Exception e) {
+                isBritishTime = true;
+            }
+
+            if (HotPlateApp.britishTime && !isBritishTime || !HotPlateApp.britishTime && isBritishTime) {
+                for (int i = 0; i < HotPlateApp.customerData.size(); i++) {
+                    Customer customer = HotPlateApp.customerData.get(i);
+                    String time = customer.getTimeWaited();
+                    Date date = ((HotPlateApp.britishTime) ? americanTime : britishTime).parse(time);
+                    String newDate = ((HotPlateApp.britishTime) ? britishTime : americanTime).format(date);
+                    customer.setTimeWaited(newDate);
+                }
+            }
+        }
         endTime = true;
-
         AdminPage.homePage();
     }
 
@@ -275,7 +296,7 @@ public class AdminController implements Initializable {
 
     public void setTime() throws InterruptedException {
         Thread thread = new Thread(() -> {
-           SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm a");
+           SimpleDateFormat timeFormat = new SimpleDateFormat((HotPlateApp.britishTime)? "HH:mm": "hh:mm a");
            while(!endTime){
                try{
                    Thread.sleep(1000);

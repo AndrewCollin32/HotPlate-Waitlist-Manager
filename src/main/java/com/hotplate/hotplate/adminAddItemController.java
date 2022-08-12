@@ -57,12 +57,12 @@ public class adminAddItemController {
     void adminSaveButton(ActionEvent event) {
         String timeSelected;
         if (adminCheckBox.isSelected()){
-            SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a");
+            SimpleDateFormat sdf = new SimpleDateFormat((HotPlateApp.britishTime)? "HH:mm": "hh:mm a");
             timeSelected = sdf.format(new Date());
         }
         else{
             timeSelected = adminCustomTimeText.getText();
-            Pattern timePattern = Pattern.compile("^\\d{2}:\\d{2}\\s(PM|AM)");
+            Pattern timePattern = Pattern.compile((HotPlateApp.britishTime)? "^(2[0123]|[01]\\d):[012345]\\d$":"^[012]\\d:[012345]\\d\\s[PM|AM]$");
             Matcher timeMatch = timePattern.matcher(adminCustomTimeText.getText());
             if (!timeMatch.matches()){
                 try {

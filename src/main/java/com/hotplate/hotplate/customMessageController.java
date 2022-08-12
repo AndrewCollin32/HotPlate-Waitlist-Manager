@@ -27,7 +27,7 @@ public class customMessageController implements Initializable {
         HotPlateApp.warnMessage = warnMessage.getText();
         HotPlateApp.callMessag = callMessage.getText();
 
-        SaveSettings ss = new SaveSettings(HotPlateApp.userName, HotPlateApp.restaurantName, HotPlateApp.pinNumber, HotPlateApp.automaticallyLoadData, HotPlateApp.warnMessage, HotPlateApp.callMessag);
+        SaveSettings ss = new SaveSettings(HotPlateApp.userName, HotPlateApp.restaurantName, HotPlateApp.pinNumber, HotPlateApp.automaticallyLoadData, HotPlateApp.warnMessage, HotPlateApp.callMessag, HotPlateApp.britishTime);
         ResourceManager.save(ss, HotPlateApp.saveSettingsPathFile);
         AdminPage.homePage();
     }
