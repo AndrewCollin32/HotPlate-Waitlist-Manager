@@ -38,10 +38,8 @@
   <li>1: Name textfield - Where customers enter their prefered name. Will be used in the text message </li>
   <li>2: Phone number textfield - Customers have to enter thei phone number inorder to recieve the SMS message. Allowed fomat: <br>
     <b>(123)-456-7890, 123-456-7890, 1234567890</b></li>
-  
-  <li>3: Call Waiter Button [Disabled] - Send a text to your waiter's phone number. </li>
-  <li>4: Waitlist Label - Shows the current waitlist size. </li>
-  <li>5: Reserve Your Seat Button - Takes you to an input page where you can fill in your information to reserve your seat</li>
+  <li>3: Submit Button - Saves all the entries including the time it was submitted </li>
+  <li>4: Cancel Button - Deletes all the entries and takes you back to the customer's portal </li>
 </ul>
 
 ![Reservation Page](https://user-images.githubusercontent.com/109395254/184277390-15ad5f0d-28b5-453d-822a-618367a94812.png)
