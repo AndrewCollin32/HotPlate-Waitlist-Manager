@@ -28,7 +28,7 @@
   <li>5: Reserve Your Seat Button - Takes you to an input page where you can fill in your information to reserve your seat</li>
 </ul>
 
-![Untitled_Artwork 18](https://user-images.githubusercontent.com/109395254/184273779-28d0263f-5ae3-4352-b1c0-85cfac26fa87.jpg | width = 300)
+![Untitled_Artwork 18](https://user-images.githubusercontent.com/109395254/184273779-28d0263f-5ae3-4352-b1c0-85cfac26fa87.jpg | width=300)
 
 <h3> Reservation Page </h3>
   When you first open your program, you will be greeted with this screen. This is the customer's screen, this is used for customers to reserve their seats. <br>
