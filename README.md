@@ -3,7 +3,7 @@
 # Hot Plate (Waitlist Manager)
 <p align="center">
   HotPlate is a powerful software tool that is made for managing restaurants <br>
-  This software version is made for managing waitlists.
+  This software version is made for managing waitlists. <br> <br>
   HotPlate was created by Andrew Collin and it has plans to expand beyond a waitlist management software
 </p>
 
