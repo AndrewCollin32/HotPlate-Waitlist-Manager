@@ -60,15 +60,30 @@
   <ul>
   <li>Hotplate Drop-down menu
     <ul>
-      <li> Customer Portal - Takes you back to the main page </li>\
+      <li> Customer Portal - Takes you back to the main page </li>
       <li> Options Drop-down menu</li>
         <ul>
           <li>Custom Message Button - Takes you to a page where you can customize your SMS messages.</li>
           <li>Settings - Takes you to the settings page where you can change your name, change the restaurant's name, change the auto load feature, change the pin and the time format.</li>
         </ul>
+      <li>About Me Button - Takes you to a page that has my credits as well as my social media</li>
+      <li>Exit - Closes the entire program (without saving)</li>
     </ul>
-  <li>1: Close Button - Takes you back to the customer portal </li>
-  <li>2: Submit Button - Validates the pin number and takes you to the admin page</li>
+  <li>File Drop-down menu</li>
+  <ul>
+    <li>Save - Saves all of your customer's data. (Your settings will be automatically saved when you exit the settings page and customize message page)</li>
+    <li>Load - Loads all of your customer's data</li>
+  </ul>
+  <li>Edit Drop-down menu</li>
+  <ul>
+    <li>Add - Takes you to a page where you can add an additonal entry</li>
+    <li>Edit - Takes you to a page where you can edit your selected entry on the table</li>
+    <li>Cut - Deletes a selected entry</li>
+    <li>Warn - Sends a SMS message to your selected entry warning your customer that their seating is almost ready</li>
+    <li>Call - Sends a SMS message to your selected entry warning your customer that their seating is ready</li>
+    <li>Clear Table - Deletes every entry on your table</li>
+  </ul>
+  <li>Help - Takes you to my GitHub page</li>
 </ul>
 
 ![Image 8-11-22 at 8 33 PM](https://user-images.githubusercontent.com/109395254/184280691-124aff72-8b2b-4786-a823-abac8b668153.JPG)
