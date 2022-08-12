@@ -35,7 +35,7 @@
   <ul>
   <li>0: Drop-down menu for party size (Min = 1, Max = 12)</li>
   <li>1: Name text field - Where customers enter their prefered name. Will be used in the text message </li>
-  <li>2: Phone number text field - Customers have to enter their phone number inorder to receive the SMS message. Allowed format: <br>
+  <li>2: Phone number text field - Customers have to enter their phone number in order to receive the SMS message. Allowed format: <br>
     <b>(123)-456-7890, 123-456-7890, 1234567890</b></li>
   <li>3: Submit Button - Saves all the entries including the time it was submitted </li>
   <li>4: Cancel Button - Deletes all the entries and takes you back to the customer's portal </li>
@@ -55,10 +55,18 @@
 <img width="596" alt="Screen_Shot_2022-08-11_at_8 18 53_PM 2" src="https://user-images.githubusercontent.com/109395254/184279071-b42b330d-92d0-470a-bb80-e8b3cc57b723.png">
 
 <hr>
-<h3> Sign In Page </h3>
-  The sign in page is used by employees to grant access to the admin page. 
+<h3> Admin Page (Dashboard) </h3>
+  The admin page has control over all the entries submitted. In this page, you can add, edit and delete entries. You can also warn and call the selected customer. You will also have access to settings, saving the data and loading the data.
   <ul>
-  <li>0: Pin number textfield - Used for employees to enter their pin number. (The default pin number is 1111, but you can change it in the settings)
+  <li>Hotplate Drop-down menu
+    <ul>
+      <li> Customer Portal - Takes you back to the main page </li>\
+      <li> Options Drop-down menu</li>
+        <ul>
+          <li>Custom Message Button - Takes you to a page where you can customize your SMS messages.</li>
+          <li>Settings - Takes you to the settings page where you can change your name, change the restaurant's name, change the auto load feature, change the pin and the time format.</li>
+        </ul>
+    </ul>
   <li>1: Close Button - Takes you back to the customer portal </li>
   <li>2: Submit Button - Validates the pin number and takes you to the admin page</li>
 </ul>
