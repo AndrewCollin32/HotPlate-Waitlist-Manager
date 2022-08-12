@@ -34,9 +34,11 @@
   When you first open your program, you will be greeted with this screen. This is the customer's screen, this is used for customers to reserve their seats. <br>
   The goal of this screen is to have customer's eyes drawn to the screen when they walk in so they will independently reserve their seats without any assistance.
   <ul>
-  <li>0: HotPlate Drop-down menu Button</li>
-  <li>1: Sign In Button - Takes you to a login page where you will be granted admin access. </li>
-  <li>2: About Me Button - Takes you to a page that has my credits as well as my social media.</li>
+  <li>0: Drop-down menu for party size (Min = 1, Max = 12)</li>
+  <li>1: Name textfield - Where customers enter their prefered name. Will be used in the text message </li>
+  <li>2: Phone number textfield - Customers have to enter thei phone number inorder to recieve the SMS message. Allowed fomat: <br>
+  (123)-456-7890, 123-456-7890, 1234567890</li>
+  
   <li>3: Call Waiter Button [Disabled] - Send a text to your waiter's phone number. </li>
   <li>4: Waitlist Label - Shows the current waitlist size. </li>
   <li>5: Reserve Your Seat Button - Takes you to an input page where you can fill in your information to reserve your seat</li>
