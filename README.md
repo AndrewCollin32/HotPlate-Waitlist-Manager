@@ -76,7 +76,7 @@
   </ul>
   <li>Edit Drop-down menu</li>
   <ul>
-    <li>Add - Takes you to a page where you can add an additonal entry</li>
+    <li>Add - Takes you to a page where you can add an additional entry</li>
     <li>Edit - Takes you to a page where you can edit your selected entry on the table</li>
     <li>Cut - Deletes a selected entry</li>
     <li>Warn - Sends a SMS message to your selected entry warning your customer that their seating is almost ready</li>
@@ -84,6 +84,9 @@
     <li>Clear Table - Deletes every entry on your table</li>
   </ul>
   <li>Help - Takes you to my GitHub page</li>
+  <br>
+  <br>
+  <li>TableView - A table that displays all of the entries. It includes the name, party size, the time it was submitted and their phone number</li>
 </ul>
 
 ![Image 8-11-22 at 8 33 PM](https://user-images.githubusercontent.com/109395254/184280691-124aff72-8b2b-4786-a823-abac8b668153.JPG)
