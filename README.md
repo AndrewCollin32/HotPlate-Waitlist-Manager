@@ -2,6 +2,7 @@
 
 # Hot Plate (Waitlist Manager)
 <p align="center">
-  HotPlate is a powerful software tool that is made for managing restaurants
+  HotPlate is a powerful software tool that is made for managing restaurants <br>
+  This software version is made for managing waitlists.
 </p>
 
