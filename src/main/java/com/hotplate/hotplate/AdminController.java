@@ -94,9 +94,14 @@ public class AdminController implements Initializable {
     }
 
     @FXML
-    void callToTable(ActionEvent event) {
+    void callToTable(ActionEvent event) throws IOException {
         String textMessage = HotPlateApp.callMessag;
-        Customer selectedCustomer = AdminTable.getSelectionModel().getSelectedItem();
+        Customer selectedCustomer;
+        selectedCustomer = AdminTable.getSelectionModel().getSelectedItem();
+        if (selectedCustomer == null){
+            AlertBox ab = new AlertBox("Call Error", "Please select the customer you want to message to");
+            return;
+        }
         textMessage = textMessage.replaceAll("(?i)\\{name\\}", selectedCustomer.getName());
         textMessage = textMessage.replaceAll("(?i)\\{restaurant\\}", HotPlateApp.restaurantName);
 
@@ -119,8 +124,12 @@ public class AdminController implements Initializable {
     }
 
     @FXML
-    void deleteToTable(ActionEvent event) {
+    void deleteToTable(ActionEvent event) throws IOException {
         Customer customer = AdminTable.getSelectionModel().getSelectedItem();
+        if (customer == null){
+            AlertBox ab = new AlertBox("Delete Error", "Please select the customer you want to remove");
+            return;
+        }
         AdminTable.getItems().remove(customer);
         HotPlateApp.customerData.remove(customer);
         HotPlateApp.waitListSize--;
@@ -268,11 +277,16 @@ public class AdminController implements Initializable {
     }
 
     @FXML
-    void warnToTable(ActionEvent event) {
+    void warnToTable(ActionEvent event) throws IOException {
         String textMessage = HotPlateApp.warnMessage;
         Customer selectedCustomer = AdminTable.getSelectionModel().getSelectedItem();
+        if (selectedCustomer == null){
+            AlertBox ab = new AlertBox("Warn Error", "Please select the customer you want to send a message to");
+            return;
+        }
         textMessage = textMessage.replaceAll("(?i)\\{name\\}", selectedCustomer.getName());
         textMessage = textMessage.replaceAll("(?i)\\{restaurant\\}", HotPlateApp.restaurantName);
+
 
         FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("callPage.fxml"));
         Scene scene = null;

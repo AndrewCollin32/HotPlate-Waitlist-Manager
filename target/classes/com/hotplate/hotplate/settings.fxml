@@ -36,6 +36,7 @@
           <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Label alignment="CENTER" text="Name:">
@@ -96,6 +97,31 @@
                   <Font name="Arial Rounded MT Bold" size="13.0" />
                </font>
             </CheckBox>
+            <Label alignment="CENTER" text="Time Format:" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="21.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <children>
+                  <RadioButton fx:id="britishTimeSelection" mnemonicParsing="false" text="24Hr">
+                     <HBox.margin>
+                        <Insets right="50.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Ebrima" size="16.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="timeFormat" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="americanTimeSelection" mnemonicParsing="false" selected="true" text="12Hr" toggleGroup="$timeFormat">
+                     <font>
+                        <Font name="Ebrima" size="16.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+            </HBox>
          </children>
          <VBox.margin>
             <Insets left="30.0" right="85.0" />
