@@ -37,7 +37,7 @@
   <li>0: Drop-down menu for party size (Min = 1, Max = 12)</li>
   <li>1: Name textfield - Where customers enter their prefered name. Will be used in the text message </li>
   <li>2: Phone number textfield - Customers have to enter thei phone number inorder to recieve the SMS message. Allowed fomat: <br>
-  (123)-456-7890, 123-456-7890, 1234567890</li>
+  **(123)-456-7890, 123-456-7890, 1234567890**</li>
   
   <li>3: Call Waiter Button [Disabled] - Send a text to your waiter's phone number. </li>
   <li>4: Waitlist Label - Shows the current waitlist size. </li>
