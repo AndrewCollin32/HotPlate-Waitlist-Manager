@@ -1,4 +1,5 @@
-![HotPlateLogo2](https://user-images.githubusercontent.com/109395254/183798665-488298c2-c94f-4437-a1bb-42fd3ffcb426.png)
+![Untitled_Artwork 17](https://user-images.githubusercontent.com/109395254/184273293-91bcf997-d268-4e04-9fa6-7501ce92a893.jpg)
+
 
 # Hot Plate (Waitlist Manager)
 <p align="center">
