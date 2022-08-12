@@ -6,3 +6,9 @@
   This software version is made for managing waitlists.
 </p>
 
+# Requirements
+<ul>
+  <li>Java SDK 15 and above</li>
+  <li>Java FX</li>
+  <li>Twilio (Optional, see below)</li>
+</ul>
