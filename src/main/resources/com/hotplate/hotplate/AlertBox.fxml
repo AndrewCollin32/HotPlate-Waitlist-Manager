@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="alertBoxVBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hotplate.hotplate.AlertBoxController">
+<VBox fx:id="alertBoxVBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/15" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hotplate.hotplate.AlertBoxController">
    <children>
       <Label fx:id="alertlabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="116.0" prefWidth="357.0" text="Error" textAlignment="CENTER" wrapText="true">
          <font>
