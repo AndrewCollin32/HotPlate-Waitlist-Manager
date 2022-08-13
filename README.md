@@ -47,7 +47,7 @@
 <h3> Sign In Page </h3>
   The sign in page is used by employees to grant access to the admin page. 
   <ul>
-  <li>0: Pin number textfield - Used for employees to enter their pin number. (The default pin number is 1111, but you can change it in the settings)
+  <li>0: Pin number textfield - Used for employees to enter their pin number. (The default pin number is 1111, but you can change it in the settings)</li>
   <li>1: Close Button - Takes you back to the customer portal </li>
   <li>2: Submit Button - Validates the pin number and takes you to the admin page</li>
 </ul>
@@ -91,6 +91,19 @@
 
 ![Image 8-11-22 at 8 33 PM](https://user-images.githubusercontent.com/109395254/184280691-124aff72-8b2b-4786-a823-abac8b668153.JPG)
 
+<hr>
+<h3> Settings </h3>
+  The settings can only be accessed through the admin page. In this page, you can edit your name, your restaurant's name, auto load feature, pin and the time format. Changes made in this page will be applied to admin and customer portals. 
+  <ul>
+  <li>Name - Textfiled for you to enter your prefered name.</li>
+  <li>Restaurant - Textfield to enter your restaurant's name. It can be used as an string injection for your messages. </li>
+  <li>Load - Check box where if selected, your last saved customer's data will automatically load on to the table.</li>
+  <li>Light Settings - Disabled and will be released in future developments</li>
+  <li>Pin - Textfield for you to enter a new pin. The pin is used to grant access to the Admin's page.</li>
+  <li>Time Format - You can choose between the 12hr and the 24hr time format. Once saved, the new time format will be applied to new and existing customer's data including the clock on the upper right corner of the Admin page.</li>
+</ul>
+
+![image](https://user-images.githubusercontent.com/109395254/184475648-2520f96b-828d-4a52-84c3-11f55b399fb0.png)
 
 
 
