@@ -16,6 +16,7 @@ public class AdminPage {
     public BorderPane bp;
     public static boolean aboutMeSectionOrg = false;
 
+    //Launches a new Admin page
     public static void homePage() throws IOException {
         FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("adminPage.fxml"));
         Scene scene = new Scene(fxml.load(), 600, 600);
