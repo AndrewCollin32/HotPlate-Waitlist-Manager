@@ -4,7 +4,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
@@ -25,14 +25,11 @@
                   <Font name="Arial Rounded MT Bold" size="59.0" />
                </font>
             </Label>
-            <TextField fx:id="signInTextPin" prefHeight="100.0" prefWidth="332.0" promptText="Enter Your Pin">
+            <PasswordField fx:id="signInTextPin" prefHeight="65.0" prefWidth="270.0" promptText="Enter Your Pin">
                <font>
-                  <Font name="Arial Rounded MT Bold" size="36.0" />
+                  <Font size="34.0" />
                </font>
-               <cursor>
-                  <Cursor fx:constant="TEXT" />
-               </cursor>
-            </TextField>
+            </PasswordField>
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
