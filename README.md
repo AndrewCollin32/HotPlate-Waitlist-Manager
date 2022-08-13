@@ -100,7 +100,7 @@
   <li>Load - Check box where if selected, your last saved customer's data will automatically load on to the table.</li>
   <li>Light Settings - Disabled and will be released in future developments</li>
   <li>Pin - Textfield for you to enter a new pin. The pin is used to grant access to the Admin's page.</li>
-  <li>Time Format - You can choose between the 12hr and the 24hr time format. Once saved, the new timeformat will be applied to new and existing customer's data including the clock on the upper right corner of the Admin page.</li>
+  <li>Time Format - You can choose between the 12hr and the 24hr time format. Once saved, the new time format will be applied to new and existing customer's data including the clock on the upper right corner of the Admin page.</li>
 </ul>
 
 ![image](https://user-images.githubusercontent.com/109395254/184475648-2520f96b-828d-4a52-84c3-11f55b399fb0.png)
