@@ -18,8 +18,7 @@ import java.util.Date;
 public class HotPlateApp extends Application {
 
     public static Stage stage;
-    public static Scene scene;
-    public static int waitListSize;
+    public static int waitListSize = 0;
     public static String pinNumber = "1111";
     public static String userName = "Jeffery";
     public static String restaurantName = "Ernie's";
