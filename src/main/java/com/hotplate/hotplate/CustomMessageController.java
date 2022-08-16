@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class customMessageController implements Initializable {
+public class CustomMessageController implements Initializable {
 
     @FXML
     private TextArea callMessage;
@@ -19,23 +19,23 @@ public class customMessageController implements Initializable {
 
     @FXML
     void messageEditorCancel(ActionEvent event) throws IOException {
-        AdminPage.homePage();
+        HotPlateApp.launchAdminPortal(false);
     }
 
     @FXML
     void messageEditorSave(ActionEvent event) throws IOException {
         HotPlateApp.warnMessage = warnMessage.getText();
-        HotPlateApp.callMessag = callMessage.getText();
+        HotPlateApp.callMessage = callMessage.getText();
 
-        SaveSettings ss = new SaveSettings(HotPlateApp.userName, HotPlateApp.restaurantName, HotPlateApp.pinNumber, HotPlateApp.automaticallyLoadData, HotPlateApp.warnMessage, HotPlateApp.callMessag, HotPlateApp.britishTime);
+        SaveSettings ss = new SaveSettings(HotPlateApp.userName, HotPlateApp.restaurantName, HotPlateApp.pinNumber, HotPlateApp.automaticallyLoadData, HotPlateApp.warnMessage, HotPlateApp.callMessage, HotPlateApp.britishTime);
         ResourceManager.save(ss, HotPlateApp.saveSettingsPathFile);
-        AdminPage.homePage();
+        HotPlateApp.launchAdminPortal(true);
     }
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         warnMessage.setText(HotPlateApp.warnMessage);
-        callMessage.setText(HotPlateApp.callMessag);
+        callMessage.setText(HotPlateApp.callMessage);
     }
 }

@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.ResourceBundle;
 
@@ -40,24 +39,12 @@ public class SettingsController implements Initializable {
     private RadioButton britishTimeSelection;
 
     @FXML
-    private RadioButton americanTimeSelection;
-
-    @FXML
-    void settingsBrowse(ActionEvent event) {
-
+    void settingsCancelButton(ActionEvent event) throws IOException {
+        HotPlateApp.launchAdminPortal(false);
     }
 
     @FXML
-    void settingsCancelButton(ActionEvent event) {
-        try {
-            AdminPage.homePage();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @FXML
-    void settingsSaveButton(ActionEvent event) throws ParseException {
+    void settingsSaveButton(ActionEvent event) throws ParseException, IOException {
         if (settingsName.getText().length() == 0 ||
         settingsPin.getText().length() == 0 ||
         settingsRestaurant.getText().length() == 0){
@@ -108,14 +95,10 @@ public class SettingsController implements Initializable {
         HotPlateApp.automaticallyLoadData = loadCheckBox.isSelected();
         HotPlateApp.britishTime = britishTimeSelection.isSelected();
 
-        SaveSettings ss = new SaveSettings(HotPlateApp.userName, HotPlateApp.restaurantName, HotPlateApp.pinNumber, HotPlateApp.automaticallyLoadData, HotPlateApp.warnMessage, HotPlateApp.callMessag, HotPlateApp.britishTime);
+        SaveSettings ss = new SaveSettings(HotPlateApp.userName, HotPlateApp.restaurantName, HotPlateApp.pinNumber, HotPlateApp.automaticallyLoadData, HotPlateApp.warnMessage, HotPlateApp.callMessage, HotPlateApp.britishTime);
         ResourceManager.save(ss, HotPlateApp.saveSettingsPathFile);
 
-        try {
-            AdminPage.homePage();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        HotPlateApp.launchAdminPortal(true);
     }
 
     @Override

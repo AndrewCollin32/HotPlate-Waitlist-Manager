@@ -11,7 +11,7 @@ public class YesNoBox {
     public static Stage stage;
     public static boolean boxChoice;
 
-    public boolean createAlert(String title, String message){
+    public static boolean createAlert(String title, String message){
         FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("yesNoBox.fxml"));
         Scene scene = null;
         try {

@@ -23,11 +23,11 @@ public class AboutMeController {
 
     @FXML
     void aboutMeOkButton(ActionEvent event) throws IOException {
-        if (AdminPage.aboutMeSectionOrg){
-            AdminPage.homePage();
+        if (HotPlateApp.aboutMeCustomerOrgin){
+            HotPlateApp.launchCustomerPortal();
         }
         else{
-            HotPlateApp.backToCustomer();
+            HotPlateApp.launchAdminPortal(false);
         }
     }
 

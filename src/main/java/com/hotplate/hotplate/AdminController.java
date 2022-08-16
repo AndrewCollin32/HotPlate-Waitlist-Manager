@@ -43,9 +43,6 @@ public class AdminController implements Initializable {
     public TableView<Customer> AdminTable;
 
     @FXML
-    public MenuItem addToTable;
-
-    @FXML
     public BorderPane adminBorderPane;
 
     @FXML
@@ -55,7 +52,11 @@ public class AdminController implements Initializable {
     public Label adminTimeLabel;
 
     @FXML
-    public MenuItem deleteToTable;
+    public MenuItem transferToHotPlateHelp;
+
+    public static Stage addToTableStage;
+
+    public static Stage callStage;
 
 
     @FXML
@@ -64,38 +65,19 @@ public class AdminController implements Initializable {
     }
 
     @FXML
-    public MenuItem transferToHotPlateHelp;
-
-    @FXML
     void adminCustomMessage() throws IOException {
         endTime = true;
-        FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("customMessagePage.fxml"));
-        Scene scene = new Scene(fxml.load(), 600, 600);
-        HotPlateApp.stage.setScene(scene);
+        HotPlateApp.launchCustomMessagePage();
     }
 
-    public static Stage addToTableStage;
-
-    public static Stage callStage;
-
     @FXML
-    void addToTable(ActionEvent event) {
-
-        FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("adminAddItem.fxml"));
-        addToTableStage = new Stage();
-        Stage stage = addToTableStage;
-        stage.setTitle("Add Item");
-        try {
-            stage.setScene(new Scene(fxml.load(), 600, 400));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        stage.show();
+    void addToTable(ActionEvent event) throws IOException {
+        HotPlateApp.launchAdminAddToTable();
     }
 
     @FXML
     void callToTable(ActionEvent event) throws IOException {
-        String textMessage = HotPlateApp.callMessag;
+        String textMessage = HotPlateApp.callMessage;
         Customer selectedCustomer;
         selectedCustomer = AdminTable.getSelectionModel().getSelectedItem();
         if (selectedCustomer == null){
@@ -117,7 +99,7 @@ public class AdminController implements Initializable {
         stage.setScene(scene);
         stage.show();
 
-        textMessageWindow tmw = fxml.getController();
+        TextMessageWindow tmw = fxml.getController();
         tmw.textMessageRecieveLabel.setText("This is the text message " + selectedCustomer.getName() + " will recieve.");
         tmw.textMessage.setText(textMessage);
         //twilioClass.warnPerson(selectedCustomer, textMessage);
@@ -136,40 +118,23 @@ public class AdminController implements Initializable {
     }
 
     @FXML
-    void tarnsferToAbout(ActionEvent event) {
+    void tarnsferToAbout(ActionEvent event) throws IOException {
         endTime = true;
-        FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("aboutMePage.fxml"));
-        try {
-            AdminPage.stage.setScene(new Scene(fxml.load(), 600, 600));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        AdminPage.aboutMeSectionOrg = true;
-
+        HotPlateApp.launchAboutMePage();
+        HotPlateApp.aboutMeCustomerOrgin = false;
     }
 
     @FXML
-    void transferToCustomer(ActionEvent event) {
-        YesNoBox ynb = new YesNoBox();
-        boolean boxChoice = ynb.createAlert("Customer Portal", "Are you sure you want to leave?");
-        if (boxChoice){
+    void transferToCustomer(ActionEvent event) throws IOException {
+        if (YesNoBox.createAlert("Customer Portal", "Are you sure you want to leave?")){
             endTime = true;
-            HotPlateApp.backToCustomer();
+            HotPlateApp.launchCustomerPortal();
         }
-    }
-
-    @FXML
-    void transferToDonate(ActionEvent event) {
-        endTime = true;
-
     }
 
     @FXML
     void transferToExit(ActionEvent event) {
-
-        YesNoBox ynb = new YesNoBox();
-        boolean boxChoice = ynb.createAlert("Exit", "Are you sure you want to exit?");
-        if (boxChoice){
+        if (YesNoBox.createAlert("Exit", "Are you sure you want to exit?")){
             endTime = true;
             HotPlateApp.stage.close();
         }
@@ -177,18 +142,6 @@ public class AdminController implements Initializable {
 
     @FXML
     public void transferToLoad(ActionEvent event) throws InterruptedException, InvocationTargetException, IOException, ParseException {
-
-        /*
-        JFileChooser chooser = new JFileChooser();
-        //FileNameExtensionFilter filter = new FileNameExtensionFilter(".ser files", ".ser");
-        //chooser.setFileFilter(filter);
-        int checkInput = chooser.showOpenDialog(null);
-
-        if (checkInput == JFileChooser.APPROVE_OPTION){
-            File openFile = chooser.getSelectedFile();
-
-            System.out.println(openFile.getName());
-        }*/
 
         SaveData sd = (SaveData) ResourceManager.load(HotPlateApp.customerDataPathFile);
         HotPlateApp.waitListSize = sd.customersData.size();
@@ -217,7 +170,7 @@ public class AdminController implements Initializable {
             }
         }
         endTime = true;
-        AdminPage.homePage();
+        HotPlateApp.launchAdminPortal(true);
     }
 
     @FXML
@@ -233,18 +186,7 @@ public class AdminController implements Initializable {
     }
 
     @FXML
-    void editTable(ActionEvent event){
-        FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("adminEditItem.fxml"));
-        addToTableStage = new Stage();
-        Stage stage = addToTableStage;
-        stage.setTitle("Edit Item");
-        try {
-            stage.setScene(new Scene(fxml.load(), 600, 400));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        adminEditItemController aeic = fxml.getController();
+    void editTable(ActionEvent event) throws IOException {
         ObservableList<TablePosition> oblist = AdminTable.getSelectionModel().getSelectedCells();
         if (oblist.size() == 0){
             try {
@@ -255,25 +197,14 @@ public class AdminController implements Initializable {
             return;
         }
         Customer customer = AdminTable.getItems().get(oblist.get(0).getRow());
-        aeic.adminAddName.setText(customer.getName());
-        aeic.adminAddPartySize.setText(customer.getPartySize());
-        aeic.adminAddPhone.setText(customer.getPhoneNumber());
-        aeic.adminCustomTimeText.setText(customer.getTimeWaited());
-        aeic.selectedCustomer = customer;
-        stage.show();
+        HotPlateApp.selectedCustomer = customer;
+        HotPlateApp.launchAdminEditToTable();
     }
 
     @FXML
-    void transferToSettings(ActionEvent event) {
+    void transferToSettings(ActionEvent event) throws IOException {
         endTime = true;
-        FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("settings.fxml"));
-        Scene scene;
-        try {
-            scene = new Scene(fxml.load(), 600, 600);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        HotPlateApp.stage.setScene(scene);
+        HotPlateApp.launchSettings();
     }
 
     @FXML
@@ -300,7 +231,7 @@ public class AdminController implements Initializable {
         stage.setScene(scene);
         stage.show();
 
-        textMessageWindow tmw = fxml.getController();
+        TextMessageWindow tmw = fxml.getController();
         tmw.textMessageRecieveLabel.setText("This is the text message " + selectedCustomer.getName() + " will recieve.");
         tmw.textMessage.setText(textMessage);
         //twilioClass.warnPerson(selectedCustomer, textMessage);
@@ -339,6 +270,7 @@ public class AdminController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        adminNameLabel.setText("Welcome, " + HotPlateApp.userName);
         name.setCellValueFactory(new PropertyValueFactory<Customer, String>("name"));
         partySize.setCellValueFactory(new PropertyValueFactory<Customer, String>("partySize"));
         timeWaited.setCellValueFactory(new PropertyValueFactory<Customer, String>("timeWaited"));
@@ -350,6 +282,10 @@ public class AdminController implements Initializable {
             customerList.add(customer);
         }
         AdminTable.setItems(customerList);
+
+        HotPlateApp.stage.setOnCloseRequest(closeEvent -> {
+            endTime = true;
+        });
 
         try {
             endTime = false;

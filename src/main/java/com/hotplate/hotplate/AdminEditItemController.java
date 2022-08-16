@@ -2,40 +2,38 @@ package com.hotplate.hotplate;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
+import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
-import java.util.Timer;
+import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class adminAddItemController {
+public class AdminEditItemController implements Initializable {
 
     @FXML
-    private TextField adminAddName;
+    public TextField adminAddName;
 
     @FXML
-    private TextField adminAddPartySize;
+    public TextField adminAddPartySize;
 
     @FXML
-    private TextField adminAddPhone;
+    public TextField adminAddPhone;
 
     @FXML
-    private CheckBox adminCheckBox;
+    public CheckBox adminCheckBox;
 
     @FXML
-    private TextField adminCustomTimeText;
+    public TextField adminCustomTimeText;
 
     @FXML
     void adminCancelButton(ActionEvent event) {
-        AdminController.addToTableStage.close();
+        HotPlateApp.adminEditToTableStage.close();
     }
 
     boolean checkBox = false;
@@ -112,19 +110,27 @@ public class adminAddItemController {
             return;
         }
         else{
+            HotPlateApp.customerData.remove(HotPlateApp.selectedCustomer);
             String phoneNumber = match.group(1) + match.group(2) + match.group(3);
             HotPlateApp.customerData.add(new Customer(adminAddName.getText(), adminAddPartySize.getText(),
                     timeSelected, phoneNumber));
             HotPlateApp.waitListSize++;
-            AdminController.addToTableStage.close();
+            HotPlateApp.adminEditToTableStage.close();
 
             try {
                 AdminController.endTime=true;
-                AdminPage.homePage();
+                HotPlateApp.launchAdminPortal(true);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        adminAddName.setText(HotPlateApp.selectedCustomer.getName());
+        adminAddPartySize.setText(HotPlateApp.selectedCustomer.getPartySize());
+        adminAddPhone.setText(HotPlateApp.selectedCustomer.getPhoneNumber());
+        adminCustomTimeText.setText(HotPlateApp.selectedCustomer.getTimeWaited());
+    }
 }

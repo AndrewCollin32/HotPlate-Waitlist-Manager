@@ -1,49 +1,36 @@
 package com.hotplate.hotplate;
 
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.TablePosition;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
-import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
-import java.util.ResourceBundle;
-import java.util.Timer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class adminEditItemController implements Initializable {
+public class AdminAddItemController {
 
     @FXML
-    public TextField adminAddName;
+    private TextField adminAddName;
 
     @FXML
-    public TextField adminAddPartySize;
+    private TextField adminAddPartySize;
 
     @FXML
-    public TextField adminAddPhone;
+    private TextField adminAddPhone;
 
     @FXML
-    public CheckBox adminCheckBox;
+    private CheckBox adminCheckBox;
 
     @FXML
-    public TextField adminCustomTimeText;
-
-    public Customer selectedCustomer;
+    private TextField adminCustomTimeText;
 
     @FXML
     void adminCancelButton(ActionEvent event) {
-        AdminController.addToTableStage.close();
+        HotPlateApp.adminAddToTableStage.close();
     }
 
     boolean checkBox = false;
@@ -120,24 +107,19 @@ public class adminEditItemController implements Initializable {
             return;
         }
         else{
-            HotPlateApp.customerData.remove(selectedCustomer);
             String phoneNumber = match.group(1) + match.group(2) + match.group(3);
             HotPlateApp.customerData.add(new Customer(adminAddName.getText(), adminAddPartySize.getText(),
                     timeSelected, phoneNumber));
             HotPlateApp.waitListSize++;
-            AdminController.addToTableStage.close();
+            HotPlateApp.adminAddToTableStage.close();
 
             try {
                 AdminController.endTime=true;
-                AdminPage.homePage();
+                HotPlateApp.launchAdminPortal(true);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
 }

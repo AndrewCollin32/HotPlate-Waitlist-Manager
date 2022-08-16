@@ -3,25 +3,23 @@ package com.hotplate.hotplate;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ReserveSeatPortalController{
+public class ReserveSeatPortalController implements Initializable {
 
     @FXML
     public TextField reserveSeatNameInput;
@@ -43,14 +41,10 @@ public class ReserveSeatPortalController{
 
     @FXML
     void reserveSeatCancelPress(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HotPlateApp.class.getResource("customerPortal.fxml"));
         reserveSeatNameInput.setText("");
         reserveSeatPhoneInput.setText("");
-        HotPlateApp.scene = new Scene(fxmlLoader.load(), 600,600);
-        customerPortalController cpc = fxmlLoader.getController();
-        cpc.customerPortalWaitlistLabel.setText("Current waitlist: " + HotPlateApp.waitListSize);
-        HotPlateApp.stage.setScene(HotPlateApp.scene);
-        HotPlateApp.stage.show();
+        HotPlateApp.launchCustomerPortal();
+
     }
 
     @FXML
@@ -65,14 +59,21 @@ public class ReserveSeatPortalController{
         }
         else{
             SimpleDateFormat sdf = new SimpleDateFormat((HotPlateApp.britishTime)? "HH:mm": "hh:mm a");
-            FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("confirmationPage.fxml"));
-            HotPlateApp.stage.setScene(new Scene(fxml.load(), 600, 600));
-            ConfirmationPageController cpc = fxml.getController();
             String phoneNumber = match.group(1) + match.group(2) + match.group(3);
             HotPlateApp.customerData.add(new Customer(reserveSeatNameInput.getText(), reserveSeatPartySizeChoice.getSelectionModel().getSelectedItem(),
                     sdf.format(new Date()), phoneNumber));
+
+            HotPlateApp.launchConfirmationPage();
         }
 
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        for (int i = 1; i < 13; i++){
+            reserveSeatPartySizeChoice.getItems().add(i + "");
+        }
+        reserveSeatPartySizeChoice.getSelectionModel().selectFirst();
+        reserveSeatPortalWelcomeLabel.setText("Thank you for choosing " + HotPlateApp.restaurantName + "!");
+    }
 }
