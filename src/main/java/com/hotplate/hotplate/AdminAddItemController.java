@@ -68,7 +68,7 @@ public class AdminAddItemController {
                 try {
                     AlertBox ab = new AlertBox("Time Error", "Please enter a time in this format (hh:mm [PM or AM])");
                     HotPlateApp.log.warning("[Saving] [Warning] because of wrong time format");
-                } catch (IOException e) {
+                } catch (Exception e) {
                     HotPlateApp.log.severe("[Fail] Can't launch AlertBox: " + e);
                     HotPlateApp.launchLogError("[Fail] Can't launch AlertBox: " + e);
                 }
@@ -86,7 +86,7 @@ public class AdminAddItemController {
             try {
                 AlertBox ab = new AlertBox("Name Error", "Please enter an integer for party size for \n this reservation");
                 HotPlateApp.log.warning("[Saving] [Warning] User didn't enter correct party size");
-            } catch (IOException j) {
+            } catch (Exception j) {
                 HotPlateApp.log.severe("[Fail] Can't launch AlertBox: " + e);
                 HotPlateApp.launchLogError("[Fail] Can't launch AlertBox: " + e);
             }
@@ -96,7 +96,7 @@ public class AdminAddItemController {
             try {
                 AlertBox ab = new AlertBox("Phone Number Error", "Please enter a valid phone number");
                 HotPlateApp.log.warning("[Saving] [Warning] User didn't enter correct phone number");
-            } catch (IOException e) {
+            } catch (Exception e) {
                 HotPlateApp.log.severe("[Fail] Can't launch AlertBox: " + e);
                 HotPlateApp.launchLogError("[Fail] Can't launch AlertBox: " + e);
             }
@@ -106,7 +106,7 @@ public class AdminAddItemController {
             try {
                 AlertBox ab = new AlertBox("Name Error", "Please provide a name for \n this reservation");
                 HotPlateApp.log.warning("[Saving] [Warning] User didn't enter a name");
-            } catch (IOException e) {
+            } catch (Exception e) {
                 HotPlateApp.log.severe("[Fail] Can't launch AlertBox: " + e);
                 HotPlateApp.launchLogError("[Fail] Can't launch AlertBox: " + e);
             }
@@ -116,7 +116,7 @@ public class AdminAddItemController {
             try {
                 AlertBox ab = new AlertBox("Party Size Error", "Please provide a valid integer for \n the party size");
                 HotPlateApp.log.warning("[Saving] [Warning] User didn't enter a valid party size");
-            } catch (IOException e) {
+            } catch (Exception e) {
                 HotPlateApp.log.severe("[Fail] Can't launch AlertBox: " + e);
                 HotPlateApp.launchLogError("[Fail] Can't launch AlertBox: " + e);
             }
@@ -132,10 +132,9 @@ public class AdminAddItemController {
             try {
                 HotPlateApp.endTime=true;
                 HotPlateApp.launchAdminPortal(true);
-            } catch (IOException e) {
+            } catch (Exception e) {
                 HotPlateApp.log.severe("[Fail] Can't launch AdminPortal: " + e);
                 HotPlateApp.launchLogError("[Fail] Can't launch AdminPortal: " + e);
-                throw new RuntimeException(e);
             } finally{
             HotPlateApp.log.info("[Saving] [Success] All data was saved correctly");}
         }
