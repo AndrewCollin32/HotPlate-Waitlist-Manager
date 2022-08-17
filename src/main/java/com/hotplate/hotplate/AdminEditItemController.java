@@ -118,7 +118,7 @@ public class AdminEditItemController implements Initializable {
             HotPlateApp.adminEditToTableStage.close();
 
             try {
-                AdminController.endTime=true;
+                HotPlateApp.endTime=true;
                 HotPlateApp.launchAdminPortal(true);
             } catch (IOException e) {
                 throw new RuntimeException(e);

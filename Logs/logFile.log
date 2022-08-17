@@ -1,0 +1,66 @@
+Aug 17, 2022 12:34:56 AM com.hotplate.hotplate.PreLaunchCheck checkSpecs
+INFO: 
+java.specification.version 15
+javafx.runtime.version 15.0.1+1
+sun.cpu.isalist amd64
+sun.jnu.encoding Cp1252
+java.class.path C:\Users\Syste\.m2\repository\org\openjfx\javafx-controls\15.0.1\javafx-controls-15.0.1.jar;C:\Users\Syste\.m2\repository\org\openjfx\javafx-graphics\15.0.1\javafx-graphics-15.0.1.jar;C:\Users\Syste\.m2\repository\org\openjfx\javafx-base\15.0.1\javafx-base-15.0.1.jar;C:\Users\Syste\.m2\repository\org\openjfx\javafx-fxml\15.0.1\javafx-fxml-15.0.1.jar
+java.vm.vendor Oracle Corporation
+sun.arch.data.model 64
+user.variant 
+java.vendor.url https://java.oracle.com/
+java.vm.specification.version 15
+os.name Windows 10
+javafx.version 15.0.1
+sun.java.launcher SUN_STANDARD
+user.country US
+sun.boot.library.path C:\Users\Syste\.jdks\openjdk-15.0.2\bin
+sun.java.command com.hotplate.hotplate/com.hotplate.hotplate.HotPlateApp
+jdk.debug release
+sun.cpu.endian little
+user.home C:\Users\Syste
+user.language en
+java.specification.vendor Oracle Corporation
+jdk.module.path C:\Users\Syste\.m2\repository\org\openjfx\javafx-graphics\15.0.1\javafx-graphics-15.0.1-win.jar;C:\Users\Syste\.m2\repository\org\openjfx\javafx-base\15.0.1\javafx-base-15.0.1-win.jar;C:\Users\Syste\.m2\repository\org\openjfx\javafx-controls\15.0.1\javafx-controls-15.0.1-win.jar;C:\Users\Syste\.m2\repository\org\openjfx\javafx-fxml\15.0.1\javafx-fxml-15.0.1-win.jar;C:\Users\Syste\Documents\IdeaProjects\HotPlate-Waitlist-ManagerExist\target\classes
+java.version.date 2021-01-19
+java.home C:\Users\Syste\.jdks\openjdk-15.0.2
+file.separator \
+java.vm.compressedOopsMode Zero based
+line.separator 
+
+java.vm.specification.vendor Oracle Corporation
+java.specification.name Java Platform API Specification
+jdk.module.main.class com.hotplate.hotplate.HotPlateApp
+jdk.module.main com.hotplate.hotplate
+user.script 
+sun.management.compiler HotSpot 64-Bit Tiered Compilers
+java.runtime.version 15.0.2+7-27
+user.name Syste
+path.separator ;
+os.version 10.0
+java.runtime.name OpenJDK Runtime Environment
+file.encoding UTF-8
+java.vm.name OpenJDK 64-Bit Server VM
+java.vendor.url.bug https://bugreport.java.com/bugreport/
+java.io.tmpdir C:\Users\Syste\AppData\Local\Temp\
+java.version 15.0.2
+user.dir C:\Users\Syste\Documents\IdeaProjects\HotPlate-Waitlist-ManagerExist
+os.arch amd64
+java.vm.specification.name Java Virtual Machine Specification
+sun.os.patch.level 
+java.library.path C:\Users\Syste\.jdks\openjdk-15.0.2\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;D:\bin;C:\Windows\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\cmd;C:\Program Files\Microsoft\Azure Functions Core Tools\;C:\Program Files\Amazon\AWSSAMCLI\bin\;C:\Program Files\Java\openjdk-11.0.16_8\bin\javac.exe;C:\Program Files (x86)\twilio-cli\bin;.
+java.vm.info mixed mode, sharing
+java.vendor Oracle Corporation
+java.vm.version 15.0.2+7-27
+sun.io.unicode.encoding UnicodeLittle
+java.class.version 59.0
+Free Memory: 514377704
+Total Memory: 536870912
+Max Memory: 8573157376
+Available Cores: 12
+Aug 17, 2022 12:34:56 AM com.hotplate.hotplate.PreLaunchCheck checkSpecs
+INFO: [Success] Java version is up to date
+Aug 17, 2022 12:34:56 AM com.hotplate.hotplate.PreLaunchCheck checkFiles
+INFO: [Start] Scanning all required FXML Files
+Aug 17, 2022 12:34:56 AM com.hotplate.hotplate.PreLaunchCheck checkFiles
+SEVERE: Can not find file: callPtage.fxml

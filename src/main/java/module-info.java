@@ -3,6 +3,7 @@ module com.hotplate.hotplate {
     requires javafx.fxml;
     requires java.desktop;
     requires javafx.graphics;
+    requires java.logging;
     //requires twilio;
 
 

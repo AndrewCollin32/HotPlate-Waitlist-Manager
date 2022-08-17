@@ -66,7 +66,7 @@ public class AdminController implements Initializable {
 
     @FXML
     void adminCustomMessage() throws IOException {
-        endTime = true;
+        HotPlateApp.endTime = true;
         HotPlateApp.launchCustomMessagePage();
     }
 
@@ -100,7 +100,7 @@ public class AdminController implements Initializable {
 
     @FXML
     void tarnsferToAbout(ActionEvent event) throws IOException {
-        endTime = true;
+        HotPlateApp.endTime = true;
         HotPlateApp.launchAboutMePage();
         HotPlateApp.aboutMeCustomerOrgin = false;
     }
@@ -108,7 +108,7 @@ public class AdminController implements Initializable {
     @FXML
     void transferToCustomer(ActionEvent event) throws IOException {
         if (YesNoBox.createAlert("Customer Portal", "Are you sure you want to leave?")){
-            endTime = true;
+            HotPlateApp.endTime = true;
             HotPlateApp.launchCustomerPortal();
         }
     }
@@ -116,7 +116,7 @@ public class AdminController implements Initializable {
     @FXML
     void transferToExit(ActionEvent event) {
         if (YesNoBox.createAlert("Exit", "Are you sure you want to exit?")){
-            endTime = true;
+            HotPlateApp.endTime = true;
             HotPlateApp.stage.close();
         }
     }
@@ -150,7 +150,7 @@ public class AdminController implements Initializable {
                 }
             }
         }
-        endTime = true;
+        HotPlateApp.endTime = true;
         HotPlateApp.launchAdminPortal(true);
     }
 
@@ -184,7 +184,7 @@ public class AdminController implements Initializable {
 
     @FXML
     void transferToSettings(ActionEvent event) throws IOException {
-        endTime = true;
+        HotPlateApp.endTime = true;
         HotPlateApp.launchSettings();
     }
 
@@ -199,12 +199,10 @@ public class AdminController implements Initializable {
         //twilioClass.warnPerson(selectedCustomer, textMessage);
     }
 
-    volatile static boolean endTime;
-
     public void setTime() throws InterruptedException {
         Thread thread = new Thread(() -> {
            SimpleDateFormat timeFormat = new SimpleDateFormat((HotPlateApp.britishTime)? "HH:mm": "hh:mm a");
-           while(!endTime){
+           while(!HotPlateApp.endTime){
                try{
                    Thread.sleep(1000);
                }
@@ -246,11 +244,11 @@ public class AdminController implements Initializable {
         AdminTable.setItems(customerList);
 
         HotPlateApp.stage.setOnCloseRequest(closeEvent -> {
-            endTime = true;
+            HotPlateApp.endTime = true;
         });
 
         try {
-            endTime = false;
+            HotPlateApp.endTime = false;
             setTime();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
