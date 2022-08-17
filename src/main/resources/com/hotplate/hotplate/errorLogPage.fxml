@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hotplate.hotplate.LogErrorPage">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hotplate.hotplate.LogErrorPage">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="600.0" style="-fx-background-color: #FF7F50;">
          <children>
@@ -23,12 +23,12 @@
             </Label>
          </children>
       </HBox>
-      <TextArea fx:id="logTextArea" prefHeight="449.0" prefWidth="600.0" wrapText="true">
+      <TextArea fx:id="logTextArea" prefHeight="395.0" prefWidth="580.0" wrapText="true">
          <VBox.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </VBox.margin>
       </TextArea>
-      <Label fx:id="errorLabel" prefHeight="64.0" prefWidth="600.0" style="-fx-text-fill: RED;" text="Error:" wrapText="true">
+      <Label fx:id="errorLabel" prefHeight="119.0" prefWidth="600.0" style="-fx-text-fill: RED;" text="Error:" wrapText="true">
          <padding>
             <Insets left="10.0" right="10.0" />
          </padding>

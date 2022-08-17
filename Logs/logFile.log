@@ -1,4 +1,4 @@
-Aug 17, 2022 12:34:56 AM com.hotplate.hotplate.PreLaunchCheck checkSpecs
+Aug 17, 2022 1:09:44 AM com.hotplate.hotplate.PreLaunchCheck checkSpecs
 INFO: 
 java.specification.version 15
 javafx.runtime.version 15.0.1+1
@@ -54,13 +54,67 @@ java.vendor Oracle Corporation
 java.vm.version 15.0.2+7-27
 sun.io.unicode.encoding UnicodeLittle
 java.class.version 59.0
-Free Memory: 514377704
+Free Memory: 514374736
 Total Memory: 536870912
 Max Memory: 8573157376
 Available Cores: 12
-Aug 17, 2022 12:34:56 AM com.hotplate.hotplate.PreLaunchCheck checkSpecs
+Aug 17, 2022 1:09:44 AM com.hotplate.hotplate.PreLaunchCheck checkSpecs
 INFO: [Success] Java version is up to date
-Aug 17, 2022 12:34:56 AM com.hotplate.hotplate.PreLaunchCheck checkFiles
+Aug 17, 2022 1:09:44 AM com.hotplate.hotplate.PreLaunchCheck checkFiles
 INFO: [Start] Scanning all required FXML Files
-Aug 17, 2022 12:34:56 AM com.hotplate.hotplate.PreLaunchCheck checkFiles
-SEVERE: Can not find file: callPtage.fxml
+Aug 17, 2022 1:09:44 AM com.hotplate.hotplate.PreLaunchCheck checkFiles
+INFO: [Success] All FXML files are present
+Aug 17, 2022 1:09:44 AM com.hotplate.hotplate.PreLaunchCheck checkFiles
+INFO: [Start] Scanning all required Java class files
+Aug 17, 2022 1:09:44 AM com.hotplate.hotplate.PreLaunchCheck checkFiles
+INFO: [Success] All Java class files are present
+Aug 17, 2022 1:09:44 AM com.hotplate.hotplate.HotPlateApp start
+INFO: [Starting] Hotplate
+Aug 17, 2022 1:09:44 AM com.hotplate.hotplate.HotPlateApp start
+INFO: [Success] Loading User's Settings
+Aug 17, 2022 1:09:44 AM com.hotplate.hotplate.HotPlateApp start
+INFO: [Success] Loading Customer's Data
+Aug 17, 2022 1:09:45 AM com.hotplate.hotplate.HotPlateApp launchCustomerPortal
+INFO: [Success] Loading Customer's Screen
+Aug 17, 2022 1:09:45 AM com.hotplate.hotplate.HotPlateApp start
+INFO: [Success] Starting HotPlate
+Aug 17, 2022 1:09:47 AM com.hotplate.hotplate.HotPlateApp launchSignInPage
+INFO: [Success] Loading Sign In Page
+Aug 17, 2022 1:09:49 AM com.hotplate.hotplate.HotPlateApp launchAdminPortal
+INFO: [Success] Loading Admin Portal
+Aug 17, 2022 1:09:50 AM com.hotplate.hotplate.HotPlateApp launchAdminAddToTable
+INFO: [Success] Loading Add To Table Menu
+Aug 17, 2022 1:09:52 AM com.hotplate.hotplate.AdminAddItemController adminCurrentTimeCheckBox
+INFO: [CheckBox] Clicked: javafx.event.ActionEvent[source=CheckBox[id=adminCheckBox, styleClass=check-box]'Current Time']
+Aug 17, 2022 1:09:53 AM com.hotplate.hotplate.AdminAddItemController adminSaveButton
+INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@6a0e6db1[styleClass=button]'Save']
+Aug 17, 2022 1:09:53 AM com.hotplate.hotplate.AdminAddItemController adminSaveButton
+INFO: [Saving] Data: 123   Checkbox:true
+Aug 17, 2022 1:09:53 AM com.hotplate.hotplate.AdminAddItemController adminSaveButton
+INFO: [Saving] Starting to save data
+Aug 17, 2022 1:09:53 AM com.hotplate.hotplate.AdminAddItemController adminSaveButton
+INFO: [Saving] [Success] Time is in the correct format
+Aug 17, 2022 1:09:53 AM com.hotplate.hotplate.AdminAddItemController adminSaveButton
+WARNING: [Saving] [Warning] User didn't enter correct party size
+Aug 17, 2022 1:09:59 AM com.hotplate.hotplate.AdminAddItemController adminSaveButton
+INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@6a0e6db1[styleClass=button]'Save']
+Aug 17, 2022 1:09:59 AM com.hotplate.hotplate.AdminAddItemController adminSaveButton
+INFO: [Saving] Data: 123 123123 12 Checkbox:true
+Aug 17, 2022 1:09:59 AM com.hotplate.hotplate.AdminAddItemController adminSaveButton
+INFO: [Saving] Starting to save data
+Aug 17, 2022 1:09:59 AM com.hotplate.hotplate.AdminAddItemController adminSaveButton
+INFO: [Saving] [Success] Time is in the correct format
+Aug 17, 2022 1:09:59 AM com.hotplate.hotplate.AdminAddItemController adminSaveButton
+WARNING: [Saving] [Warning] User didn't enter correct phone number
+Aug 17, 2022 1:10:01 AM com.hotplate.hotplate.AdminAddItemController adminSaveButton
+INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@6a0e6db1[styleClass=button]'Save']
+Aug 17, 2022 1:10:01 AM com.hotplate.hotplate.AdminAddItemController adminSaveButton
+INFO: [Saving] Data: 123 1231231234 12 Checkbox:true
+Aug 17, 2022 1:10:01 AM com.hotplate.hotplate.AdminAddItemController adminSaveButton
+INFO: [Saving] Starting to save data
+Aug 17, 2022 1:10:01 AM com.hotplate.hotplate.AdminAddItemController adminSaveButton
+INFO: [Saving] [Success] Time is in the correct format
+Aug 17, 2022 1:10:01 AM com.hotplate.hotplate.HotPlateApp launchAdminPortal
+INFO: [Success] Loading Admin Portal
+Aug 17, 2022 1:10:01 AM com.hotplate.hotplate.AdminAddItemController adminSaveButton
+INFO: [Saving] [Success] All data was saved correctly

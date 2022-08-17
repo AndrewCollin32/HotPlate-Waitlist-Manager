@@ -18,11 +18,13 @@ public class AboutMeController {
     @FXML
     void GitHubLink(ActionEvent event) throws URISyntaxException, IOException {
         //HostServices host = getHostServices().showDocument("https://github.com/AndrewCDiep");
-        java.awt.Desktop.getDesktop().browse(new URI("https://github.com/AndrewCDiep"));
+        HotPlateApp.log.info("[Button] Clicked: " + event.toString());
+        java.awt.Desktop.getDesktop().browse(new URI("https://github.com/AndrewCollin/HotPlate-Waitlist-Manager"));
     }
 
     @FXML
     void aboutMeOkButton(ActionEvent event) throws IOException {
+        HotPlateApp.log.info("[Button] Clicked: " + event.toString());
         if (HotPlateApp.aboutMeCustomerOrgin){
             HotPlateApp.launchCustomerPortal();
         }
@@ -33,16 +35,19 @@ public class AboutMeController {
 
     @FXML
     void facebookLink(ActionEvent event) throws URISyntaxException, IOException {
+        HotPlateApp.log.info("[Button] Clicked: " + event.toString());
         java.awt.Desktop.getDesktop().browse(new URI("https://www.facebook.com/System32Comics"));
     }
 
     @FXML
     void instagramLink(ActionEvent event) throws URISyntaxException, IOException {
+        HotPlateApp.log.info("[Button] Clicked: " + event.toString());
         java.awt.Desktop.getDesktop().browse(new URI("https://www.instagram.com/system32comics/"));
     }
 
     @FXML
     void twitterLink(ActionEvent event) throws URISyntaxException, IOException {
+        HotPlateApp.log.info("[Button] Clicked: " + event.toString());
         java.awt.Desktop.getDesktop().browse(new URI("https://twitter.com/System32Comics"));
     }
 

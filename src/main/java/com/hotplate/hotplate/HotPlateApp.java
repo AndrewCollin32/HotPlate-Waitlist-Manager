@@ -254,6 +254,7 @@ public class HotPlateApp extends Application {
     public static Stage logErrorStage;
     public static String errorLogMessage;
     public static void launchLogError(String errorMessage){
+        log.severe("ERROR WINDOW CALLED");
         HotPlateApp.endTime = true;
         errorLogMessage = errorMessage;
         logErrorStage = new Stage();

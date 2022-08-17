@@ -30,6 +30,7 @@ public class AdminAddItemController {
 
     @FXML
     void adminCancelButton(ActionEvent event) {
+        HotPlateApp.log.info("[Button] Clicked: " + event.toString());
         HotPlateApp.adminAddToTableStage.close();
     }
 
@@ -37,6 +38,7 @@ public class AdminAddItemController {
 
     @FXML
     void adminCurrentTimeCheckBox(ActionEvent event) {
+        HotPlateApp.log.info("[CheckBox] Clicked: " + event.toString());
         if (!checkBox){
             adminCustomTimeText.setText("");
             adminCustomTimeText.setVisible(false);
@@ -50,6 +52,9 @@ public class AdminAddItemController {
 
     @FXML
     void adminSaveButton(ActionEvent event) {
+        HotPlateApp.log.info("[Button] Clicked: " + event.toString());
+        HotPlateApp.log.info("[Saving] Data: " + adminAddName.getText() + " " + adminAddPhone.getText() + " " + adminAddPartySize.getText() + " Checkbox:" + adminCheckBox.isSelected());
+        HotPlateApp.log.info("[Saving] Starting to save data");
         String timeSelected;
         if (adminCheckBox.isSelected()){
             SimpleDateFormat sdf = new SimpleDateFormat((HotPlateApp.britishTime)? "HH:mm": "hh:mm a");
@@ -62,12 +67,15 @@ public class AdminAddItemController {
             if (!timeMatch.matches()){
                 try {
                     AlertBox ab = new AlertBox("Time Error", "Please enter a time in this format (hh:mm [PM or AM])");
+                    HotPlateApp.log.warning("[Saving] [Warning] because of wrong time format");
                 } catch (IOException e) {
-                    throw new RuntimeException(e);
+                    HotPlateApp.log.severe("[Fail] Can't launch AlertBox: " + e);
+                    HotPlateApp.launchLogError("[Fail] Can't launch AlertBox: " + e);
                 }
                 return;
             }
         }
+        HotPlateApp.log.info("[Saving] [Success] Time is in the correct format");
         Pattern pattern = Pattern.compile("^\\(?(\\d{3})\\)?-?(\\d{3})-?(\\d{4})$");
         Matcher match = pattern.matcher(adminAddPhone.getText());
 
@@ -76,33 +84,41 @@ public class AdminAddItemController {
         }
         catch(Exception e){
             try {
-                AlertBox ab = new AlertBox("Name Error", "Please provide a name for \n this reservation");
+                AlertBox ab = new AlertBox("Name Error", "Please enter an integer for party size for \n this reservation");
+                HotPlateApp.log.warning("[Saving] [Warning] User didn't enter correct party size");
             } catch (IOException j) {
-                throw new RuntimeException(e);
+                HotPlateApp.log.severe("[Fail] Can't launch AlertBox: " + e);
+                HotPlateApp.launchLogError("[Fail] Can't launch AlertBox: " + e);
             }
             return;
         }
         if (!match.matches()){
             try {
                 AlertBox ab = new AlertBox("Phone Number Error", "Please enter a valid phone number");
+                HotPlateApp.log.warning("[Saving] [Warning] User didn't enter correct phone number");
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                HotPlateApp.log.severe("[Fail] Can't launch AlertBox: " + e);
+                HotPlateApp.launchLogError("[Fail] Can't launch AlertBox: " + e);
             }
             return;
         }
         else if (adminAddName.getText().length() == 0){
             try {
                 AlertBox ab = new AlertBox("Name Error", "Please provide a name for \n this reservation");
+                HotPlateApp.log.warning("[Saving] [Warning] User didn't enter a name");
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                HotPlateApp.log.severe("[Fail] Can't launch AlertBox: " + e);
+                HotPlateApp.launchLogError("[Fail] Can't launch AlertBox: " + e);
             }
             return;
         }
         else if (adminAddPartySize.getText().length() == 0) {
             try {
                 AlertBox ab = new AlertBox("Party Size Error", "Please provide a valid integer for \n the party size");
+                HotPlateApp.log.warning("[Saving] [Warning] User didn't enter a valid party size");
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                HotPlateApp.log.severe("[Fail] Can't launch AlertBox: " + e);
+                HotPlateApp.launchLogError("[Fail] Can't launch AlertBox: " + e);
             }
             return;
         }
@@ -117,8 +133,11 @@ public class AdminAddItemController {
                 HotPlateApp.endTime=true;
                 HotPlateApp.launchAdminPortal(true);
             } catch (IOException e) {
+                HotPlateApp.log.severe("[Fail] Can't launch AdminPortal: " + e);
+                HotPlateApp.launchLogError("[Fail] Can't launch AdminPortal: " + e);
                 throw new RuntimeException(e);
-            }
+            } finally{
+            HotPlateApp.log.info("[Saving] [Success] All data was saved correctly");}
         }
     }
 
