@@ -25,16 +25,19 @@ public class LogErrorPage implements Initializable {
 
     @FXML
     void onClickExit(ActionEvent event) {
+        HotPlateApp.log.info("[Button] Clicked: " + event);
         HotPlateApp.logErrorStage.close();
     }
 
     @FXML
     void onClickSendReport(ActionEvent event) {
+        HotPlateApp.log.info("[Button] Clicked: " + event);
         HotPlateApp.logErrorStage.close();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        HotPlateApp.log.info("[Starting] Loading error log file");
         errorLabel.setText("Error: " + HotPlateApp.errorLogMessage);
         String total = "";
         try (BufferedReader br = new BufferedReader(new FileReader("Logs/logFile.log"))) {
@@ -46,5 +49,6 @@ public class LogErrorPage implements Initializable {
         logTextArea.setText(total);
         logTextArea.selectPositionCaret(logTextArea.getLength());
         logTextArea.deselect();
+        HotPlateApp.log.info("[Success] Loading error log file");
     }
 }

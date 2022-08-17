@@ -123,6 +123,7 @@ public class AdminController implements Initializable {
         HotPlateApp.log.info("[Button] Clicked: " + event.toString());
         if (YesNoBox.createAlert("Exit", "Are you sure you want to exit?")){
             HotPlateApp.endTime = true;
+            HotPlateApp.log.info("[Closing] SOFTWARE IS CLOSING");
             HotPlateApp.stage.close();
         }
     }
@@ -266,6 +267,7 @@ public class AdminController implements Initializable {
         AdminTable.setItems(customerList);
 
         HotPlateApp.stage.setOnCloseRequest(closeEvent -> {
+            HotPlateApp.log.info("[Closing] Program is closing");
             HotPlateApp.endTime = true;
         });
 

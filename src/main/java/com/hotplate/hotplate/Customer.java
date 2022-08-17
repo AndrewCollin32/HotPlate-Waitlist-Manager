@@ -10,6 +10,7 @@ public class Customer implements Serializable {
     private String phoneNumber;
 
     public Customer (String name, String partySize, String time, String phoneNumber){
+        HotPlateApp.log.info("[Creation] New Customer Data Created: " + name + "," + partySize + "," + time + "," + phoneNumber);
         this.name = name;
         this.partySize = partySize;
         this.timeWaited = time;

@@ -16,6 +16,7 @@ public class ConfirmationPageController {
 
     @FXML
     void confirmationPageOkButton(ActionEvent event) throws IOException {
+        HotPlateApp.log.info("[Button] Clicked: " + event);
         HotPlateApp.launchCustomerPortal();
     }
 

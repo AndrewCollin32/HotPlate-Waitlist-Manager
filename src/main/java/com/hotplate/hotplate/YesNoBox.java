@@ -25,6 +25,7 @@ public class YesNoBox {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.setTitle(title);
+        HotPlateApp.log.info("[Success] Choice box was created");
         stage.showAndWait();
         return boxChoice;
     }

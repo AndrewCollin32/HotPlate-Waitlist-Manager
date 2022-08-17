@@ -33,6 +33,7 @@ public class AdminEditItemController implements Initializable {
 
     @FXML
     void adminCancelButton(ActionEvent event) {
+        HotPlateApp.log.info("[Button] Clicked: " + event);
         HotPlateApp.adminEditToTableStage.close();
     }
 
@@ -40,6 +41,7 @@ public class AdminEditItemController implements Initializable {
 
     @FXML
     void adminCurrentTimeCheckBox(ActionEvent event) {
+        HotPlateApp.log.info("[Button] Clicked: " + event);
         if (!checkBox){
             adminCustomTimeText.setText("");
             adminCustomTimeText.setVisible(false);
@@ -53,6 +55,8 @@ public class AdminEditItemController implements Initializable {
 
     @FXML
     void adminSaveButton(ActionEvent event) {
+        HotPlateApp.log.info("[Button] Clicked: " + event);
+        HotPlateApp.log.info("[Starting] Saving Customer Data");
         String timeSelected;
         if (adminCheckBox.isSelected()){
             SimpleDateFormat sdf = new SimpleDateFormat((HotPlateApp.britishTime)? "HH:mm": "hh:mm a");
@@ -66,11 +70,13 @@ public class AdminEditItemController implements Initializable {
                 try {
                     AlertBox ab = new AlertBox("Time Error", "Please enter a time in this format (hh:mm [PM or AM])");
                 } catch (IOException e) {
-                    throw new RuntimeException(e);
+                    HotPlateApp.log.severe("[Fail] Couldn't open alert box" + e);
+                    HotPlateApp.launchLogError("[Fail] Couldn't open alert box: " + e);
                 }
                 return;
             }
         }
+        HotPlateApp.log.info("[Success] Time successfully saved");
         Pattern pattern = Pattern.compile("^\\(?(\\d{3})\\)?-?(\\d{3})-?(\\d{4})$");
         Matcher match = pattern.matcher(adminAddPhone.getText());
 
@@ -79,33 +85,43 @@ public class AdminEditItemController implements Initializable {
         }
         catch(Exception e){
             try {
-                AlertBox ab = new AlertBox("Name Error", "Please provide a name for \n this reservation");
+                HotPlateApp.log.warning("[Fail] User failed to enter the correct party size: " +e );
+                AlertBox ab = new AlertBox("Number Error", "Please provide a party size for \n this reservation");
+                return;
             } catch (IOException j) {
-                throw new RuntimeException(e);
+                HotPlateApp.log.severe("[Fail] Couldn't open alert box" + j);
+                HotPlateApp.launchLogError("[Fail] Couldn't open alert box: " + j);
             }
             return;
         }
+        HotPlateApp.log.info("[Success] Party size successfully loaded");
         if (!match.matches()){
             try {
+                HotPlateApp.log.warning("[Fail] User failed to enter the correct phone number format");
                 AlertBox ab = new AlertBox("Phone Number Error", "Please enter a valid phone number");
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                HotPlateApp.log.severe("[Fail] Couldn't open alert box" + e);
+                HotPlateApp.launchLogError("[Fail] Couldn't open alert box: " + e);
             }
             return;
         }
         else if (adminAddName.getText().length() == 0){
             try {
+                HotPlateApp.log.warning("[Fail] User didn't enter a name");
                 AlertBox ab = new AlertBox("Name Error", "Please provide a name for \n this reservation");
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                HotPlateApp.log.severe("[Fail] Couldn't open alert box" + e);
+                HotPlateApp.launchLogError("[Fail] Couldn't open alert box: " + e);
             }
             return;
         }
         else if (adminAddPartySize.getText().length() == 0) {
             try {
+                HotPlateApp.log.warning("[Fail] User failed to enter party size");
                 AlertBox ab = new AlertBox("Party Size Error", "Please provide a valid integer for \n the party size");
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                HotPlateApp.log.severe("[Fail] Couldn't open alert box" + e);
+                HotPlateApp.launchLogError("[Fail] Couldn't open alert box: " + e);
             }
             return;
         }
@@ -119,18 +135,22 @@ public class AdminEditItemController implements Initializable {
 
             try {
                 HotPlateApp.endTime=true;
+                HotPlateApp.log.info("[Success] Customer's data was successfully saved");
                 HotPlateApp.launchAdminPortal(true);
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                HotPlateApp.log.severe("[Fail] Couldn't open Admin Page" + e);
+                HotPlateApp.launchLogError("[Fail] Couldn't open Admin Page: " + e);
             }
         }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        HotPlateApp.log.info("[Start] Loading customer's data to edit page");
         adminAddName.setText(HotPlateApp.selectedCustomer.getName());
         adminAddPartySize.setText(HotPlateApp.selectedCustomer.getPartySize());
         adminAddPhone.setText(HotPlateApp.selectedCustomer.getPhoneNumber());
         adminCustomTimeText.setText(HotPlateApp.selectedCustomer.getTimeWaited());
+        HotPlateApp.log.info("[Success] Customer's data successfully loaded");
     }
 }

@@ -10,6 +10,7 @@ import java.io.IOException;
 public class AlertBox {
     public static Stage stage;
     public AlertBox(String title, String message) throws IOException {
+        HotPlateApp.log.info("[Alert] Alert box was called!");
         FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("AlertBox.fxml"));
         Scene scene = new Scene(fxml.load(), 400, 200);
         AlertBoxController abc = fxml.getController();

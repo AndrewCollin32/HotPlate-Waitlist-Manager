@@ -18,11 +18,13 @@ public class TextMessageWindow implements Initializable {
 
     @FXML
     void okButton(ActionEvent event) {
+        HotPlateApp.log.info("[Button] Clicked: " + event);
         HotPlateApp.callCustomerStage.close();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        HotPlateApp.log.info("[Start] Loading SMS message");
         String TM;
         if (HotPlateApp.callCustomerBoolean){
             TM = HotPlateApp.callMessage;
@@ -36,5 +38,6 @@ public class TextMessageWindow implements Initializable {
 
         textMessageRecieveLabel.setText("This is the text message " + selectedCustomer.getName() + " will recieve.");
         textMessage.setText(TM);
+        HotPlateApp.log.info("[Success] Loading SMS message");
     }
 }

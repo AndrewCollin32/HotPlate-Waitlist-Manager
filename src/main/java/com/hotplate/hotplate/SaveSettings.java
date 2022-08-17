@@ -13,6 +13,7 @@ public class SaveSettings implements Serializable {
     public Boolean britishTime;
 
     public SaveSettings(String userName, String restaurantName, String pin, boolean autoLoadData, String warnMessage, String callMessage, Boolean britishTime){
+        HotPlateApp.log.info("[Save] Saving Settings: " + userName + "," + restaurantName + "," + autoLoadData + "," + warnMessage + "," + callMessage + "," + pin + "," + britishTime);
         this.userName = userName;
         this.restaurantName = restaurantName;
         this.autoLoadData = autoLoadData;

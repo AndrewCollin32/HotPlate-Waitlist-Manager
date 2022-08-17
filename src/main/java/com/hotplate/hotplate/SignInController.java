@@ -18,11 +18,14 @@ public class SignInController implements Initializable {
 
     @FXML
     void signInClosePress(ActionEvent event) throws IOException {
+        HotPlateApp.log.info("[Button] Clicked: " + event);
         HotPlateApp.launchCustomerPortal();
     }
 
     @FXML
     void signInSubmitPress(ActionEvent event) throws IOException {
+
+        HotPlateApp.log.info("[Button] Clicked: " + event);
         if (!signInTextPin.getText().equals(HotPlateApp.pinNumber)){
             new AlertBox("Pin Error", "You've entered the wrong pin");
             return;
@@ -33,10 +36,12 @@ public class SignInController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //TODO IMPORTANT, Must delete this alert box for non-demo version
+        HotPlateApp.log.info("Displaying alert box with the pin");
         try {
             AlertBox ab = new AlertBox("Your Pin number", "Your pin number is: " + HotPlateApp.pinNumber );
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            HotPlateApp.log.severe("[Fail] Couldn't open alert box" + e);
+            HotPlateApp.launchLogError("[Fail] Couldn't open alert box: " + e);
         }
     }
 }

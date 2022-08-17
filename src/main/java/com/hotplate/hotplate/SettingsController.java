@@ -40,26 +40,33 @@ public class SettingsController implements Initializable {
 
     @FXML
     void settingsCancelButton(ActionEvent event) throws IOException {
+        HotPlateApp.log.info("[Button] Clicked: " + event);
         HotPlateApp.launchAdminPortal(false);
     }
 
     @FXML
     void settingsSaveButton(ActionEvent event) throws ParseException, IOException {
+        HotPlateApp.log.info("[Button] Clicked: " + event);
+        HotPlateApp.log.info("[Start] Saving Settings Data");
         if (settingsName.getText().length() == 0 ||
         settingsPin.getText().length() == 0 ||
         settingsRestaurant.getText().length() == 0){
             try {
+                HotPlateApp.log.warning("[Fail] User failed to enter for one text field");
                 new AlertBox("Error", "One of the text fields are empty");
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                HotPlateApp.log.severe("[Fail] Couldn't open alert box" + e);
+                HotPlateApp.launchLogError("[Fail] Couldn't open alert box: " + e);
             }
             return;
         }
         else if (settingsPin.getText().length() < 4){
             try {
+                HotPlateApp.log.warning("[Fail] User failed to enter the correct pin");
                 new AlertBox("Error", "Please make sure that the pin is at least 4 digits");
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                HotPlateApp.log.severe("[Fail] Couldn't open alert box" + e);
+                HotPlateApp.launchLogError("[Fail] Couldn't open alert box: " + e);
             }
             return;
         }
@@ -98,11 +105,13 @@ public class SettingsController implements Initializable {
         SaveSettings ss = new SaveSettings(HotPlateApp.userName, HotPlateApp.restaurantName, HotPlateApp.pinNumber, HotPlateApp.automaticallyLoadData, HotPlateApp.warnMessage, HotPlateApp.callMessage, HotPlateApp.britishTime);
         ResourceManager.save(ss, HotPlateApp.saveSettingsPathFile);
 
+        HotPlateApp.log.info("[Success] Saving Settings Data");
         HotPlateApp.launchAdminPortal(true);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        HotPlateApp.log.info("[Start] Loading settings data");
         settingsName.setText(HotPlateApp.userName);
         settingsRestaurant.setText(HotPlateApp.restaurantName);
         settingsPin.setText(HotPlateApp.pinNumber);
@@ -110,5 +119,6 @@ public class SettingsController implements Initializable {
         if (HotPlateApp.britishTime){
             britishTimeSelection.setSelected(true);
         }
+        HotPlateApp.log.info("[Success] Loading settings data");
     }
 }
