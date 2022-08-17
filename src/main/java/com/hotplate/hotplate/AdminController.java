@@ -54,31 +54,32 @@ public class AdminController implements Initializable {
     @FXML
     public MenuItem transferToHotPlateHelp;
 
-    public static Stage addToTableStage;
-
-    public static Stage callStage;
-
 
     @FXML
-    public void transferToGitHub() throws URISyntaxException, IOException {
+    public void transferToGitHub(ActionEvent event) throws URISyntaxException, IOException {
+        HotPlateApp.log.info("[Button] Clicked: " + event.toString());
         java.awt.Desktop.getDesktop().browse(new URI("https://github.com/AndrewCollin/HotPlate"));
     }
 
     @FXML
-    void adminCustomMessage() throws IOException {
+    void adminCustomMessage(ActionEvent event) throws IOException {
+        HotPlateApp.log.info("[Button] Clicked: " + event.toString());
         HotPlateApp.endTime = true;
         HotPlateApp.launchCustomMessagePage();
     }
 
     @FXML
     void addToTable(ActionEvent event) throws IOException {
+        HotPlateApp.log.info("[Button] Clicked: " + event.toString());
         HotPlateApp.launchAdminAddToTable();
     }
 
     @FXML
     void callToTable(ActionEvent event) throws IOException {
+        HotPlateApp.log.info("[Button] Clicked: " + event.toString());
         Customer selectedCustomer = AdminTable.getSelectionModel().getSelectedItem();
         if (selectedCustomer == null){
+            HotPlateApp.log.warning("[Fail] Customer failed to make a selection: " + event.toString());
             AlertBox ab = new AlertBox("Call Error", "Please select the customer you want to message to");
             return;
         }
@@ -88,8 +89,10 @@ public class AdminController implements Initializable {
 
     @FXML
     void deleteToTable(ActionEvent event) throws IOException {
+        HotPlateApp.log.info("[Button] Clicked: " + event.toString());
         Customer customer = AdminTable.getSelectionModel().getSelectedItem();
         if (customer == null){
+            HotPlateApp.log.warning("[Fail] Customer failed to make a selection: " + event.toString());
             AlertBox ab = new AlertBox("Delete Error", "Please select the customer you want to remove");
             return;
         }
@@ -100,6 +103,7 @@ public class AdminController implements Initializable {
 
     @FXML
     void tarnsferToAbout(ActionEvent event) throws IOException {
+        HotPlateApp.log.info("[Button] Clicked: " + event.toString());
         HotPlateApp.endTime = true;
         HotPlateApp.launchAboutMePage();
         HotPlateApp.aboutMeCustomerOrgin = false;
@@ -107,6 +111,7 @@ public class AdminController implements Initializable {
 
     @FXML
     void transferToCustomer(ActionEvent event) throws IOException {
+        HotPlateApp.log.info("[Button] Clicked: " + event.toString());
         if (YesNoBox.createAlert("Customer Portal", "Are you sure you want to leave?")){
             HotPlateApp.endTime = true;
             HotPlateApp.launchCustomerPortal();
@@ -115,6 +120,7 @@ public class AdminController implements Initializable {
 
     @FXML
     void transferToExit(ActionEvent event) {
+        HotPlateApp.log.info("[Button] Clicked: " + event.toString());
         if (YesNoBox.createAlert("Exit", "Are you sure you want to exit?")){
             HotPlateApp.endTime = true;
             HotPlateApp.stage.close();
@@ -124,39 +130,45 @@ public class AdminController implements Initializable {
     @FXML
     public void transferToLoad(ActionEvent event) throws InterruptedException, InvocationTargetException, IOException, ParseException {
 
-        SaveData sd = (SaveData) ResourceManager.load(HotPlateApp.customerDataPathFile);
-        HotPlateApp.waitListSize = sd.customersData.size();
-        HotPlateApp.customerData = sd.customersData;
+        HotPlateApp.log.info("[Button] Clicked: " + event.toString());
+        SaveData sd = null;
+        try {
+            sd = (SaveData) ResourceManager.load(HotPlateApp.customerDataPathFile);
+            HotPlateApp.waitListSize = sd.customersData.size();
+            HotPlateApp.customerData = sd.customersData;
 
-        if (sd.customersData.size() != 0) {
-            SimpleDateFormat britishTime = new SimpleDateFormat("HH:mm");
-            SimpleDateFormat americanTime = new SimpleDateFormat("hh:mm a");
+            if (sd.customersData.size() != 0) {
+                SimpleDateFormat britishTime = new SimpleDateFormat("HH:mm");
+                SimpleDateFormat americanTime = new SimpleDateFormat("hh:mm a");
 
-            boolean isBritishTime = false;
+                boolean isBritishTime = false;
 
-            try {
-                americanTime.parse(HotPlateApp.customerData.get(0).getTimeWaited());
-            } catch (Exception e) {
-                isBritishTime = true;
-            }
+                try {
+                    americanTime.parse(HotPlateApp.customerData.get(0).getTimeWaited());
+                } catch (Exception e) {
+                    isBritishTime = true;
+                }
 
-            if (HotPlateApp.britishTime && !isBritishTime || !HotPlateApp.britishTime && isBritishTime) {
-                for (int i = 0; i < HotPlateApp.customerData.size(); i++) {
-                    Customer customer = HotPlateApp.customerData.get(i);
-                    String time = customer.getTimeWaited();
-                    Date date = ((HotPlateApp.britishTime) ? americanTime : britishTime).parse(time);
-                    String newDate = ((HotPlateApp.britishTime) ? britishTime : americanTime).format(date);
-                    customer.setTimeWaited(newDate);
+                if (HotPlateApp.britishTime && !isBritishTime || !HotPlateApp.britishTime && isBritishTime) {
+                    for (int i = 0; i < HotPlateApp.customerData.size(); i++) {
+                        Customer customer = HotPlateApp.customerData.get(i);
+                        String time = customer.getTimeWaited();
+                        Date date = ((HotPlateApp.britishTime) ? americanTime : britishTime).parse(time);
+                        String newDate = ((HotPlateApp.britishTime) ? britishTime : americanTime).format(date);
+                        customer.setTimeWaited(newDate);
+                    }
                 }
             }
         }
+        catch(Exception e) {HotPlateApp.log.severe("[Fail] Couldn't load customer data: " + e); HotPlateApp.launchLogError("[Fail] Couldn't load customer data: " + e);}
+        finally {HotPlateApp.log.info("[Success] Customer data successfully loaded");}
         HotPlateApp.endTime = true;
         HotPlateApp.launchAdminPortal(true);
     }
 
     @FXML
     void transferToSave(ActionEvent event) {
-
+        HotPlateApp.log.info("[Button] Clicked: " + event.toString());
         SaveData sd = new SaveData(HotPlateApp.customerData);
         ResourceManager.save(sd, HotPlateApp.customerDataPathFile);
     }
@@ -168,12 +180,15 @@ public class AdminController implements Initializable {
 
     @FXML
     void editTable(ActionEvent event) throws IOException {
+        HotPlateApp.log.info("[Button] Clicked: " + event);
         ObservableList<TablePosition> oblist = AdminTable.getSelectionModel().getSelectedCells();
         if (oblist.size() == 0){
             try {
+                HotPlateApp.log.warning("[Fail] User failed to make a selection");
                 AlertBox ab = new AlertBox("Error", "Please select the row you want to edit");
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                HotPlateApp.log.severe("[Fail] Failed to open alert box: " + e);
+                HotPlateApp.launchLogError("[Fail] Failed to open alert box: " + e);
             }
             return;
         }
@@ -184,14 +199,17 @@ public class AdminController implements Initializable {
 
     @FXML
     void transferToSettings(ActionEvent event) throws IOException {
+        HotPlateApp.log.info("[Button] Clicked: " + event);
         HotPlateApp.endTime = true;
         HotPlateApp.launchSettings();
     }
 
     @FXML
     void warnToTable(ActionEvent event) throws IOException {
+        HotPlateApp.log.info("[Button] Clicked: " + event);
         Customer selectedCustomer = AdminTable.getSelectionModel().getSelectedItem();
         if (selectedCustomer == null){
+            HotPlateApp.log.warning("[Fail] User failed to make a selection");
             AlertBox ab = new AlertBox("Warn Error", "Please select the customer you want to message to");
             return;
         }
@@ -200,6 +218,7 @@ public class AdminController implements Initializable {
     }
 
     public void setTime() throws InterruptedException {
+        HotPlateApp.log.info("Starting time");
         Thread thread = new Thread(() -> {
            SimpleDateFormat timeFormat = new SimpleDateFormat((HotPlateApp.britishTime)? "HH:mm": "hh:mm a");
            while(!HotPlateApp.endTime){
@@ -207,7 +226,8 @@ public class AdminController implements Initializable {
                    Thread.sleep(1000);
                }
                catch (Exception e){
-                   e.printStackTrace();
+                   HotPlateApp.log.severe("[Fail] Time: " + e);
+                   HotPlateApp.launchLogError("[Fail] Time: " +e);
                }
                final String timeNow = timeFormat.format(new Date());
                Platform.runLater(() -> {
@@ -219,7 +239,8 @@ public class AdminController implements Initializable {
     }
 
     @FXML
-    public void transferToClearTable(){
+    public void transferToClearTable(ActionEvent event){
+        HotPlateApp.log.info("[Button] Clicked: " + event);
         YesNoBox YN = new YesNoBox();
         if (YN.createAlert("Clear Table", "Are you sure you want to clear the table?")){
             AdminTable.getItems().clear();
@@ -230,6 +251,7 @@ public class AdminController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        HotPlateApp.log.info("[Start] Loading Customer's data to table");
         adminNameLabel.setText("Welcome, " + HotPlateApp.userName);
         name.setCellValueFactory(new PropertyValueFactory<Customer, String>("name"));
         partySize.setCellValueFactory(new PropertyValueFactory<Customer, String>("partySize"));
@@ -251,7 +273,10 @@ public class AdminController implements Initializable {
             HotPlateApp.endTime = false;
             setTime();
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            HotPlateApp.log.severe("[Fail] Failed to set time: " + e);
+            HotPlateApp.launchLogError("[Fail] Failed to set time: " + e);
         }
+
+        HotPlateApp.log.info("[Success] Customer's data is successfully loaded");
     }
 }

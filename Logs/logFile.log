@@ -1,4 +1,4 @@
-Aug 17, 2022 1:42:31 AM com.hotplate.hotplate.PreLaunchCheck checkSpecs
+Aug 17, 2022 11:13:16 AM com.hotplate.hotplate.PreLaunchCheck checkSpecs
 INFO: 
 java.specification.version 15
 javafx.runtime.version 15.0.1+1
@@ -21,7 +21,7 @@ sun.cpu.endian little
 user.home C:\Users\Syste
 user.language en
 java.specification.vendor Oracle Corporation
-jdk.module.path C:\Users\Syste\.m2\repository\org\openjfx\javafx-base\15.0.1\javafx-base-15.0.1-win.jar;C:\Users\Syste\Documents\IdeaProjects\HotPlate-Waitlist-ManagerExist\target\classes;C:\Users\Syste\.m2\repository\org\openjfx\javafx-fxml\15.0.1\javafx-fxml-15.0.1-win.jar;C:\Users\Syste\.m2\repository\org\openjfx\javafx-controls\15.0.1\javafx-controls-15.0.1-win.jar;C:\Users\Syste\.m2\repository\org\openjfx\javafx-graphics\15.0.1\javafx-graphics-15.0.1-win.jar
+jdk.module.path C:\Users\Syste\.m2\repository\org\openjfx\javafx-fxml\15.0.1\javafx-fxml-15.0.1-win.jar;C:\Users\Syste\Documents\IdeaProjects\HotPlate-Waitlist-ManagerExist\target\classes;C:\Users\Syste\.m2\repository\org\openjfx\javafx-base\15.0.1\javafx-base-15.0.1-win.jar;C:\Users\Syste\.m2\repository\org\openjfx\javafx-controls\15.0.1\javafx-controls-15.0.1-win.jar;C:\Users\Syste\.m2\repository\org\openjfx\javafx-graphics\15.0.1\javafx-graphics-15.0.1-win.jar
 java.version.date 2021-01-19
 java.home C:\Users\Syste\.jdks\openjdk-15.0.2
 file.separator \
@@ -54,51 +54,31 @@ java.vendor Oracle Corporation
 java.vm.version 15.0.2+7-27
 sun.io.unicode.encoding UnicodeLittle
 java.class.version 59.0
-Free Memory: 514377704
+Free Memory: 514377736
 Total Memory: 536870912
 Max Memory: 8573157376
 Available Cores: 12
-Aug 17, 2022 1:42:31 AM com.hotplate.hotplate.PreLaunchCheck checkSpecs
+Aug 17, 2022 11:13:17 AM com.hotplate.hotplate.PreLaunchCheck checkSpecs
 INFO: [Success] Java version is up to date
-Aug 17, 2022 1:42:31 AM com.hotplate.hotplate.PreLaunchCheck checkFiles
+Aug 17, 2022 11:13:17 AM com.hotplate.hotplate.PreLaunchCheck checkFiles
 INFO: [Start] Scanning all required FXML Files
-Aug 17, 2022 1:42:31 AM com.hotplate.hotplate.PreLaunchCheck checkFiles
+Aug 17, 2022 11:13:17 AM com.hotplate.hotplate.PreLaunchCheck checkFiles
 INFO: [Success] All FXML files are present
-Aug 17, 2022 1:42:31 AM com.hotplate.hotplate.PreLaunchCheck checkFiles
+Aug 17, 2022 11:13:17 AM com.hotplate.hotplate.PreLaunchCheck checkFiles
 INFO: [Start] Scanning all required Java class files
-Aug 17, 2022 1:42:31 AM com.hotplate.hotplate.PreLaunchCheck checkFiles
+Aug 17, 2022 11:13:17 AM com.hotplate.hotplate.PreLaunchCheck checkFiles
 INFO: [Success] All Java class files are present
-Aug 17, 2022 1:42:31 AM com.hotplate.hotplate.HotPlateApp start
+Aug 17, 2022 11:13:17 AM com.hotplate.hotplate.HotPlateApp start
 INFO: [Starting] Hotplate
-Aug 17, 2022 1:42:31 AM com.hotplate.hotplate.HotPlateApp start
+Aug 17, 2022 11:13:17 AM com.hotplate.hotplate.HotPlateApp start
 INFO: [Success] Loading User's Settings
-Aug 17, 2022 1:42:31 AM com.hotplate.hotplate.HotPlateApp start
+Aug 17, 2022 11:13:17 AM com.hotplate.hotplate.HotPlateApp start
 INFO: [Success] Loading Customer's Data
-Aug 17, 2022 1:42:32 AM com.hotplate.hotplate.HotPlateApp launchCustomerPortal
+Aug 17, 2022 11:13:17 AM com.hotplate.hotplate.HotPlateApp launchCustomerPortal
 INFO: [Success] Loading Customer's Screen
-Aug 17, 2022 1:42:32 AM com.hotplate.hotplate.HotPlateApp start
+Aug 17, 2022 11:13:17 AM com.hotplate.hotplate.HotPlateApp start
 INFO: [Success] Starting HotPlate
-Aug 17, 2022 1:42:33 AM com.hotplate.hotplate.HotPlateApp launchSignInPage
+Aug 17, 2022 11:13:19 AM com.hotplate.hotplate.HotPlateApp launchSignInPage
 INFO: [Success] Loading Sign In Page
-Aug 17, 2022 1:42:35 AM com.hotplate.hotplate.HotPlateApp launchAdminPortal
+Aug 17, 2022 11:13:21 AM com.hotplate.hotplate.HotPlateApp launchAdminPortal
 INFO: [Success] Loading Admin Portal
-Aug 17, 2022 1:42:39 AM com.hotplate.hotplate.HotPlateApp launchAdminAddToTable
-INFO: [Success] Loading Add To Table Menu
-Aug 17, 2022 1:42:41 AM com.hotplate.hotplate.AdminAddItemController adminCurrentTimeCheckBox
-INFO: [CheckBox] Clicked: javafx.event.ActionEvent[source=CheckBox[id=adminCheckBox, styleClass=check-box]'Current Time']
-Aug 17, 2022 1:42:44 AM com.hotplate.hotplate.AdminAddItemController adminSaveButton
-INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@1e814d27[styleClass=button]'Save']
-Aug 17, 2022 1:42:44 AM com.hotplate.hotplate.AdminAddItemController adminSaveButton
-INFO: [Saving] Data: 123 1231231234 123 Checkbox:true
-Aug 17, 2022 1:42:44 AM com.hotplate.hotplate.AdminAddItemController adminSaveButton
-INFO: [Saving] Starting to save data
-Aug 17, 2022 1:42:44 AM com.hotplate.hotplate.AdminAddItemController adminSaveButton
-INFO: [Saving] [Success] Time is in the correct format
-Aug 17, 2022 1:42:44 AM com.hotplate.hotplate.HotPlateApp launchAdminPortal
-INFO: [Success] Loading Admin Portal
-Aug 17, 2022 1:42:44 AM com.hotplate.hotplate.AdminAddItemController adminSaveButton
-SEVERE: [Fail] Can't launch AdminPortal: java.io.IOException
-Aug 17, 2022 1:42:44 AM com.hotplate.hotplate.HotPlateApp launchLogError
-SEVERE: ERROR WINDOW CALLED
-Aug 17, 2022 1:42:44 AM com.hotplate.hotplate.AdminAddItemController adminSaveButton
-INFO: [Saving] [Success] All data was saved correctly
