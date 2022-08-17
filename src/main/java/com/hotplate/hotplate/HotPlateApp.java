@@ -101,21 +101,16 @@ public class HotPlateApp extends Application {
 
     /* SCENE AND CONTROLLER CREATION */
 
-    public static Scene customerPortalScene;
     public static void launchCustomerPortal() throws IOException {
-        if (customerPortalScene == null){
-            FXMLLoader fxmlLoader = new FXMLLoader(HotPlateApp.class.getResource("customerPortal.fxml"));
-            customerPortalScene = new Scene(fxmlLoader.load(), 600, 600);
-        }
+        FXMLLoader fxmlLoader = new FXMLLoader(HotPlateApp.class.getResource("customerPortal.fxml"));
+        Scene customerPortalScene = new Scene(fxmlLoader.load(), 600, 600);
         stage.setScene(customerPortalScene);
     }
 
-    public static Scene reserveSeatScene;
+
     public static void launchReserveSeatPortal() throws IOException {
-        if (reserveSeatScene == null){
-            FXMLLoader fxmlLoader = new FXMLLoader(HotPlateApp.class.getResource("reserveSeatPortal.fxml"));
-            reserveSeatScene = new Scene(fxmlLoader.load(), 600, 600);
-        }
+        FXMLLoader fxmlLoader = new FXMLLoader(HotPlateApp.class.getResource("reserveSeatPortal.fxml"));
+        Scene reserveSeatScene = new Scene(fxmlLoader.load(), 600, 600);
         stage.setScene(reserveSeatScene);
     }
 
@@ -128,12 +123,9 @@ public class HotPlateApp extends Application {
         stage.setScene(confirmationPageScene);
     }
 
-    public static Scene signInScene;
     public static void launchSignInPage() throws IOException {
-        if (signInScene == null){
-            FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("signInPage.fxml"));
-            signInScene = new Scene(fxml.load(), 600, 600);
-        }
+        FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("signInPage.fxml"));
+        Scene signInScene = new Scene(fxml.load(), 600, 600);
         stage.setScene(signInScene);
     }
 
@@ -147,58 +139,62 @@ public class HotPlateApp extends Application {
         stage.setScene(aboutMeScene);
     }
 
-    public static Scene adminPortalScene;
     public static void launchAdminPortal(boolean updatePage) throws IOException {
-        if (adminPortalScene == null || updatePage){
-            FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("adminPage.fxml"));
-            adminPortalScene = new Scene(fxml.load(), 600, 600);
-        }
+        FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("adminPage.fxml"));
+        Scene adminPortalScene = new Scene(fxml.load(), 600, 600);
         stage.setScene(adminPortalScene);
     }
 
-    public static Scene customMessagePageScene;
     public static void launchCustomMessagePage() throws IOException {
-        if(customMessagePageScene == null){
-            FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("customMessagePage.fxml"));
-            customMessagePageScene = new Scene(fxml.load(), 600, 600);
-        }
+        FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("customMessagePage.fxml"));
+        Scene customMessagePageScene = new Scene(fxml.load(), 600, 600);
         stage.setScene(customMessagePageScene);
     }
 
-    public static Scene adminAddToTableScene;
     public static Stage adminAddToTableStage;
     public static void launchAdminAddToTable() throws IOException {
-        if (adminAddToTableScene == null){
-            FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("adminAddItem.fxml"));
-            adminAddToTableScene = new Scene(fxml.load(), 600, 400);
-        }
+        FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("adminAddItem.fxml"));
+        Scene adminAddToTableScene = new Scene(fxml.load(), 600, 400);
         adminAddToTableStage = new Stage();
         adminAddToTableStage.setScene(adminAddToTableScene);
         adminAddToTableStage.setTitle("Add Item");
         adminAddToTableStage.show();
     }
 
-    public static Scene adminEditToTableScene;
     public static Stage adminEditToTableStage;
     public static Customer selectedCustomer;
     public static void launchAdminEditToTable() throws IOException {
-        if (adminEditToTableScene == null){
-            FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("adminEditItem.fxml"));
-            adminEditToTableScene = new Scene(fxml.load(), 600, 400);
-        }
+        FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("adminEditItem.fxml"));
+        Scene adminEditToTableScene = new Scene(fxml.load(), 600, 400);
         adminEditToTableStage = new Stage();
         adminEditToTableStage.setScene(adminEditToTableScene);
         adminEditToTableStage.setTitle("Edit Item");
         adminEditToTableStage.show();
     }
 
-    public static Scene settingsScene;
     public static void launchSettings() throws IOException {
-        if (settingsScene == null){
-            FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("settings.fxml"));
-            settingsScene = new Scene(fxml.load(), 600,600);
-        }
+        FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("settings.fxml"));
+        Scene settingsScene = new Scene(fxml.load(), 600,600);
         stage.setScene(settingsScene);
+    }
+
+    public static Stage callCustomerStage;
+    public static boolean callCustomerBoolean;
+    public static Customer callCustomerClass;
+
+    public static void launchCallCustomer(boolean callCustomer, Customer customer) throws IOException {
+        callCustomerBoolean = callCustomer;
+        callCustomerClass = customer;
+        FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("callPage.fxml"));
+        Scene callCustomerScene = new Scene(fxml.load(), 600, 400);
+        callCustomerStage = new Stage();
+        if (callCustomer){
+            callCustomerStage.setTitle("Call Customer");
+        } else{
+            callCustomerStage.setTitle("Warn Customer");
+        }
+        callCustomerStage.setScene(callCustomerScene);
+        callCustomerStage.show();
     }
 
 }

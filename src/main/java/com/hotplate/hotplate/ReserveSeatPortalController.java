@@ -58,6 +58,7 @@ public class ReserveSeatPortalController implements Initializable {
             AlertBox ab = new AlertBox("Name Error", "Please provide a name for \n this reservation");
         }
         else{
+            HotPlateApp.waitListSize++;
             SimpleDateFormat sdf = new SimpleDateFormat((HotPlateApp.britishTime)? "HH:mm": "hh:mm a");
             String phoneNumber = match.group(1) + match.group(2) + match.group(3);
             HotPlateApp.customerData.add(new Customer(reserveSeatNameInput.getText(), reserveSeatPartySizeChoice.getSelectionModel().getSelectedItem(),

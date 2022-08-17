@@ -16,13 +16,7 @@ public class ConfirmationPageController {
 
     @FXML
     void confirmationPageOkButton(ActionEvent event) throws IOException {
-        FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("customerPortal.fxml"));
-        Parent root = fxml.load();
-        HotPlateApp.waitListSize++;
-        CustomerPortalController cpc = fxml.getController();
-        cpc.customerPortalWaitlistLabel.setText("Current waitlist: " + HotPlateApp.waitListSize);
-        HotPlateApp.stage.setScene(new Scene(root, 600, 600));
-        HotPlateApp.stage.show();
+        HotPlateApp.launchCustomerPortal();
     }
 
 }

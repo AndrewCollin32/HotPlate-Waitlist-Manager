@@ -77,31 +77,12 @@ public class AdminController implements Initializable {
 
     @FXML
     void callToTable(ActionEvent event) throws IOException {
-        String textMessage = HotPlateApp.callMessage;
-        Customer selectedCustomer;
-        selectedCustomer = AdminTable.getSelectionModel().getSelectedItem();
+        Customer selectedCustomer = AdminTable.getSelectionModel().getSelectedItem();
         if (selectedCustomer == null){
             AlertBox ab = new AlertBox("Call Error", "Please select the customer you want to message to");
             return;
         }
-        textMessage = textMessage.replaceAll("(?i)\\{name\\}", selectedCustomer.getName());
-        textMessage = textMessage.replaceAll("(?i)\\{restaurant\\}", HotPlateApp.restaurantName);
-
-        FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("callPage.fxml"));
-        Scene scene = null;
-        try {
-            scene = new Scene(fxml.load(), 600, 400);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        Stage stage = new Stage();
-        callStage = stage;
-        stage.setScene(scene);
-        stage.show();
-
-        TextMessageWindow tmw = fxml.getController();
-        tmw.textMessageRecieveLabel.setText("This is the text message " + selectedCustomer.getName() + " will recieve.");
-        tmw.textMessage.setText(textMessage);
+        HotPlateApp.launchCallCustomer(true, selectedCustomer);
         //twilioClass.warnPerson(selectedCustomer, textMessage);
     }
 
@@ -209,31 +190,12 @@ public class AdminController implements Initializable {
 
     @FXML
     void warnToTable(ActionEvent event) throws IOException {
-        String textMessage = HotPlateApp.warnMessage;
         Customer selectedCustomer = AdminTable.getSelectionModel().getSelectedItem();
         if (selectedCustomer == null){
-            AlertBox ab = new AlertBox("Warn Error", "Please select the customer you want to send a message to");
+            AlertBox ab = new AlertBox("Warn Error", "Please select the customer you want to message to");
             return;
         }
-        textMessage = textMessage.replaceAll("(?i)\\{name\\}", selectedCustomer.getName());
-        textMessage = textMessage.replaceAll("(?i)\\{restaurant\\}", HotPlateApp.restaurantName);
-
-
-        FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("callPage.fxml"));
-        Scene scene = null;
-        try {
-            scene = new Scene(fxml.load(), 600, 400);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        Stage stage = new Stage();
-        callStage = stage;
-        stage.setScene(scene);
-        stage.show();
-
-        TextMessageWindow tmw = fxml.getController();
-        tmw.textMessageRecieveLabel.setText("This is the text message " + selectedCustomer.getName() + " will recieve.");
-        tmw.textMessage.setText(textMessage);
+        HotPlateApp.launchCallCustomer(false, selectedCustomer);
         //twilioClass.warnPerson(selectedCustomer, textMessage);
     }
 
