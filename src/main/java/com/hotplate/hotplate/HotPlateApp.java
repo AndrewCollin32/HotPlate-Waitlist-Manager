@@ -29,7 +29,7 @@ public class HotPlateApp extends Application {
     public static String saveSettingsPathFile = "SaveSettings.ser";
     public static Boolean automaticallyLoadData = false;
     public static Boolean britishTime = false;
-    public static ArrayList<Customer> customerData = new ArrayList<Customer>();
+    public static ArrayList<Customer> customerData = new ArrayList<>();
     public boolean bypassSaveSettingsDeBug = false;
     public boolean bypassSaveCustomersDebug = false;
     public static Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -42,7 +42,7 @@ public class HotPlateApp extends Application {
     //Starting the program in the customer portal scene
     @Override
     public void start(Stage stage) throws IOException, ParseException {
-        this.stage = stage;
+        HotPlateApp.stage = stage;
         fileHandler = new FileHandler("Logs/logFile.log");
         fileHandler.setLevel(Level.INFO);
         fileHandler.setFormatter(new SimpleFormatter());
@@ -66,7 +66,12 @@ public class HotPlateApp extends Application {
                 HotPlateApp.pinNumber = ss.pin;
                 HotPlateApp.warnMessage = ss.warnMessage;
                 HotPlateApp.callMessage = ss.callMessage;
-                HotPlateApp.britishTime = ss.britishTime;}
+                HotPlateApp.britishTime = ss.britishTime;
+            if (ss.userName == null || ss.restaurantName == null || ss.pin == null || ss.warnMessage == null || ss.callMessage == null){
+                log.severe("[Fail] Loading User's Settings");
+                launchLogError("[Fail] Loading User's Settings");
+                return;}
+            }
             catch(Exception e){ log.severe("[Fail] Loading User's Settings: " + e); launchLogError("[Fail] Loading User's Settings: " + e); return;}
             finally {log.info("[Success] Loading User's Settings");}
         }
