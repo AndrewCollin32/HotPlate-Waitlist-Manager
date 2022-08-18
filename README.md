@@ -161,6 +161,7 @@ This error only occurs when the user is first loading up the program. Before the
   <li>3. The file's name or format was changed</li>
 </ul>
 <code>Can not find file: FileName.class </code>  This error means the program couldn't find the required java classes. Go to src/main/java/com/Hotplate/Hotplate and see if the class file is in there. If not, just re-download it from this repository. 
+<br>
 <code>Can not find file: FileName.fxml </code>  This error means the program couldn't find the required fxml document. Go to src/main/resources and see if the fxml file is in there. If not, just re-download it from this repository. 
 
 
