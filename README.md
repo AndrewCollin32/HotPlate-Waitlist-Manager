@@ -27,7 +27,7 @@ A simple restaurant waitlist management software
   </ul>
   <li><a href="#Troubleshoot"> Troubleshoot </a></li>
   <ul>
-    <li><a href="#Can_Not_Find_File:"> Can not find file: </a></li>
+    <li><a href="#Can_Not_Find_File"> Can not find file </a></li>
   </ul>
 </ul>
 
@@ -153,7 +153,7 @@ A simple restaurant waitlist management software
 If you encountered a crash report, make sure to copy the red label at the bottom of the log display. The red text is the main culprit to the error. 
 ![image](https://user-images.githubusercontent.com/109395254/185512235-c474ced9-12ce-42c8-85b8-bce9330d3df8.png)
 
-# Can_Not_Find_File:
+# Can_Not_Find_File
 This error only occurs when the user is first loading up the program. Before the software starts, it searches through the required directories to find the required files to run this program. When the program can't find a file, it is either:
 <ul>
   <li>1. The file was deleted</li>
