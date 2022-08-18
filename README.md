@@ -23,6 +23,7 @@ A simple restaurant waitlist management software
     <li><a href="#Sign_In_Page"> Sign In Page </a></li>
     <li><a href="#Admin_Page"> Admin Page </a></li>
     <li><a href="#Settings"> Settings </a></li>
+    <li><a href="#Crash_Report"> Crash Report </a></li>
   </ul>
 </ul>
 
