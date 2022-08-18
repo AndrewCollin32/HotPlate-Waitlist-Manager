@@ -17,6 +17,9 @@ A simple restaurant waitlist management software
 <ul>
 <li><a href="#Requirements">Requirements</a></li>
   <li><a href="#How_to_use">How To Use</a></li>
+  <ul>
+    <li><a href="#Main_Screen">Main Screen (Customer's Portal) </a></li>
+  </ul>
 </ul>
 
 # Requirements
@@ -27,7 +30,7 @@ A simple restaurant waitlist management software
 </ul>
 
 # How_to_use
-<h3> Main Screen (Customer Portal)</h3>
+# Main_Screen (Customer Portal)
   When you first open your program, you will be greeted with this screen. This is the customer's screen, this is used for customers to reserve their seats. <br>
   The goal of this screen is to have customer's eyes drawn to the screen when they walk in so they will independently reserve their seats without any assistance.
   <ul>
