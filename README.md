@@ -12,6 +12,12 @@ A simple restaurant waitlist management software
   HotPlate was created by Andrew Collin and it has plans to expand beyond a waitlist management software
 </p>
 
+<h1>Getting Started</h1>
+
+<ul>
+<li><a href="#Requirements">Requirements</a></li>
+</ul>
+
 # Requirements
 <ul>
   <li>Java SDK 15 and above</li>
