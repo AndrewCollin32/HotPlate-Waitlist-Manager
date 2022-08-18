@@ -25,6 +25,7 @@ A simple restaurant waitlist management software
     <li><a href="#Settings"> Settings </a></li>
     <li><a href="#Crash_Report"> Crash Report </a></li>
   </ul>
+  <li><a href="#Troubleshoot"> Troubleshoot </a></li>
 </ul>
 
 # Requirements
@@ -136,19 +137,15 @@ A simple restaurant waitlist management software
 <hr>
 
 # Crash_Report
-
- The settings can only be accessed through the admin page. In this page, you can edit your name, your restaurant's name, auto load feature, pin and the time format. Changes made in this page will be applied to admin and customer portals. 
-  <ul>
-  <li>Name - Textfiled for you to enter your prefered name.</li>
-  <li>Restaurant - Textfield to enter your restaurant's name. It can be used as an string injection for your messages. </li>
-  <li>Load - Check box where if selected, your last saved customer's data will automatically load on to the table.</li>
-  <li>Light Settings - Disabled and will be released in future developments</li>
-  <li>Pin - Textfield for you to enter a new pin. The pin is used to grant access to the Admin's page.</li>
-  <li>Time Format - You can choose between the 12hr and the 24hr time format. Once saved, the new time format will be applied to new and existing customer's data including the clock on the upper right corner of the Admin page.</li>
-</ul>
-
+  
+  See <a href = "#Troubleshoot"> Troubleshoot </a> for more details about your error.
+  The crash report windows opens up when there is a severe error that has taken place. It shows you the entire log file since you first open your program. It also has   a red label at the bottom telling you what the exact error is. You can send the report so I can look at it or you can exit the program and restart it. At the moment   I will not receive any reports because this program is still in beta, but you can voice your errors on this Github's repository.
 
 ![crash report](https://user-images.githubusercontent.com/109395254/185509625-93405e90-5ffd-4491-9387-b52c791e566c.PNG)
+
+<hr>
+
+#Troubleshoot
 
 
 
