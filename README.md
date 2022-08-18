@@ -26,6 +26,9 @@ A simple restaurant waitlist management software
     <li><a href="#Crash_Report"> Crash Report </a></li>
   </ul>
   <li><a href="#Troubleshoot"> Troubleshoot </a></li>
+  <ul>
+    <li><a href="#Can_Not_Find_File:"> Can not find file: </a></li>
+  </ul>
 </ul>
 
 # Requirements
@@ -157,6 +160,7 @@ This error only occurs when the user is first loading up the program. Before the
   <li>2. The file was moved</li>
   <li>3. The file's name or format was changed</li>
 </ul>
-<code>Can not find file: FileName.class </code> This error means the program couldn't find the required java classes. Go to src/main/java/com/Hotplate/Hotplate and see if the class file is in there. If not, just redownload it from this repository. 
+<code>Can not find file: FileName.class </code>  This error means the program couldn't find the required java classes. Go to src/main/java/com/Hotplate/Hotplate and see if the class file is in there. If not, just re-download it from this repository. 
+<code>Can not find file: FileName.fxml </code>  This error means the program couldn't find the required fxml document. Go to src/main/resources and see if the fxml file is in there. If not, just re-download it from this repository. 
 
 
