@@ -151,6 +151,8 @@ A simple restaurant waitlist management software
 # Troubleshoot
 
 If you encountered a crash report, make sure to copy the red label at the bottom of the log display. The red text is the main culprit to the error. 
+<br>
+
 ![image](https://user-images.githubusercontent.com/109395254/185512235-c474ced9-12ce-42c8-85b8-bce9330d3df8.png)
 
 # Can_Not_Find_File
