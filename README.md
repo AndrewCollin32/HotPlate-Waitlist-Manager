@@ -132,5 +132,22 @@ A simple restaurant waitlist management software
 
 ![image](https://user-images.githubusercontent.com/109395254/184475648-2520f96b-828d-4a52-84c3-11f55b399fb0.png)
 
+<hr>
+
+# Crash_Report
+
+ The settings can only be accessed through the admin page. In this page, you can edit your name, your restaurant's name, auto load feature, pin and the time format. Changes made in this page will be applied to admin and customer portals. 
+  <ul>
+  <li>Name - Textfiled for you to enter your prefered name.</li>
+  <li>Restaurant - Textfield to enter your restaurant's name. It can be used as an string injection for your messages. </li>
+  <li>Load - Check box where if selected, your last saved customer's data will automatically load on to the table.</li>
+  <li>Light Settings - Disabled and will be released in future developments</li>
+  <li>Pin - Textfield for you to enter a new pin. The pin is used to grant access to the Admin's page.</li>
+  <li>Time Format - You can choose between the 12hr and the 24hr time format. Once saved, the new time format will be applied to new and existing customer's data including the clock on the upper right corner of the Admin page.</li>
+</ul>
+
+
+![crash report](https://user-images.githubusercontent.com/109395254/185509625-93405e90-5ffd-4491-9387-b52c791e566c.PNG)
+
 
 
