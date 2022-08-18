@@ -145,7 +145,7 @@ A simple restaurant waitlist management software
 
 <hr>
 
-#Troubleshoot
+# Troubleshoot
 
 
 
