@@ -19,6 +19,10 @@ A simple restaurant waitlist management software
   <li><a href="#How_to_use">How To Use</a></li>
   <ul>
     <li><a href="#Main_Screen">Main Screen (Customer's Portal) </a></li>
+    <li><a href="#Reservation_Page">Reservation Page</a></li>
+    <li><a href="#Sign_In_Page"> Sign In Page </a></li>
+    <li><a href="#Admin_Page_(Dashboard)"> Admin Page </a></li>
+    <li><a href="#Settings"> Settings </a></li>
   </ul>
 </ul>
 
@@ -45,7 +49,7 @@ A simple restaurant waitlist management software
 
 ![Untitled_Artwork 18](https://user-images.githubusercontent.com/109395254/184273779-28d0263f-5ae3-4352-b1c0-85cfac26fa87.jpg)
 <hr>
-<h3> Reservation Page </h3>
+# Reservation_Page
   This page is for customers to input their information to reserve their seat.
   <ul>
   <li>0: Drop-down menu for party size (Min = 1, Max = 12)</li>
@@ -59,7 +63,7 @@ A simple restaurant waitlist management software
 ![Reservation Page](https://user-images.githubusercontent.com/109395254/184277390-15ad5f0d-28b5-453d-822a-618367a94812.png)
 
 <hr>
-<h3> Sign In Page </h3>
+# Sign_In_Page
   The sign in page is used by employees to grant access to the admin page. 
   <ul>
   <li>0: Pin number textfield - Used for employees to enter their pin number. (The default pin number is 1111, but you can change it in the settings)</li>
@@ -70,7 +74,7 @@ A simple restaurant waitlist management software
 <img width="596" alt="Screen_Shot_2022-08-11_at_8 18 53_PM 2" src="https://user-images.githubusercontent.com/109395254/184279071-b42b330d-92d0-470a-bb80-e8b3cc57b723.png">
 
 <hr>
-<h3> Admin Page (Dashboard) </h3>
+# Admin_Page_(Dashboard)
   The admin page has control over all the entries submitted. In this page, you can add, edit and delete entries. You can also warn and call the selected customer. You will also have access to settings, saving the data and loading the data.
   <ul>
   <li>Hotplate Drop-down menu
@@ -107,7 +111,7 @@ A simple restaurant waitlist management software
 ![Image 8-11-22 at 8 33 PM](https://user-images.githubusercontent.com/109395254/184280691-124aff72-8b2b-4786-a823-abac8b668153.JPG)
 
 <hr>
-<h3> Settings </h3>
+# Settings 
   The settings can only be accessed through the admin page. In this page, you can edit your name, your restaurant's name, auto load feature, pin and the time format. Changes made in this page will be applied to admin and customer portals. 
   <ul>
   <li>Name - Textfiled for you to enter your prefered name.</li>
