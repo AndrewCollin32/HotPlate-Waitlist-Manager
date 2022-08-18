@@ -260,9 +260,12 @@ public class HotPlateApp extends Application {
         logErrorStage = new Stage();
         FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("errorLogPage.fxml"));
         Scene scene = null;
-        if (stage != null){
-            stage.close();
-        }
+        if (stage != null){stage.close();}
+        if (callCustomerStage != null){callCustomerStage.close();}
+        if (adminAddToTableStage != null){adminAddToTableStage.close();}
+        if (adminEditToTableStage != null){adminEditToTableStage.close();}
+        if (AlertBox.stage != null){AlertBox.stage.close();}
+        if (YesNoBox.stage != null){YesNoBox.stage.close();}
         try {
             scene = new Scene(fxml.load(), 600, 600);
         } catch (IOException e) {
