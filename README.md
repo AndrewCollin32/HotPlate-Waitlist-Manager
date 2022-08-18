@@ -21,7 +21,7 @@ A simple restaurant waitlist management software
     <li><a href="#Main_Screen">Main Screen (Customer's Portal) </a></li>
     <li><a href="#Reservation_Page">Reservation Page</a></li>
     <li><a href="#Sign_In_Page"> Sign In Page </a></li>
-    <li><a href="#Admin_Page_(Dashboard)"> Admin Page </a></li>
+    <li><a href="#Admin_Page"> Admin Page </a></li>
     <li><a href="#Settings"> Settings </a></li>
   </ul>
 </ul>
@@ -79,7 +79,7 @@ A simple restaurant waitlist management software
 
 <hr>
 
-# Admin_Page_(Dashboard)
+# Admin_Page
 
   The admin page has control over all the entries submitted. In this page, you can add, edit and delete entries. You can also warn and call the selected customer. You will also have access to settings, saving the data and loading the data.
   <ul>
