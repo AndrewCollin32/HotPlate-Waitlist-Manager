@@ -180,3 +180,5 @@ The error can appear in any of these labels.
 
 When the program is starting it will load the previous user's settings. The file it uses is SaveSettings.ser and it could be found in the main files.
 The problem occurs if the SaveSettings.ser file is corrupted. This can be caused by running outdated program or running a program that failed to update. In order to resolve this problem, you'll have to delete SaveSettings.ser. Keep in mind that by deleting this file, you'll lose all of your user settings. Customer's data will not be affected. 
+
+Another solution is to just change <code>public boolean bypassSaveSettingsDeBug = false;</code> to true <code>public boolean bypassSaveSettingsDeBug = true;</code>. After, you exit the program, just change it back to false. It will resolve the problem itself. 
