@@ -52,7 +52,7 @@ public class AdminController implements Initializable {
     @FXML
     public void transferToGitHub(ActionEvent event) throws URISyntaxException, IOException {
         HotPlateApp.log.info("[Button] Clicked: " + event.toString());
-        java.awt.Desktop.getDesktop().browse(new URI("https://github.com/AndrewCollin/HotPlate"));
+        java.awt.Desktop.getDesktop().browse(new URI("https://github.com/AndrewCollin32/HotPlate-Waitlist-Manager"));
     }
 
     @FXML

@@ -13,7 +13,7 @@ public class AboutMeController {
     void GitHubLink(ActionEvent event) throws URISyntaxException, IOException {
         //HostServices host = getHostServices().showDocument("https://github.com/AndrewCDiep");
         HotPlateApp.log.info("[Button] Clicked: " + event.toString());
-        java.awt.Desktop.getDesktop().browse(new URI("https://github.com/AndrewCollin/HotPlate-Waitlist-Manager"));
+        java.awt.Desktop.getDesktop().browse(new URI("https://github.com/AndrewCollin32/HotPlate-Waitlist-Manager"));
     }
 
     @FXML
