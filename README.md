@@ -29,6 +29,7 @@ A simple restaurant waitlist management software
   <ul>
     <li><a href="#Can_Not_Find_File"> Can not find file </a></li>
     <li><a href="#Loading_User_Settings"> Loading User's Settings </a></li>
+    <li><a href="#Initializing_Load"> Initializing Load </a></li>
   </ul>
 </ul>
 
@@ -182,3 +183,15 @@ When the program is starting it will load the previous user's settings. The file
 The problem occurs if the SaveSettings.ser file is corrupted. This can be caused by running outdated program or running a program that failed to update. In order to resolve this problem, you'll have to delete SaveSettings.ser. Keep in mind that by deleting this file, you'll lose all of your user settings. Customer's data will not be affected. 
 
 Another solution is to go to <code>HotPlate.java</code> and change <code>public boolean bypassSaveSettingsDeBug = false;</code> to true <code>public boolean bypassSaveSettingsDeBug = true;</code>. After, you exit the program, just change it back to false. It will resolve the problem itself. 
+
+<hr>
+
+# Initializing_Load
+
+![initizliaing load](https://user-images.githubusercontent.com/109395254/185516645-d0e8a6ba-893f-4e16-8e73-8fe66f820ae8.PNG)
+
+When the program is starting it will load the previous customer's save. The file it uses is DefaultSave.ser and it could be found in the main files.
+The problem occurs if the DefaultSave.ser file is corrupted. This can be caused by running outdated program or running a program that failed to update. In order to resolve this problem, you'll have to delete DefaultSave.ser. Keep in mind that by deleting this file, you'll lose all of your customer's data. User's settings will not be affected. 
+
+Another solution is to go to <code>HotPlate.java</code> and change <code>public boolean bypassSaveCustomersDebug = false;</code> to true <code>public boolean bypassSaveCustomersDebug = true;</code>. After, you exit the program, just change it back to false. It will resolve the problem itself. 
+
