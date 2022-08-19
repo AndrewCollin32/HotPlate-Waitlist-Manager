@@ -1,6 +1,6 @@
 # HotPlate
 
-A simple restaurant waitlist management software
+A simple restaurant waitlist management software created by AndrewCollin32
 
 ![Untitled_Artwork 17](https://user-images.githubusercontent.com/109395254/184273293-91bcf997-d268-4e04-9fa6-7501ce92a893.jpg)
 
