@@ -28,6 +28,7 @@ A simple restaurant waitlist management software
   <li><a href="#Troubleshoot"> Troubleshoot </a></li>
   <ul>
     <li><a href="#Can_Not_Find_File"> Can not find file </a></li>
+    <li><a href="#Loading_User's_Settings"> Loading User's Settings </a></li>
   </ul>
 </ul>
 
@@ -166,4 +167,14 @@ This error only occurs when the user is first loading up the program. Before the
 <br>
 <code>Can not find file: FileName.fxml </code>  This error means the program couldn't find the required fxml document. Go to src/main/resources and see if the fxml file is in there. If not, just re-download it from this repository. 
 
+<hr>
 
+# Loading_User's_Settings
+
+![errorSaveSettings](https://user-images.githubusercontent.com/109395254/185515923-21660543-f739-4f07-8a96-40976989ded0.PNG)
+<br>
+![erroSaveSettings](https://user-images.githubusercontent.com/109395254/185515926-8d1a0b71-c625-41f2-b881-6c3391b44745.PNG)
+
+
+When the program is starting it will load the previous user's settings. The file it uses is SaveSettings.ser and it could be found in the main files.
+The problem occurs if the SaveSettings.ser file is corrupted. This can be caused by running outdated program or running a program that failed to update. In order to resolve this problem, you'll have to delete SaveSettings.ser. Keep in mind that by deleting this file, you'll lose all of your user settings. Customer's data will not be affected. 
