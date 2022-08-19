@@ -5,8 +5,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.net.URL;
@@ -20,8 +18,6 @@ public class LogErrorPage implements Initializable {
     @FXML
     private TextArea logTextArea;
 
-    @FXML
-    private TextField commentTextField;
 
     @FXML
     void onClickExit(ActionEvent event) {
@@ -39,14 +35,14 @@ public class LogErrorPage implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         HotPlateApp.log.info("[Starting] Loading error log file");
         errorLabel.setText("Error: " + HotPlateApp.errorLogMessage);
-        String total = "";
+        StringBuilder total = new StringBuilder();
         try (BufferedReader br = new BufferedReader(new FileReader("Logs/logFile.log"))) {
             String line;
             while ((line = br.readLine()) != null) {
-                total += line + "\n";
+                total.append(line).append("\n");
             }
         } catch(Exception e) {HotPlateApp.log.severe("Couldn't read file: " + e);}
-        logTextArea.setText(total);
+        logTextArea.setText(total.toString());
         logTextArea.selectPositionCaret(logTextArea.getLength());
         logTextArea.deselect();
         HotPlateApp.log.info("[Success] Loading error log file");

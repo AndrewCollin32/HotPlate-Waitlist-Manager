@@ -20,7 +20,7 @@ public class CustomMessageController implements Initializable {
     @FXML
     void messageEditorCancel(ActionEvent event) throws IOException {
         HotPlateApp.log.info("[Button] Clicked: " + event);
-        HotPlateApp.launchAdminPortal(false);
+        HotPlateApp.launchAdminPortal();
     }
 
     @FXML
@@ -33,7 +33,7 @@ public class CustomMessageController implements Initializable {
         SaveSettings ss = new SaveSettings(HotPlateApp.userName, HotPlateApp.restaurantName, HotPlateApp.pinNumber, HotPlateApp.automaticallyLoadData, HotPlateApp.warnMessage, HotPlateApp.callMessage, HotPlateApp.britishTime);
         ResourceManager.save(ss, HotPlateApp.saveSettingsPathFile);
         HotPlateApp.log.info("[Success] Saving custom messages");
-        HotPlateApp.launchAdminPortal(true);
+        HotPlateApp.launchAdminPortal();
     }
 
 

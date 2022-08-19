@@ -4,7 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-
 import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
@@ -13,16 +12,6 @@ import java.util.Date;
 import java.util.ResourceBundle;
 
 public class SettingsController implements Initializable {
-
-    @FXML
-    private ToggleGroup darkLight;
-
-    @FXML
-    private RadioButton settingsDarkMode;
-
-    @FXML
-    private RadioButton settingsLightMode;
-
     @FXML
     private TextField settingsName;
 
@@ -41,7 +30,7 @@ public class SettingsController implements Initializable {
     @FXML
     void settingsCancelButton(ActionEvent event) throws IOException {
         HotPlateApp.log.info("[Button] Clicked: " + event);
-        HotPlateApp.launchAdminPortal(false);
+        HotPlateApp.launchAdminPortal();
     }
 
     @FXML
@@ -53,7 +42,7 @@ public class SettingsController implements Initializable {
         settingsRestaurant.getText().length() == 0){
             try {
                 HotPlateApp.log.warning("[Fail] User failed to enter for one text field");
-                new AlertBox("Error", "One of the text fields are empty");
+                AlertBox.createAlertBox("Error", "One of the text fields are empty");
             } catch (IOException e) {
                 HotPlateApp.log.severe("[Fail] Couldn't open alert box" + e);
                 HotPlateApp.launchLogError("[Fail] Couldn't open alert box: " + e);
@@ -63,7 +52,7 @@ public class SettingsController implements Initializable {
         else if (settingsPin.getText().length() < 4){
             try {
                 HotPlateApp.log.warning("[Fail] User failed to enter the correct pin");
-                new AlertBox("Error", "Please make sure that the pin is at least 4 digits");
+                AlertBox.createAlertBox("Error", "Please make sure that the pin is at least 4 digits");
             } catch (IOException e) {
                 HotPlateApp.log.severe("[Fail] Couldn't open alert box" + e);
                 HotPlateApp.launchLogError("[Fail] Couldn't open alert box: " + e);
@@ -106,7 +95,7 @@ public class SettingsController implements Initializable {
         ResourceManager.save(ss, HotPlateApp.saveSettingsPathFile);
 
         HotPlateApp.log.info("[Success] Saving Settings Data");
-        HotPlateApp.launchAdminPortal(true);
+        HotPlateApp.launchAdminPortal();
     }
 
     @Override

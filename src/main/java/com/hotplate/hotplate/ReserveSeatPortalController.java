@@ -2,15 +2,12 @@ package com.hotplate.hotplate;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
-
 import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -40,7 +37,7 @@ public class ReserveSeatPortalController implements Initializable {
     public VBox reserveSeatVBox;
 
     @FXML
-    void reserveSeatCancelPress(ActionEvent event) throws IOException {
+    void reserveSeatCancelPress(ActionEvent event) {
         HotPlateApp.log.info("[Button] Clicked: " + event);
         reserveSeatNameInput.setText("");
         reserveSeatPhoneInput.setText("");
@@ -56,11 +53,11 @@ public class ReserveSeatPortalController implements Initializable {
         Matcher match = pattern.matcher(reserveSeatPhoneInput.getText());
         if (!match.matches()){
             HotPlateApp.log.warning("[Fail] Customer failed to enter the correct phone number" );
-            AlertBox ab = new AlertBox("Phone Number Error", "Please enter a valid phone number");
+            AlertBox.createAlertBox("Phone Number Error", "Please enter a valid phone number");
         }
         else if (reserveSeatNameInput.getText().length() == 0){
             HotPlateApp.log.warning("[Fail] Customer failed to enter the correct name");
-            AlertBox ab = new AlertBox("Name Error", "Please provide a name for \n this reservation");
+            AlertBox.createAlertBox("Name Error", "Please provide a name for \n this reservation");
         }
         else{
             HotPlateApp.waitListSize++;

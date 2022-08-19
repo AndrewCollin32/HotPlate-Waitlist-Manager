@@ -1,12 +1,9 @@
 package com.hotplate.hotplate;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.TextField;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -27,10 +24,10 @@ public class SignInController implements Initializable {
 
         HotPlateApp.log.info("[Button] Clicked: " + event);
         if (!signInTextPin.getText().equals(HotPlateApp.pinNumber)){
-            new AlertBox("Pin Error", "You've entered the wrong pin");
+            AlertBox.createAlertBox("Pin Error", "You've entered the wrong pin");
             return;
         }
-        HotPlateApp.launchAdminPortal(true);
+        HotPlateApp.launchAdminPortal();
     }
 
     @Override
@@ -38,7 +35,7 @@ public class SignInController implements Initializable {
         //TODO IMPORTANT, Must delete this alert box for non-demo version
         HotPlateApp.log.info("Displaying alert box with the pin");
         try {
-            AlertBox ab = new AlertBox("Your Pin number", "Your pin number is: " + HotPlateApp.pinNumber );
+            AlertBox.createAlertBox("Your Pin number", "Your pin number is: " + HotPlateApp.pinNumber );
         } catch (IOException e) {
             HotPlateApp.log.severe("[Fail] Couldn't open alert box" + e);
             HotPlateApp.launchLogError("[Fail] Couldn't open alert box: " + e);

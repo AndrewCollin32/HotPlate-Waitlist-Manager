@@ -13,7 +13,7 @@ public class YesNoBox {
 
     public static boolean createAlert(String title, String message){
         FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("yesNoBox.fxml"));
-        Scene scene = null;
+        Scene scene;
         try {
             scene = new Scene(fxml.load(), 400, 200);
         } catch (IOException e) {

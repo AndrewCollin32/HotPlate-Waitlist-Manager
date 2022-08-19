@@ -4,8 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
-
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.regex.Matcher;
@@ -62,11 +60,11 @@ public class AdminAddItemController {
         }
         else{
             timeSelected = adminCustomTimeText.getText();
-            Pattern timePattern = Pattern.compile((HotPlateApp.britishTime)? "^(2[0123]|[01]\\d):[012345]\\d$":"^[012]\\d:[012345]\\d\\s[PM|AM]$");
+            Pattern timePattern = Pattern.compile((HotPlateApp.britishTime)? "^(2[0123]|[01]\\d):[012345]\\d$":"^[012]\\d:[012345]\\d\\s[P|A]M$");
             Matcher timeMatch = timePattern.matcher(adminCustomTimeText.getText());
             if (!timeMatch.matches()){
                 try {
-                    AlertBox ab = new AlertBox("Time Error", "Please enter a time in this format (hh:mm [PM or AM])");
+                    AlertBox.createAlertBox("Time Error", "Please enter a time in this format (hh:mm [PM or AM])");
                     HotPlateApp.log.warning("[Saving] [Warning] because of wrong time format");
                 } catch (Exception e) {
                     HotPlateApp.log.severe("[Fail] Can't launch AlertBox: " + e);
@@ -84,7 +82,7 @@ public class AdminAddItemController {
         }
         catch(Exception e){
             try {
-                AlertBox ab = new AlertBox("Name Error", "Please enter an integer for party size for \n this reservation");
+                AlertBox.createAlertBox("Name Error", "Please enter an integer for party size for \n this reservation");
                 HotPlateApp.log.warning("[Saving] [Warning] User didn't enter correct party size");
             } catch (Exception j) {
                 HotPlateApp.log.severe("[Fail] Can't launch AlertBox: " + e);
@@ -94,33 +92,30 @@ public class AdminAddItemController {
         }
         if (!match.matches()){
             try {
-                AlertBox ab = new AlertBox("Phone Number Error", "Please enter a valid phone number");
+                AlertBox.createAlertBox("Phone Number Error", "Please enter a valid phone number");
                 HotPlateApp.log.warning("[Saving] [Warning] User didn't enter correct phone number");
             } catch (Exception e) {
                 HotPlateApp.log.severe("[Fail] Can't launch AlertBox: " + e);
                 HotPlateApp.launchLogError("[Fail] Can't launch AlertBox: " + e);
             }
-            return;
         }
         else if (adminAddName.getText().length() == 0){
             try {
-                AlertBox ab = new AlertBox("Name Error", "Please provide a name for \n this reservation");
+                AlertBox.createAlertBox("Name Error", "Please provide a name for \n this reservation");
                 HotPlateApp.log.warning("[Saving] [Warning] User didn't enter a name");
             } catch (Exception e) {
                 HotPlateApp.log.severe("[Fail] Can't launch AlertBox: " + e);
                 HotPlateApp.launchLogError("[Fail] Can't launch AlertBox: " + e);
             }
-            return;
         }
         else if (adminAddPartySize.getText().length() == 0) {
             try {
-                AlertBox ab = new AlertBox("Party Size Error", "Please provide a valid integer for \n the party size");
+                AlertBox.createAlertBox("Party Size Error", "Please provide a valid integer for \n the party size");
                 HotPlateApp.log.warning("[Saving] [Warning] User didn't enter a valid party size");
             } catch (Exception e) {
                 HotPlateApp.log.severe("[Fail] Can't launch AlertBox: " + e);
                 HotPlateApp.launchLogError("[Fail] Can't launch AlertBox: " + e);
             }
-            return;
         }
         else{
             String phoneNumber = match.group(1) + match.group(2) + match.group(3);
@@ -131,7 +126,7 @@ public class AdminAddItemController {
 
             try {
                 HotPlateApp.endTime=true;
-                HotPlateApp.launchAdminPortal(true);
+                HotPlateApp.launchAdminPortal();
             } catch (Exception e) {
                 HotPlateApp.log.severe("[Fail] Can't launch AdminPortal: " + e);
                 HotPlateApp.launchLogError("[Fail] Can't launch AdminPortal: " + e);

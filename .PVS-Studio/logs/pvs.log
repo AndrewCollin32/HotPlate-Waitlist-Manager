@@ -1,0 +1,118 @@
+2022-08-18 22:58:59 [INFO ] c.p.r.NativeLoader:64 - ********************************
+2022-08-18 22:58:59 [INFO ] c.p.r.NativeLoader:65 - Native library search paths: 
+2022-08-18 22:58:59 [INFO ] c.p.r.NativeLoader:948 - C:\Users\Syste\AppData\Roaming\PVS-Studio-Java\7.20.63149
+2022-08-18 22:58:59 [INFO ] c.p.r.NativeLoader:948 - .
+2022-08-18 22:58:59 [INFO ] c.p.r.NativeLoader:948 - C:\Users\Syste\AppData\Roaming\PVS-Studio-Java\7.20.63149\..
+2022-08-18 22:58:59 [INFO ] c.p.r.NativeLoader:948 - C:\Users\Syste\AppData\Roaming\PVS-Studio-Java\7.20.63149\..\..
+2022-08-18 22:58:59 [INFO ] c.p.r.NativeLoader:948 - C:\Users\Syste\AppData\Roaming\PVS-Studio-Java\7.20.63149\..\..\build
+2022-08-18 22:58:59 [INFO ] c.p.r.NativeLoader:67 - Additional path: native/win
+2022-08-18 22:58:59 [INFO ] c.p.r.NativeLoader:76 - Native library found: C:\Users\Syste\AppData\Roaming\PVS-Studio-Java\7.20.63149\native\win\analysis-core.dll
+2022-08-18 22:58:59 [INFO ] c.p.r.NativeLoader:77 - ********************************
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:49 - Module: HotPlate
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:50 - Sources:
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/Documents/IdeaProjects/HotPlate-Waitlist-ManagerTESTST/src/main/java
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:52 - Classpath:
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/java.scripting
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.incubator.jpackage
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.internal.jvmstat
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/java.logging
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/java.sql
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.internal.vm.ci
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.unsupported
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/java.sql.rowset
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.localedata
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.internal.vm.compiler.management
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.naming.dns
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.unsupported.desktop
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.jfr
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.editpad
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.management
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.m2/repository/org/openjfx/javafx-controls/15.0.1/javafx-controls-15.0.1-win.jar
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.jshell
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.jlink
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/java.smartcardio
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.net
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.m2/repository/org/openjfx/javafx-graphics/15.0.1/javafx-graphics-15.0.1-win.jar
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.attach
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.jartool
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.jsobject
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/java.xml.crypto
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.crypto.mscapi
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.hotspot.agent
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.crypto.ec
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.m2/repository/org/openjfx/javafx-fxml/15.0.1/javafx-fxml-15.0.1.jar
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.m2/repository/org/openjfx/javafx-fxml/15.0.1/javafx-fxml-15.0.1-win.jar
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.sctp
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/java.prefs
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.nio.mapmode
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/java.security.sasl
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.internal.opt
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.security.auth
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.compiler
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/java.base
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/java.net.http
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/java.transaction.xa
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.jstatd
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.crypto.cryptoki
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/java.rmi
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.aot
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/java.instrument
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/java.desktop
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.jdeps
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.m2/repository/org/openjfx/javafx-graphics/15.0.1/javafx-graphics-15.0.1.jar
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.internal.ed
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.jdi
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/java.se
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.jdwp.agent
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.m2/repository/org/openjfx/javafx-base/15.0.1/javafx-base-15.0.1-win.jar
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.incubator.foreign
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.dynalink
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.internal.vm.compiler
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/java.xml
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.charsets
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.m2/repository/org/openjfx/javafx-controls/15.0.1/javafx-controls-15.0.1.jar
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/java.management.rmi
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/java.datatransfer
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/java.compiler
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/java.security.jgss
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.accessibility
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.httpserver
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.m2/repository/org/openjfx/javafx-base/15.0.1/javafx-base-15.0.1.jar
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.naming.rmi
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/java.naming
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.jconsole
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/java.management
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.management.agent
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.internal.le
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.security.jgss
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.management.jfr
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.jcmd
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.javadoc
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.zipfs
+2022-08-18 22:59:00 [INFO ] c.p.p.JsonEvaluator:75 - C:/Users/Syste/.jdks/openjdk-15.0.2!/jdk.xml.dom
+2022-08-18 22:59:00 [INFO ] c.p.p.IncrementalLauncher:278 - Build model from scratch...
+2022-08-18 22:59:00 [ERROR] c.p.p.Module:371 - Model build failed: Module should be known
+java.lang.IllegalStateException: Module should be known
+	at org.eclipse.jdt.internal.compiler.batch.CompilationUnit.module(CompilationUnit.java:126)
+	at org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration.module(CompilationUnitDeclaration.java:833)
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.buildTypeBindings(LookupEnvironment.java:469)
+	at org.eclipse.jdt.internal.compiler.Compiler.internalBeginToCompile(Compiler.java:845)
+	at org.eclipse.jdt.internal.compiler.Compiler.beginToCompile(Compiler.java:394)
+	at spoon.support.compiler.jdt.TreeBuilderCompiler.buildUnits(TreeBuilderCompiler.java:60)
+	at spoon.support.compiler.jdt.JDTBatchCompiler.getUnits(JDTBatchCompiler.java:256)
+	at spoon.support.compiler.jdt.JDTBasedSpoonCompiler.buildUnits(JDTBasedSpoonCompiler.java:417)
+	at spoon.support.compiler.jdt.JDTBasedSpoonCompiler.buildUnitsAndModel(JDTBasedSpoonCompiler.java:369)
+	at spoon.support.compiler.jdt.JDTBasedSpoonCompiler.buildSources(JDTBasedSpoonCompiler.java:337)
+	at spoon.support.compiler.jdt.JDTBasedSpoonCompiler.build(JDTBasedSpoonCompiler.java:114)
+	at spoon.support.compiler.jdt.JDTBasedSpoonCompiler.build(JDTBasedSpoonCompiler.java:97)
+	at spoon.Launcher.buildModel(Launcher.java:755)
+	at com.pvsstudio.projects.Module.build(Module.java:359)
+	at com.pvsstudio.runner.ModuleWorker.run(ModuleWorker.java:52)
+	at com.pvsstudio.runner.AnalyzerRunner.run(AnalyzerRunner.java:81)
+	at com.pvsstudio.Main.main(Main.java:508)

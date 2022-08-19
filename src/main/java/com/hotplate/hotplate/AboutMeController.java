@@ -1,17 +1,11 @@
 package com.hotplate.hotplate;
 
-import javafx.application.Application;
-import javafx.application.HostServices;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
+
 
 public class AboutMeController {
 
@@ -25,11 +19,11 @@ public class AboutMeController {
     @FXML
     void aboutMeOkButton(ActionEvent event) throws IOException {
         HotPlateApp.log.info("[Button] Clicked: " + event.toString());
-        if (HotPlateApp.aboutMeCustomerOrgin){
+        if (HotPlateApp.aboutMeCustomerOrigin){
             HotPlateApp.launchCustomerPortal();
         }
         else{
-            HotPlateApp.launchAdminPortal(false);
+            HotPlateApp.launchAdminPortal();
         }
     }
 

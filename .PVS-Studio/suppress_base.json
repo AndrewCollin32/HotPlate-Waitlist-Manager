@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "warnings": [
+    {
+      "FileName": "",
+      "ErrorCode": "",
+      "Message": "Congratulations! PVS-Studio has not found any issues in your source code!",
+      "CodePrev": 0,
+      "CodeCurrent": 0,
+      "CodeNext": 0
+    },
+    {
+      "FileName": "",
+      "ErrorCode": "V061",
+      "Message": "Unable to start the analysis on \u0027HotPlate\u0027 module. By cause: \u0027Module should be known\u0027.",
+      "CodePrev": 0,
+      "CodeCurrent": 0,
+      "CodeNext": 0
+    }
+  ]
+}

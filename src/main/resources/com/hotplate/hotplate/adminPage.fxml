@@ -108,7 +108,7 @@
                     </items>
                   </Menu>
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" onAction="#tarnsferToAbout" text="About" />
+                  <MenuItem mnemonicParsing="false" onAction="#transferToAbout" text="About" />
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem mnemonicParsing="false" onAction="#transferToExit" text="Exit" />
               </items>

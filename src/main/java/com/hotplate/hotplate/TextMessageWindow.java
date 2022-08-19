@@ -14,7 +14,7 @@ public class TextMessageWindow implements Initializable {
     public Label textMessage;
 
     @FXML
-    public Label textMessageRecieveLabel;
+    public Label textMessageReceiveLabel;
 
     @FXML
     void okButton(ActionEvent event) {
@@ -33,10 +33,10 @@ public class TextMessageWindow implements Initializable {
             TM = HotPlateApp.warnMessage;
         }
         Customer selectedCustomer = HotPlateApp.callCustomerClass;
-        TM = TM.replaceAll("(?i)\\{name\\}", selectedCustomer.getName());
-        TM = TM.replaceAll("(?i)\\{restaurant\\}", HotPlateApp.restaurantName);
+        TM = TM.replaceAll("(?i)\\{name}", selectedCustomer.getName());
+        TM = TM.replaceAll("(?i)\\{restaurant}", HotPlateApp.restaurantName);
 
-        textMessageRecieveLabel.setText("This is the text message " + selectedCustomer.getName() + " will recieve.");
+        textMessageReceiveLabel.setText("This is the text message " + selectedCustomer.getName() + " will receive.");
         textMessage.setText(TM);
         HotPlateApp.log.info("[Success] Loading SMS message");
     }

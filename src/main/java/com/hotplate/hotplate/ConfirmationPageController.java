@@ -2,12 +2,7 @@ package com.hotplate.hotplate;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
-
-import java.io.IOException;
 
 public class ConfirmationPageController {
 
@@ -15,7 +10,7 @@ public class ConfirmationPageController {
     public Label confirmationWelcomeLabel;
 
     @FXML
-    void confirmationPageOkButton(ActionEvent event) throws IOException {
+    void confirmationPageOkButton(ActionEvent event) {
         HotPlateApp.log.info("[Button] Clicked: " + event);
         HotPlateApp.launchCustomerPortal();
     }

@@ -1,3 +1,7 @@
+// This is a personal academic project. Dear PVS-Studio, please check it.
+
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: https://pvs-studio.com
+
 /*
 HotPlateApp Software, created by Andrew Collin Diep 08/06/2022
 HotPlate is a wait-list restaurant manager
@@ -14,6 +18,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Objects;
 import java.util.logging.*;
 
 public class HotPlateApp extends Application {
@@ -60,6 +65,7 @@ public class HotPlateApp extends Application {
         if (!bypassSaveSettingsDeBug) {
             try {
                 SaveSettings ss = (SaveSettings) ResourceManager.load(HotPlateApp.saveSettingsPathFile);
+                assert ss != null;
                 HotPlateApp.userName = ss.userName;
                 HotPlateApp.restaurantName = ss.restaurantName;
                 HotPlateApp.automaticallyLoadData = ss.autoLoadData;
@@ -113,7 +119,13 @@ public class HotPlateApp extends Application {
 
         stage.setResizable(false);
         stage.setTitle("HotPlate");
-        try {stage.getIcons().add(new Image(HotPlateApp.class.getResourceAsStream("HotPlateLogo.png")));} catch(Exception e) {log.warning("Failure to load the HotPlate logo: " + e);}
+        try {
+            try {
+                stage.getIcons().add(new Image(Objects.requireNonNull(HotPlateApp.class.getResourceAsStream("HotPlateLogo.png"))));
+            } catch (Exception e) {
+                log.warning("Failure to load the HotPlate logo: " + e);
+            }
+        } catch(Exception e) {log.warning("[Fail] Unable to load the logo image: " + e);}
         launchCustomerPortal();
         stage.show();
         log.info("[Success] Starting HotPlate");
@@ -127,79 +139,79 @@ public class HotPlateApp extends Application {
 
     /* SCENE AND CONTROLLER CREATION */
 
-    public static void launchCustomerPortal() throws IOException {
+    public static void launchCustomerPortal() {
         try {
         FXMLLoader fxmlLoader = new FXMLLoader(HotPlateApp.class.getResource("customerPortal.fxml"));
         Scene customerPortalScene = new Scene(fxmlLoader.load(), 600, 600);
         stage.setScene(customerPortalScene);}
-        catch(Exception e) {log.severe("[Fail] Loading Customer's Screen: " + e); launchLogError("[Fail] Loading Customer's Screen: " + e); return;}
+        catch(Exception e) {log.severe("[Fail] Loading Customer's Screen: " + e); launchLogError("[Fail] Loading Customer's Screen: " + e);}
         finally {log.info("[Success] Loading Customer's Screen");}
     }
 
 
-    public static void launchReserveSeatPortal() throws IOException {
+    public static void launchReserveSeatPortal() {
         try{
         FXMLLoader fxmlLoader = new FXMLLoader(HotPlateApp.class.getResource("reserveSeatPortal.fxml"));
         Scene reserveSeatScene = new Scene(fxmlLoader.load(), 600, 600);
         stage.setScene(reserveSeatScene);}
-        catch(Exception e){log.severe("[Fail] Loading Reservation Screen: " + e); launchLogError("[Fail] Loading Reservation Screen: " + e); return;}
+        catch(Exception e){log.severe("[Fail] Loading Reservation Screen: " + e); launchLogError("[Fail] Loading Reservation Screen: " + e);}
         finally {log.info("[Success] Loading Reservation Screen");}
     }
 
     public static Scene confirmationPageScene;
-    public static void launchConfirmationPage() throws IOException {
+    public static void launchConfirmationPage() {
         try{
         if (confirmationPageScene == null){
             FXMLLoader fxmlLoader = new FXMLLoader(HotPlateApp.class.getResource("confirmationPage.fxml"));
             confirmationPageScene = new Scene(fxmlLoader.load(), 600, 600);
         }
         stage.setScene(confirmationPageScene);}
-        catch(Exception e){log.severe("[Fail] Loading Confirmation Page: " + e); launchLogError("[Fail] Loading Confirmation Page: " + e); return;}
+        catch(Exception e){log.severe("[Fail] Loading Confirmation Page: " + e); launchLogError("[Fail] Loading Confirmation Page: " + e);}
         finally {log.info("[Success] Loading Confirmation Page");}
     }
 
-    public static void launchSignInPage() throws IOException {
+    public static void launchSignInPage() {
         try{
         FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("signInPage.fxml"));
         Scene signInScene = new Scene(fxml.load(), 600, 600);
         stage.setScene(signInScene);}
-        catch(Exception e){log.severe("[Fail] Loading Sign In Page: " + e); launchLogError("[Fail] Loading Sign In Page: " + e); return;}
+        catch(Exception e){log.severe("[Fail] Loading Sign In Page: " + e); launchLogError("[Fail] Loading Sign In Page: " + e);}
         finally {log.info("[Success] Loading Sign In Page");}
     }
 
     public static Scene aboutMeScene;
-    public static boolean aboutMeCustomerOrgin;
-    public static void launchAboutMePage() throws IOException {
+    public static boolean aboutMeCustomerOrigin;
+    public static void launchAboutMePage() {
         try{
         if (aboutMeScene == null){
             FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("aboutMePage.fxml"));
             aboutMeScene = new Scene(fxml.load(), 600, 600);
         }
         stage.setScene(aboutMeScene);}
-        catch(Exception e){log.severe("[Fail] Loading About Me Page: " + e); launchLogError("[Fail] Loading About Me Page: " + e); return;}
+        catch(Exception e){log.severe("[Fail] Loading About Me Page: " + e); launchLogError("[Fail] Loading About Me Page: " + e);}
         finally {log.info("[Success] Loading About Me Page");}
     }
 
-    public static void launchAdminPortal(boolean updatePage) throws IOException {
+    public static void launchAdminPortal() throws IOException {
         try{
         FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("adminPage.fxml"));
         Scene adminPortalScene = new Scene(fxml.load(), 600, 600);
         stage.setScene(adminPortalScene);}
-        catch(Exception e){log.severe("[Fail] Loading Admin Portal: " + e); launchLogError("[Fail] Loading Admin Portal: " + e); return;}
+        catch(Exception e){log.severe("[Fail] Loading Admin Portal: " + e); launchLogError("[Fail] Loading Admin Portal: " + e);}
         finally {log.info("[Success] Loading Admin Portal");}
     }
 
-    public static void launchCustomMessagePage() throws IOException {
+    public static void launchCustomMessagePage() {
         try{
         FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("customMessagePage.fxml"));
         Scene customMessagePageScene = new Scene(fxml.load(), 600, 600);
         stage.setScene(customMessagePageScene);}
-        catch(Exception e){log.severe("[Fail] Loading Custom Message Settings: " + e); launchLogError("[Fail] Loading Custom Message Settings: " + e); return;}
+        catch(Exception e){log.severe("[Fail] Loading Custom Message Settings: " + e); launchLogError("[Fail] Loading Custom Message Settings: " + e);}
         finally {log.info("[Success] Loading Custom Message Settings");}
     }
 
     public static Stage adminAddToTableStage;
-    public static void launchAdminAddToTable() throws IOException {
+    public static void launchAdminAddToTable() {
         try{
         FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("adminAddItem.fxml"));
         Scene adminAddToTableScene = new Scene(fxml.load(), 600, 400);
@@ -207,13 +219,13 @@ public class HotPlateApp extends Application {
         adminAddToTableStage.setScene(adminAddToTableScene);
         adminAddToTableStage.setTitle("Add Item");
         adminAddToTableStage.show();}
-        catch(Exception e){log.severe("[Fail] Loading Add To Table Menu: " + e); launchLogError("[Fail] Loading Add To Table Menu: " + e); return;}
+        catch(Exception e){log.severe("[Fail] Loading Add To Table Menu: " + e); launchLogError("[Fail] Loading Add To Table Menu: " + e);}
         finally {log.info("[Success] Loading Add To Table Menu");}
     }
 
     public static Stage adminEditToTableStage;
     public static Customer selectedCustomer;
-    public static void launchAdminEditToTable() throws IOException {
+    public static void launchAdminEditToTable() {
         try{
         FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("adminEditItem.fxml"));
         Scene adminEditToTableScene = new Scene(fxml.load(), 600, 400);
@@ -221,16 +233,16 @@ public class HotPlateApp extends Application {
         adminEditToTableStage.setScene(adminEditToTableScene);
         adminEditToTableStage.setTitle("Edit Item");
         adminEditToTableStage.show();}
-        catch(Exception e){log.severe("[Fail] Loading Edit To Table Menu: " + e); launchLogError("[Fail] Loading Edit To Table Menu: " + e); return;}
+        catch(Exception e){log.severe("[Fail] Loading Edit To Table Menu: " + e); launchLogError("[Fail] Loading Edit To Table Menu: " + e);}
         finally {log.info("[Success] Loading Edit To Table Menu");}
     }
 
-    public static void launchSettings() throws IOException {
+    public static void launchSettings() {
         try{
         FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("settings.fxml"));
         Scene settingsScene = new Scene(fxml.load(), 600,600);
         stage.setScene(settingsScene);}
-        catch(Exception e){log.severe("[Fail] Loading Settings Page: " + e); launchLogError("[Fail] Loading Settings Page: " + e); return;}
+        catch(Exception e){log.severe("[Fail] Loading Settings Page: " + e); launchLogError("[Fail] Loading Settings Page: " + e);}
         finally {log.info("[Success] Loading Settings Page");}
     }
 
@@ -238,7 +250,7 @@ public class HotPlateApp extends Application {
     public static boolean callCustomerBoolean;
     public static Customer callCustomerClass;
 
-    public static void launchCallCustomer(boolean callCustomer, Customer customer) throws IOException {
+    public static void launchCallCustomer(boolean callCustomer, Customer customer) {
         try{
         callCustomerBoolean = callCustomer;
         callCustomerClass = customer;
@@ -252,7 +264,7 @@ public class HotPlateApp extends Application {
         }
         callCustomerStage.setScene(callCustomerScene);
         callCustomerStage.show();}
-        catch(Exception e){log.severe("[Fail] Loading Call Customer Page: " + e); launchLogError("[Fail] Loading Call Customer Page: " + e); return;}
+        catch(Exception e){log.severe("[Fail] Loading Call Customer Page: " + e); launchLogError("[Fail] Loading Call Customer Page: " + e);}
         finally {log.info("[Success] Loading Call Customer Page");}
     }
 
@@ -264,7 +276,7 @@ public class HotPlateApp extends Application {
         errorLogMessage = errorMessage;
         logErrorStage = new Stage();
         FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("errorLogPage.fxml"));
-        Scene scene = null;
+        Scene scene;
         if (stage != null){stage.close();}
         if (callCustomerStage != null){callCustomerStage.close();}
         if (adminAddToTableStage != null){adminAddToTableStage.close();}

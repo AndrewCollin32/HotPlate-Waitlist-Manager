@@ -1,7 +1,5 @@
 package com.hotplate.hotplate;
 
-import javafx.scene.shape.Path;
-
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
