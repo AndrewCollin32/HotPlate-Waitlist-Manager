@@ -28,7 +28,7 @@ A simple restaurant waitlist management software
   <li><a href="#Troubleshoot"> Troubleshoot </a></li>
   <ul>
     <li><a href="#Can_Not_Find_File"> Can not find file </a></li>
-    <li><a href="#Loading_User's_Settings"> Loading User's Settings </a></li>
+    <li><a href="#Loading_User_Settings"> Loading User's Settings </a></li>
   </ul>
 </ul>
 
@@ -169,7 +169,9 @@ This error only occurs when the user is first loading up the program. Before the
 
 <hr>
 
-# Loading_User's_Settings
+# Loading_User_Settings
+
+The error can appear in any of these labels. 
 
 ![errorSaveSettings](https://user-images.githubusercontent.com/109395254/185515923-21660543-f739-4f07-8a96-40976989ded0.PNG)
 <br>
