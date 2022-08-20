@@ -133,7 +133,12 @@ public class HotPlateApp extends Application {
 
     public static void main(String[] args) {
         console.setLevel(Level.SEVERE);
-        launch();
+        try {
+            launch();
+        } catch (Exception e){
+            log.severe("[Fail] Error: " + e);
+            launchLogError("[Fail] Error: " + e);
+        }
     }
 
 
