@@ -31,6 +31,7 @@ A simple restaurant waitlist management software created by AndrewCollin32
     <li><a href="#Loading_User_Settings"> Loading User's Settings </a></li>
     <li><a href="#Initializing_Load"> Initializing Load </a></li>
   </ul>
+  <li><a href="#Setup_Program"> Initializing Load </a></li>
 </ul>
 
 # Requirements
@@ -195,6 +196,6 @@ The problem occurs if the DefaultSave.ser file is corrupted. This can be caused 
 
 Another solution is to go to <code>HotPlate.java</code> and change <code>public boolean bypassSaveCustomersDebug = false;</code> to true <code>public boolean bypassSaveCustomersDebug = true;</code>. After, you exit the program, just change it back to false. It will resolve the problem itself. 
 
-# Setup Program
+# Setup_Program
 
 To setup program you can simply import this repisitory to your prefered IDE. The launch of the program will be located in <code>HotPlate.class</code> inside <code>src/java/com/Hotplate/Hotplate/Hotplate.class</code>
