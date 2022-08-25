@@ -126,38 +126,46 @@ public class AdminController implements Initializable {
     public void transferToLoad(ActionEvent event) throws IOException{
 
         HotPlateApp.log.info("[Button] Clicked: " + event.toString());
-        SaveData sd;
-        try {
-            sd = (SaveData) ResourceManager.load(HotPlateApp.customerDataPathFile);
-            assert sd != null;
-            HotPlateApp.waitListSize = sd.customersData.size();
-            HotPlateApp.customerData = sd.customersData;
 
-            if (sd.customersData.size() != 0) {
-                SimpleDateFormat britishTime = new SimpleDateFormat("HH:mm");
-                SimpleDateFormat americanTime = new SimpleDateFormat("hh:mm a");
+        if (HotPlateApp.useSQL){
+            HotPlateApp.loadSQL.loadCustomerData();
+        }
+        else {
+            SaveData sd;
+            try {
+                sd = (SaveData) ResourceManager.load(HotPlateApp.customerDataPathFile);
+                assert sd != null;
+                HotPlateApp.waitListSize = sd.customersData.size();
+                HotPlateApp.customerData = sd.customersData;
 
-                boolean isBritishTime = false;
+                if (sd.customersData.size() != 0) {
+                    SimpleDateFormat britishTime = new SimpleDateFormat("HH:mm");
+                    SimpleDateFormat americanTime = new SimpleDateFormat("hh:mm a");
 
-                try {
-                    americanTime.parse(HotPlateApp.customerData.get(0).getTimeWaited());
-                } catch (Exception e) {
-                    isBritishTime = true;
-                }
+                    boolean isBritishTime = false;
 
-                if (HotPlateApp.britishTime && !isBritishTime || !HotPlateApp.britishTime && isBritishTime) {
-                    for (int i = 0; i < HotPlateApp.customerData.size(); i++) {
-                        Customer customer = HotPlateApp.customerData.get(i);
-                        String time = customer.getTimeWaited();
-                        Date date = ((HotPlateApp.britishTime) ? americanTime : britishTime).parse(time);
-                        String newDate = ((HotPlateApp.britishTime) ? britishTime : americanTime).format(date);
-                        customer.setTimeWaited(newDate);
+                    try {
+                        americanTime.parse(HotPlateApp.customerData.get(0).getTimeWaited());
+                    } catch (Exception e) {
+                        isBritishTime = true;
+                    }
+
+                    if (HotPlateApp.britishTime && !isBritishTime || !HotPlateApp.britishTime && isBritishTime) {
+                        for (int i = 0; i < HotPlateApp.customerData.size(); i++) {
+                            Customer customer = HotPlateApp.customerData.get(i);
+                            String time = customer.getTimeWaited();
+                            Date date = ((HotPlateApp.britishTime) ? americanTime : britishTime).parse(time);
+                            String newDate = ((HotPlateApp.britishTime) ? britishTime : americanTime).format(date);
+                            customer.setTimeWaited(newDate);
+                        }
                     }
                 }
+            } catch (Exception e) {
+                HotPlateApp.log.severe("[Fail] Couldn't load customer data: " + e);
+                HotPlateApp.launchLogError("[Fail] Couldn't load customer data: " + e);
             }
         }
-        catch(Exception e) {HotPlateApp.log.severe("[Fail] Couldn't load customer data: " + e); HotPlateApp.launchLogError("[Fail] Couldn't load customer data: " + e);}
-        finally {HotPlateApp.log.info("[Success] Customer data successfully loaded");}
+        HotPlateApp.log.info("[Success] Customer data successfully loaded");
         HotPlateApp.endTime = true;
         HotPlateApp.launchAdminPortal();
     }
@@ -165,8 +173,13 @@ public class AdminController implements Initializable {
     @FXML
     void transferToSave(ActionEvent event) {
         HotPlateApp.log.info("[Button] Clicked: " + event.toString());
-        SaveData sd = new SaveData(HotPlateApp.customerData);
-        ResourceManager.save(sd, HotPlateApp.customerDataPathFile);
+        if (HotPlateApp.useSQL){
+            HotPlateApp.loadSQL.saveCustomerData();
+        }
+        else {
+            SaveData sd = new SaveData(HotPlateApp.customerData);
+            ResourceManager.save(sd, HotPlateApp.customerDataPathFile);
+        }
     }
 
     @FXML

@@ -45,7 +45,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="40.0" />
                </VBox.margin>
             </ImageView>
-            <Label fx:id="customerPortalWaitlistLabel" text="Current Waitlist: 0">
+            <Label fx:id="customerPortalWaitListLabel" text="Current Waitlist: 0">
                <font>
                   <Font size="20.0" />
                </font>

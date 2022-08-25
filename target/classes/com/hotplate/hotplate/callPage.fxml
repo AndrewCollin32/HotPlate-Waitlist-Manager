@@ -8,7 +8,7 @@
 
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hotplate.hotplate.TextMessageWindow">
    <children>
-      <Label fx:id="textMessageRecieveLabel" text="This is the text message (Phone number) will recieve:">
+      <Label fx:id="textMessageReceiveLabel" text="This is the text message (Phone number) will recieve:">
          <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>

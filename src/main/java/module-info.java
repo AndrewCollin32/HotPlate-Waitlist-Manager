@@ -4,6 +4,8 @@ module com.hotplate.hotplate {
     requires java.desktop;
     requires javafx.graphics;
     requires java.logging;
+    requires java.sql;
+    requires mysql.connector.java;
     //requires twilio;
 
 

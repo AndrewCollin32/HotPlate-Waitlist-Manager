@@ -30,8 +30,13 @@ public class CustomMessageController implements Initializable {
         HotPlateApp.warnMessage = warnMessage.getText();
         HotPlateApp.callMessage = callMessage.getText();
 
-        SaveSettings ss = new SaveSettings(HotPlateApp.userName, HotPlateApp.restaurantName, HotPlateApp.pinNumber, HotPlateApp.automaticallyLoadData, HotPlateApp.warnMessage, HotPlateApp.callMessage, HotPlateApp.britishTime);
-        ResourceManager.save(ss, HotPlateApp.saveSettingsPathFile);
+        if (HotPlateApp.useSQL) {
+            HotPlateApp.loadSQL.saveSQLSettings();
+        }
+        else {
+            SaveSettings ss = new SaveSettings(HotPlateApp.userUsername, HotPlateApp.restaurantName, HotPlateApp.userUsername, HotPlateApp.userPassword, HotPlateApp.automaticallyLoadData, HotPlateApp.warnMessage, HotPlateApp.callMessage, HotPlateApp.britishTime);
+            ResourceManager.save(ss, HotPlateApp.saveSettingsPathFile);
+        }
         HotPlateApp.log.info("[Success] Saving custom messages");
         HotPlateApp.launchAdminPortal();
     }

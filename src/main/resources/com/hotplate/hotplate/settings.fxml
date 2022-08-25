@@ -22,7 +22,7 @@
             <Font name="Arial Rounded MT Bold" size="45.0" />
          </font>
          <VBox.margin>
-            <Insets bottom="40.0" />
+            <Insets bottom="20.0" />
          </VBox.margin>
       </Label>
       <GridPane alignment="CENTER">
@@ -31,6 +31,8 @@
           <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
@@ -39,47 +41,42 @@
             <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label alignment="CENTER" text="Name:">
+            <Label alignment="CENTER" text="Name:" GridPane.rowIndex="2">
                <font>
                   <Font name="Arial Rounded MT Bold" size="21.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" text="Load" GridPane.rowIndex="2">
+            <Label fx:id="loadLabel" alignment="CENTER" text="Load:" GridPane.rowIndex="4">
                <font>
                   <Font name="Arial Rounded MT Bold" size="21.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" text="Light Settings:" GridPane.rowIndex="3">
+            <Label alignment="CENTER" text="Light Settings:" GridPane.rowIndex="5">
                <font>
                   <Font name="Arial Rounded MT Bold" size="21.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" text="Restaurant:" GridPane.rowIndex="1">
+            <Label alignment="CENTER" text="Restaurant:" GridPane.rowIndex="3">
                <font>
                   <Font name="Arial Rounded MT Bold" size="21.0" />
                </font>
             </Label>
-            <TextField fx:id="settingsName" prefHeight="49.0" prefWidth="300.0" promptText="Your Name" GridPane.columnIndex="1">
+            <TextField fx:id="settingsName" prefHeight="49.0" prefWidth="300.0" promptText="Your Name" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="settingsRestaurant" prefHeight="49.0" prefWidth="300.0" promptText="Restaurant Name" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField fx:id="settingsRestaurant" prefHeight="49.0" prefWidth="300.0" promptText="Restaurant Name" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </GridPane.margin>
             </TextField>
-            <Label alignment="CENTER" text="Pin:" GridPane.rowIndex="4">
+            <Label alignment="CENTER" text="Username:">
                <font>
                   <Font name="Arial Rounded MT Bold" size="21.0" />
                </font>
             </Label>
-            <PasswordField fx:id="settingsPin" promptText="Enter a New Pin" GridPane.columnIndex="1" GridPane.rowIndex="4">
-               <GridPane.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </GridPane.margin>
-            </PasswordField>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <children>
                   <RadioButton fx:id="settingsDarkMode" disable="true" mnemonicParsing="false" text="Dark Mode">
                      <HBox.margin>
@@ -92,17 +89,17 @@
                   <RadioButton fx:id="settingsLightMode" disable="true" mnemonicParsing="false" selected="true" text="Light Mode" toggleGroup="$darkLight" />
                </children>
             </HBox>
-            <CheckBox fx:id="loadCheckBox" mnemonicParsing="false" selected="true" text="Automatically load last saved data" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <CheckBox fx:id="loadCheckBox" mnemonicParsing="false" selected="true" text="Automatically load last saved data" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <font>
                   <Font name="Arial Rounded MT Bold" size="13.0" />
                </font>
             </CheckBox>
-            <Label alignment="CENTER" text="Time Format:" GridPane.rowIndex="5">
+            <Label alignment="CENTER" text="Time Format:" GridPane.rowIndex="6">
                <font>
                   <Font name="Arial Rounded MT Bold" size="21.0" />
                </font>
             </Label>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <children>
                   <RadioButton fx:id="britishTimeSelection" mnemonicParsing="false" text="24Hr">
                      <HBox.margin>
@@ -122,29 +119,57 @@
                   </RadioButton>
                </children>
             </HBox>
+            <Label alignment="CENTER" text="Password:" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="21.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="settingsPassword" prefHeight="25.0" prefWidth="237.0" promptText="Enter New Password" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </GridPane.margin>
+            </PasswordField>
+            <TextField fx:id="settingsUsername" promptText="Enter New Username" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </GridPane.margin>
+            </TextField>
+            <Button fx:id="deleteButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#deleteAccountButton" style="-fx-background-color: #de265d; -fx-border-radius: 90px; -fx-border-style: none; -fx-text-fill: White;" text="Delete Account" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Button>
+            <Label fx:id="deleteAccountLabel" alignment="CENTER" text="Delete Account:" GridPane.rowIndex="7">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="21.0" />
+               </font>
+            </Label>
          </children>
          <VBox.margin>
             <Insets left="30.0" right="85.0" />
          </VBox.margin>
       </GridPane>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER" prefHeight="68.0" prefWidth="600.0">
          <children>
             <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#settingsCancelButton" style="-fx-background-color: #FF7F50; -fx-border-radius: 90px; -fx-border-style: none; -fx-text-fill: White;" text="Cancel">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
                <padding>
-                  <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding></Button>
             <Button mnemonicParsing="false" onAction="#settingsSaveButton" style="-fx-background-color: #FF7F50; -fx-border-radius: 90px; -fx-border-style: none; -fx-text-fill: White;" text="Save">
                <font>
-                  <Font name="Arial Rounded MT Bold" size="20.0" />
+                  <Font size="20.0" />
                </font>
                <HBox.margin>
                   <Insets left="100.0" />
                </HBox.margin>
                <padding>
-                  <Insets bottom="10.0" left="30.0" right="30.0" top="10.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </Button>
          </children>

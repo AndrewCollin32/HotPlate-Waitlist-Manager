@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.sql.Connection;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -21,11 +22,38 @@ import java.util.Date;
 import java.util.Objects;
 import java.util.logging.*;
 
+
 public class HotPlateApp extends Application {
 
+
+    public boolean bypassSaveSettingsDeBug = false;
+    public boolean bypassSaveCustomersDebug = false;
+
+
+    // -------------------------------------------------------------------------------------------------
+
+    // If you want to use the SQL database, you must enable useSQL to true. You will also need to type
+    // down your username, password and database url. Make sure that you have the class path to your
+    // connector in your library. Please see https://github.com/AndrewCollin32/HotPlate-Waitlist-Manager
+    // for more information.
+
+    // Enable to true if you want to use SQL to store customer and user data
+    public static boolean useSQL =  SQLSetup.useSQL;
+
+    // Put down your databaseURL. It should be in this format: jdbc:mysql://localhost:{PortNumber}/{databaseName}
+    // if you are using local host and mySQL
+
+    // Type down the sqlUsername and password to log in to your database
+
+    // At the time of this writing, I am using mySQL to store data for this program.
+
+    // -------------------------------------------------------------------------------------------------
     public static Stage stage;
+
+    public static LoadSQL loadSQL;
     public static int waitListSize = 0;
-    public static String pinNumber = "1111";
+    public static String userPassword = "1111";
+    public static String userUsername = "root";
     public static String userName = "Jeffery";
     public static String restaurantName = "Ernie's";
     public static String warnMessage = "Hi {name}, this is {restaurant}, your table will be ready within 5 minutes.";
@@ -35,12 +63,9 @@ public class HotPlateApp extends Application {
     public static Boolean automaticallyLoadData = false;
     public static Boolean britishTime = false;
     public static ArrayList<Customer> customerData = new ArrayList<>();
-    public boolean bypassSaveSettingsDeBug = false;
-    public boolean bypassSaveCustomersDebug = false;
     public static Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     public static ConsoleHandler console = new ConsoleHandler();
     public static FileHandler fileHandler;
-
     public static boolean endTime = true;
 
 
@@ -60,61 +85,81 @@ public class HotPlateApp extends Application {
             return;
         }
         log.info("[Starting] Hotplate");
-
+        if (useSQL){
+            loadSQL = new LoadSQL();
+        }
         //Loading the user's settings into HotPlateApp
         if (!bypassSaveSettingsDeBug) {
-            try {
-                SaveSettings ss = (SaveSettings) ResourceManager.load(HotPlateApp.saveSettingsPathFile);
-                assert ss != null;
-                HotPlateApp.userName = ss.userName;
-                HotPlateApp.restaurantName = ss.restaurantName;
-                HotPlateApp.automaticallyLoadData = ss.autoLoadData;
-                HotPlateApp.pinNumber = ss.pin;
-                HotPlateApp.warnMessage = ss.warnMessage;
-                HotPlateApp.callMessage = ss.callMessage;
-                HotPlateApp.britishTime = ss.britishTime;
-            if (ss.userName == null || ss.restaurantName == null || ss.pin == null || ss.warnMessage == null || ss.callMessage == null){
-                log.severe("[Fail] Loading User's Settings");
-                launchLogError("[Fail] Loading User's Settings");
-                return;}
+            if (!useSQL) {
+                try {
+                    SaveSettings ss = (SaveSettings) ResourceManager.load(HotPlateApp.saveSettingsPathFile);
+                    assert ss != null;
+                    HotPlateApp.userUsername = ss.userUserName;
+                    HotPlateApp.restaurantName = ss.restaurantName;
+                    System.out.println(ss.autoLoadData);
+                    HotPlateApp.automaticallyLoadData = ss.autoLoadData;
+                    HotPlateApp.userName = ss.username;
+                    HotPlateApp.userPassword = ss.password;
+                    HotPlateApp.warnMessage = ss.warnMessage;
+                    HotPlateApp.callMessage = ss.callMessage;
+                    HotPlateApp.britishTime = ss.britishTime;
+                    System.out.println(ss.userUserName + " " + ss.restaurantName + " " + ss.username + " " + ss.password +" "+ ss.warnMessage + " " + ss.callMessage);
+                    if (ss.userUserName == null || ss.restaurantName == null || ss.username == null || ss.password == null || ss.warnMessage == null || ss.callMessage == null) {
+                        log.severe("[Fail] Loading User's Settings");
+                        launchLogError("[Fail] Loading User's Settings");
+                        return;
+                    }
+                } catch (Exception e) {
+                    log.severe("[Fail] Loading User's Settings: " + e);
+                    launchLogError("[Fail] Loading User's Settings: " + e);
+                    return;
+                } finally {
+                    log.info("[Success] Loading User's Settings");
+                }
             }
-            catch(Exception e){ log.severe("[Fail] Loading User's Settings: " + e); launchLogError("[Fail] Loading User's Settings: " + e); return;}
-            finally {log.info("[Success] Loading User's Settings");}
         }
         //Loading the customer's data into HotPlateApp if Auto-Load is turned on.
         if (!bypassSaveCustomersDebug) {
-            try {
-                SaveData sd = (SaveData) ResourceManager.load(HotPlateApp.customerDataPathFile);
-                if (HotPlateApp.automaticallyLoadData && sd != null) {
+            if (useSQL){
+                loadSQL.loadCustomerData();
+            }
+            else {
+                try {
+                    SaveData sd = (SaveData) ResourceManager.load(HotPlateApp.customerDataPathFile);
+                    if (HotPlateApp.automaticallyLoadData && sd != null) {
 
-                    HotPlateApp.waitListSize = sd.customersData.size();
-                    HotPlateApp.customerData = sd.customersData;
+                        HotPlateApp.waitListSize = sd.customersData.size();
+                        HotPlateApp.customerData = sd.customersData;
 
-                    SimpleDateFormat britishTime = new SimpleDateFormat("HH:mm");
-                    SimpleDateFormat americanTime = new SimpleDateFormat("hh:mm a");
+                        SimpleDateFormat britishTime = new SimpleDateFormat("HH:mm");
+                        SimpleDateFormat americanTime = new SimpleDateFormat("hh:mm a");
 
-                    boolean isBritishTime = false;
+                        boolean isBritishTime = false;
 
-                    try{
-                        americanTime.parse(HotPlateApp.customerData.get(0).getTimeWaited());
-                    }
-                    catch(Exception e){
-                        isBritishTime = true;
-                    }
+                        try {
+                            americanTime.parse(HotPlateApp.customerData.get(0).getTimeWaited());
+                        } catch (Exception e) {
+                            isBritishTime = true;
+                        }
 
-                    if (HotPlateApp.britishTime && !isBritishTime || !HotPlateApp.britishTime && isBritishTime){
-                        for (int i = 0; i < HotPlateApp.customerData.size(); i++){
-                            Customer customer = HotPlateApp.customerData.get(i);
-                            String time = customer.getTimeWaited();
-                            Date date = ((HotPlateApp.britishTime)?americanTime:britishTime).parse(time);
-                            String newDate = ((HotPlateApp.britishTime)?britishTime:americanTime).format(date);
-                            customer.setTimeWaited(newDate);
+                        if (HotPlateApp.britishTime && !isBritishTime || !HotPlateApp.britishTime && isBritishTime) {
+                            for (int i = 0; i < HotPlateApp.customerData.size(); i++) {
+                                Customer customer = HotPlateApp.customerData.get(i);
+                                String time = customer.getTimeWaited();
+                                Date date = ((HotPlateApp.britishTime) ? americanTime : britishTime).parse(time);
+                                String newDate = ((HotPlateApp.britishTime) ? britishTime : americanTime).format(date);
+                                customer.setTimeWaited(newDate);
+                            }
                         }
                     }
+                } catch (Exception e) {
+                    log.severe("[Fail] Loading Customer's Data: " + e);
+                    launchLogError("[Fail] Loading Customer's Data: " + e);
+                    return;
+                } finally {
+                    log.info("[Success] Loading Customer's Data");
                 }
-            } catch (Exception e) {
-                log.severe("[Fail] Loading Customer's Data: " + e); launchLogError("[Fail] Loading Customer's Data: " + e); return;
-            } finally {log.info("[Success] Loading Customer's Data");}
+            }
         }
 
         stage.setResizable(false);
@@ -137,7 +182,6 @@ public class HotPlateApp extends Application {
             launch();
         } catch (Exception e){
             log.severe("[Fail] Error: " + e);
-            launchLogError("[Fail] Error: " + e);
         }
     }
 
@@ -247,6 +291,15 @@ public class HotPlateApp extends Application {
         FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("settings.fxml"));
         Scene settingsScene = new Scene(fxml.load(), 600,600);
         stage.setScene(settingsScene);}
+        catch(Exception e){log.severe("[Fail] Loading Settings Page: " + e); launchLogError("[Fail] Loading Settings Page: " + e);}
+        finally {log.info("[Success] Loading Settings Page");}
+    }
+
+    public static void launchRegister() {
+        try{
+            FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("registerPage.fxml"));
+            Scene settingsScene = new Scene(fxml.load(), 600,600);
+            stage.setScene(settingsScene);}
         catch(Exception e){log.severe("[Fail] Loading Settings Page: " + e); launchLogError("[Fail] Loading Settings Page: " + e);}
         finally {log.info("[Success] Loading Settings Page");}
     }
