@@ -42,6 +42,10 @@ A simple restaurant waitlist management software created by AndrewCollin32
 </ul>
 
 # How_to_use
+
+![Untitled_Artwork 10](https://user-images.githubusercontent.com/109395254/186785857-1f6e66ac-9e95-4f6a-8071-5dfb9931d9da.png)
+
+
 # Main_Screen 
 (Customer Portal)
   When you first open your program, you will be greeted with this screen. This is the customer's screen, this is used for customers to reserve their seats. <br>
