@@ -25,8 +25,8 @@ A simple restaurant waitlist management software created by AndrewCollin32
     <li><a href="#Settings"> Settings </a></li>
     <li><a href="#SQL_Setup"> SQL Setup </a></li>
     <ul>
-    <li><a href = "Enable_SQL"> Enable SQL </a></li>
-    <li><a href = "Disable_SQL"> Disable SQL </a></li>
+    <li><a href = "#Enable_SQL"> Enable SQL </a></li>
+    <li><a href = "#Disable_SQL"> Disable SQL </a></li>
     </ul>
     <li><a href="#Crash_Report"> Crash Report </a></li>
   </ul>
