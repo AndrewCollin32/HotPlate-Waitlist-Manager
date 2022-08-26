@@ -157,6 +157,12 @@ A simple restaurant waitlist management software created by AndrewCollin32
 
 # Enable_SQL
 
+
+
+https://user-images.githubusercontent.com/109395254/186793230-4a6ea8c8-0651-4d33-913d-bf6d8f551b19.mp4
+
+
+
 <hr>
 
 # Disable_SQL
