@@ -154,15 +154,15 @@ A simple restaurant waitlist management software created by AndrewCollin32
 
 # Register
 
-The register page can only be opened if you have SQL enabled. If SQL is disabled, then it will give you an alert box that has your sign in information. In this page, you can create a new user by adding their username, password, user's name and resturant name. Once submitted, it will create a new row in your usersettings table. 
+The register page can only be opened if you have SQL enabled. If SQL is disabled, then it will give you an alert box that has your sign in information. In this page, you can create a new user by adding their username, password, user's name and restaurant name. Once submitted, it will create a new row in your usersettings table. 
 
   <ul>
-  <li>Username - User is promoted to enter their prefered username for login. This username is unique and is registered as a primary key in SQL.</li>
+  <li>Username - User is prompted to enter their prefered username for login. This username is unique and is registered as a primary key in SQL.</li>
   <li>Password - Users need to enter a password that is at least 4 characters long. </li>
   <li>Name - This is the name you'll be greeted with when you are in the Admin portal. It will also be used when you send call and warn messages.</li>
   <li>Restaurant Name - This field will only be used when sending out messages and in the customer's portal</li>
   <li>Cancel - Button that takes you back to the sign in page.</li>
-  <li>Submit - Checks that every textfield is filled and password meets the requirements. Afterwards it will insert the user to the usersettings table in your database.</li>
+  <li>Submit - Checks that every textfield is filled and password meets the requirements. Afterwards it will insert the user to the user settings table in your database.</li>
 </ul>
 
 ![register](https://user-images.githubusercontent.com/109395254/186794266-16533ad5-e75e-4355-b72a-5b5f7b006192.PNG)
@@ -170,6 +170,13 @@ The register page can only be opened if you have SQL enabled. If SQL is disabled
 <hr>
 
 # SQL_Setup
+
+This is how you can enable SQL for this program. With SQL, you'll get a lot of benefits like: Registering more users, better organize data and ease of access to data. Inorder to begin the SQL setup you'll need three important things:
+  <ul>
+  <li>SQL Username</li>
+  <li>SQL Password</li></li>
+  <li>SQL Database URL</li>
+</ul>
 
 ![setup](https://user-images.githubusercontent.com/109395254/186794278-d65e42d3-c471-42f0-8eaf-9819051b194c.PNG)
 
