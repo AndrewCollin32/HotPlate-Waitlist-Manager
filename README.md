@@ -154,14 +154,15 @@ A simple restaurant waitlist management software created by AndrewCollin32
 
 # Register
 
-The settings can only be accessed through the admin page. In this page, you can edit your name, your restaurant's name, auto load feature, pin and the time format. Changes made in this page will be applied to admin and customer portals. 
+The register page can only be opened if you have SQL enabled. If SQL is disabled, then it will give you an alert box that has your sign in information. In this page, you can create a new user by adding their username, password, user's name and resturant name. Once submitted, it will create a new row in your usersettings table. 
+
   <ul>
-  <li>Name - Textfiled for you to enter your prefered name.</li>
-  <li>Restaurant - Textfield to enter your restaurant's name. It can be used as an string injection for your messages. </li>
-  <li>Load - Check box where if selected, your last saved customer's data will automatically load on to the table.</li>
-  <li>Light Settings - Disabled and will be released in future developments</li>
-  <li>Pin - Textfield for you to enter a new pin. The pin is used to grant access to the Admin's page.</li>
-  <li>Time Format - You can choose between the 12hr and the 24hr time format. Once saved, the new time format will be applied to new and existing customer's data including the clock on the upper right corner of the Admin page.</li>
+  <li>Username - User is promoted to enter their prefered username for login. This username is unique and is registered as a primary key in SQL.</li>
+  <li>Password - Users need to enter a password that is at least 4 characters long. </li>
+  <li>Name - This is the name you'll be greeted with when you are in the Admin portal. It will also be used when you send call and warn messages.</li>
+  <li>Restaurant Name - This field will only be used when sending out messages and in the customer's portal</li>
+  <li>Cancel - Button that takes you back to the sign in page.</li>
+  <li>Submit - Checks that every textfield is filled and password meets the requirements. Afterwards it will insert the user to the usersettings table in your database.</li>
 </ul>
 
 ![register](https://user-images.githubusercontent.com/109395254/186794266-16533ad5-e75e-4355-b72a-5b5f7b006192.PNG)
