@@ -194,12 +194,22 @@ You should get something like this: <br>
 
 # Enable_SQL
 
-https://user-images.githubusercontent.com/109395254/186794173-80b3e99e-4010-4375-9d40-d342ab1ad255.mp4
+After you've put your credentials, you'll need to create the tables to make this possible. Luckily, you don't have to create the tables. I've written the program to automatically create tables for you. It will also give you a sample list of customers and users for you to interact with. 
 
+After filling out the credentials, just run <code> main </code> in SQLSetup.java. Everything would work perfectly if there were no exception errors.
+You can even check that you've created the tables by using mySQL. (Below)
+
+Afterwards, you are all set to go. Just go to HotplateApp and run <code> main </code>. The program should launch without any issues. 
+
+https://user-images.githubusercontent.com/109395254/186794173-80b3e99e-4010-4375-9d40-d342ab1ad255.mp4
 
 <hr>
 
 # Disable_SQL
+
+To disable SQL, simply go to SetupSQL and change <code>useSQL</code> to false.
+
+![false](https://user-images.githubusercontent.com/109395254/186799054-e3722440-3748-462b-ac7e-bc6dc7cf33b3.PNG)
 
 <hr>
 
