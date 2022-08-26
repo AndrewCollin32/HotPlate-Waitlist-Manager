@@ -181,12 +181,12 @@ This is how you can enable SQL for this program. With SQL, you'll get a lot of b
 Go to SQLSetup.java in your src/main/java/com/Hotplate/Hotplate/ directory. 
 Fill out the missing values (See below)
 To Enable SQL, change the useSQL to true.
-You should get something like this:
+You should get something like this: <br>
 <code>
-  public static boolean useSQL = true;
-  public static String databaseURL = "jdbc:mysql://localhost:{PortNumber}/{databaseName}";
-  public static String sqlUsername = "{Your Username}";
-  public static String sqlPassword = "{Your password}";
+  public static boolean useSQL = true; <br>
+  public static String databaseURL = "jdbc:mysql://localhost:{PortNumber}/{databaseName}"; <br>
+  public static String sqlUsername = "{Your Username}"; <br>
+  public static String sqlPassword = "{Your password}"; <br>
 </code>
 
 ![setup](https://user-images.githubusercontent.com/109395254/186794278-d65e42d3-c471-42f0-8eaf-9819051b194c.PNG)
