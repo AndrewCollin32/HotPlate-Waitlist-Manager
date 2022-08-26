@@ -92,7 +92,7 @@ A simple restaurant waitlist management software created by AndrewCollin32
   <li>2: Submit Button - Validates the pin number and takes you to the admin page</li>
 </ul>
 
-<img width="596" alt="Screen_Shot_2022-08-11_at_8 18 53_PM 2" src="https://user-images.githubusercontent.com/109395254/184279071-b42b330d-92d0-470a-bb80-e8b3cc57b723.png">
+![signin](https://user-images.githubusercontent.com/109395254/186794232-ab59f5e5-7b8a-40c1-b79c-f88765e32f2b.PNG)
 
 <hr>
 
@@ -147,20 +147,35 @@ A simple restaurant waitlist management software created by AndrewCollin32
   <li>Time Format - You can choose between the 12hr and the 24hr time format. Once saved, the new time format will be applied to new and existing customer's data including the clock on the upper right corner of the Admin page.</li>
 </ul>
 
-![image](https://user-images.githubusercontent.com/109395254/184475648-2520f96b-828d-4a52-84c3-11f55b399fb0.png)
+![Settings](https://user-images.githubusercontent.com/109395254/186794239-89c284dd-d442-4d82-a5c5-a38be37614c3.PNG)
+
+<hr>
+
+# Register
+
+![register](https://user-images.githubusercontent.com/109395254/186794266-16533ad5-e75e-4355-b72a-5b5f7b006192.PNG)
+
+The settings can only be accessed through the admin page. In this page, you can edit your name, your restaurant's name, auto load feature, pin and the time format. Changes made in this page will be applied to admin and customer portals. 
+  <ul>
+  <li>Name - Textfiled for you to enter your prefered name.</li>
+  <li>Restaurant - Textfield to enter your restaurant's name. It can be used as an string injection for your messages. </li>
+  <li>Load - Check box where if selected, your last saved customer's data will automatically load on to the table.</li>
+  <li>Light Settings - Disabled and will be released in future developments</li>
+  <li>Pin - Textfield for you to enter a new pin. The pin is used to grant access to the Admin's page.</li>
+  <li>Time Format - You can choose between the 12hr and the 24hr time format. Once saved, the new time format will be applied to new and existing customer's data including the clock on the upper right corner of the Admin page.</li>
+</ul>
 
 <hr>
 
 # SQL_Setup
 
+![setup](https://user-images.githubusercontent.com/109395254/186794278-d65e42d3-c471-42f0-8eaf-9819051b194c.PNG)
+
 <hr>
 
 # Enable_SQL
 
-
-
-https://user-images.githubusercontent.com/109395254/186793230-4a6ea8c8-0651-4d33-913d-bf6d8f551b19.mp4
-
+https://user-images.githubusercontent.com/109395254/186794173-80b3e99e-4010-4375-9d40-d342ab1ad255.mp4
 
 
 <hr>
