@@ -152,8 +152,6 @@ A simple restaurant waitlist management software created by AndrewCollin32
 
 <hr>
 
-![register](https://user-images.githubusercontent.com/109395254/186794266-16533ad5-e75e-4355-b72a-5b5f7b006192.PNG)
-
 # Register
 
 The settings can only be accessed through the admin page. In this page, you can edit your name, your restaurant's name, auto load feature, pin and the time format. Changes made in this page will be applied to admin and customer portals. 
@@ -165,6 +163,8 @@ The settings can only be accessed through the admin page. In this page, you can 
   <li>Pin - Textfield for you to enter a new pin. The pin is used to grant access to the Admin's page.</li>
   <li>Time Format - You can choose between the 12hr and the 24hr time format. Once saved, the new time format will be applied to new and existing customer's data including the clock on the upper right corner of the Admin page.</li>
 </ul>
+
+![register](https://user-images.githubusercontent.com/109395254/186794266-16533ad5-e75e-4355-b72a-5b5f7b006192.PNG)
 
 <hr>
 
