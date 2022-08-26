@@ -211,6 +211,10 @@ To disable SQL, simply go to SetupSQL and change <code>useSQL</code> to false.
 
 ![false](https://user-images.githubusercontent.com/109395254/186799054-e3722440-3748-462b-ac7e-bc6dc7cf33b3.PNG)
 
+You can even delete all the data and tables by commenting out the 3 methods and uncommenting the deleteEverything method. 
+
+![delete](https://user-images.githubusercontent.com/109395254/186799252-2903ab5d-cc40-4410-96f8-f58aabcc50a1.PNG)
+
 <hr>
 
 # Crash_Report
