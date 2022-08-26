@@ -23,6 +23,7 @@ A simple restaurant waitlist management software created by AndrewCollin32
     <li><a href="#Sign_In_Page"> Sign In Page </a></li>
     <li><a href="#Admin_Page"> Admin Page </a></li>
     <li><a href="#Settings"> Settings </a></li>
+    <li><a href="#Register"> Register </a></li>
     <li><a href="#SQL_Setup"> SQL Setup </a></li>
     <ul>
     <li><a href = "#Enable_SQL"> Enable SQL </a></li>
@@ -151,9 +152,9 @@ A simple restaurant waitlist management software created by AndrewCollin32
 
 <hr>
 
-# Register
-
 ![register](https://user-images.githubusercontent.com/109395254/186794266-16533ad5-e75e-4355-b72a-5b5f7b006192.PNG)
+
+# Register
 
 The settings can only be accessed through the admin page. In this page, you can edit your name, your restaurant's name, auto load feature, pin and the time format. Changes made in this page will be applied to admin and customer portals. 
   <ul>
