@@ -44,7 +44,7 @@ public class SQLSetup extends LoadSQL{
                 "  `customerPartySize` varchar(2) NOT NULL,\n" +
                 "  `customerTime` varchar(10) NOT NULL,\n" +
                 "  `customerPhoneNumber` varchar(10) NOT NULL\n" +
-                ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;\n");
+                ");");
 
         statement.execute("CREATE TABLE `usersettings` (\n" +
                 "  `username` varchar(45) NOT NULL,\n" +
@@ -56,7 +56,7 @@ public class SQLSetup extends LoadSQL{
                 "  `warnmessage` varchar(500) NOT NULL,\n" +
                 "  `callmessage` varchar(500) NOT NULL,\n" +
                 "  PRIMARY KEY (`username`)\n" +
-                ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Used for storing user''s settings';\n");
+                ");");
     }
 
     // Creates a sample of user data.
