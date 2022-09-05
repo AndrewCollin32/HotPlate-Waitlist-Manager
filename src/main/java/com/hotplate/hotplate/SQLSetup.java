@@ -13,13 +13,13 @@ public class SQLSetup extends LoadSQL{
     // for more information.
 
     // Enable to true if you want to use SQL to store customer and user data
-    public static boolean useSQL = true;
+    public static boolean useSQL = false;
     // Put down your databaseURL. It should be in this format: jdbc:mysql://localhost:{PortNumber}/{databaseName}
     // if you are using local host and mySQL
-    protected static String databaseURL = "jdbc:mysql://localhost:3306/hotplatedata";
+    protected static String databaseURL = "";
     // Type down the sqlUsername and password to log in to your database
-    protected static String sqlUsername = "root";
-    protected static String sqlPassword = "123Nelca.";
+    protected static String sqlUsername = "";
+    protected static String sqlPassword = "";
     // At the time of this writing, I am using mySQL to store data for this program.
 
     // Instructions: After entering those 3 information, run main (below) one time. This will generate
