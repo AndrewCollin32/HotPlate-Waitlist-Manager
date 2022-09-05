@@ -67,17 +67,30 @@ public class LoadSQL {
     }
 
     public void saveSQLSettings(){
+        HotPlateApp.log.info("[Starting] Saving Data To SQL");
         try {
-            statement.executeUpdate("UPDATE usersettings SET " +
-                    "username = '" + HotPlateApp.userUsername + "', " +
-                    "password = '" + HotPlateApp.userPassword + "', " +
-                    "ownername = '" + HotPlateApp.userName + "', " +
-                    "restaurantname = '" + HotPlateApp.restaurantName + "', " +
-                    "autoloaddata = " + HotPlateApp.automaticallyLoadData + ", " +
-                    "britishtime = " + HotPlateApp.britishTime + ", " +
-                    "warnmessage = '" + HotPlateApp.warnMessage + "', " +
-                    "callmessage = '" + HotPlateApp.callMessage + "' " +
-                    "WHERE username = '" + HotPlateApp.userUsername + "'");
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE usersettings SET " +
+                    "username = ?, " +
+                    "password = ?,  " +
+                    "ownername = ?, " +
+                    "restaurantname = ?, " +
+                    "autoloaddata = ?, " +
+                    "britishtime = ?, " +
+                    "warnmessage = ?, " +
+                    "callmessage = ? " +
+                    "WHERE username = ?");
+            preparedStatement.setString(1, HotPlateApp.userUsername);
+            preparedStatement.setString(2, HotPlateApp.userPassword);
+            preparedStatement.setString(3, HotPlateApp.userName);
+            preparedStatement.setString(4, HotPlateApp.restaurantName);
+            preparedStatement.setBoolean(5, HotPlateApp.automaticallyLoadData);
+            preparedStatement.setBoolean(6, HotPlateApp.britishTime);
+            preparedStatement.setString(7, HotPlateApp.warnMessage);
+            preparedStatement.setString(8, HotPlateApp.callMessage);
+            preparedStatement.setString(9, HotPlateApp.userUsername);
+            preparedStatement.executeUpdate();
+
+            HotPlateApp.log.info("[Success] Saving Data To SQL");
 
         } catch (Exception e){
             HotPlateApp.log.severe("[Fail] Couldn't update SQL settings: " + e);
@@ -86,18 +99,20 @@ public class LoadSQL {
 
     }
 
-    public static void createNewAccount(String username, String password, String ownername, String resturantname){
+    public void createNewAccount(String username, String password, String ownername, String resturantname){
         try {
             HotPlateApp.log.info("[Starting] Creating a new account");
-            statement.execute("INSERT INTO usersettings VALUE " +
-                    "('" + username + "','" +
-                    password + "','" +
-                    ownername + "','" +
-                    resturantname + "'," +
-                    true + "," +
-                    false + ",'" +
-                    "Hi {name}, this is {restaurant}, your table will be ready within 5 minutes." + "','" +
-                    "Hi {name}, this is {restaurant}, your table is ready." + "')");
+
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO usersettings VALUE (?,?,?,?,?,?,?,?)");
+            preparedStatement.setString(1,username);
+            preparedStatement.setString(2, password);
+            preparedStatement.setString(3, ownername);
+            preparedStatement.setString(4, resturantname);
+            preparedStatement.setBoolean(5, true);
+            preparedStatement.setBoolean(6, false);
+            preparedStatement.setString(7, "Hi {name}, this is {restaurant}, your table will be ready within 5 minutes.");
+            preparedStatement.setString(8, "Hi {name}, this is {restaurant}, your table is ready.");
+            preparedStatement.executeUpdate();
 
             HotPlateApp.log.info("[Success] Creating a new account");
 
@@ -108,11 +123,12 @@ public class LoadSQL {
     }
 
     public boolean userNameExist(String name){
-        System.out.println(name + " vs " + HotPlateApp.userUsername);
         try{
             HotPlateApp.log.info("Searching for username (Primary key)");
-            ResultSet rs = statement.executeQuery("SELECT * FROM usersettings WHERE username = '" + name + "'");
-            return rs.next();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM usersettings WHERE username = ?");
+            preparedStatement.setString(1, name);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            return resultSet.next();
         } catch(Exception e){
             HotPlateApp.log.severe("[Fail] Couldn't execute SQL: " + e);
             HotPlateApp.launchLogError("[Fail] Couldn't execute SQL: " + e);
@@ -128,7 +144,9 @@ public class LoadSQL {
             return false;
         }
         try {
-            statement.execute("DELETE FROM usersettings WHERE username = '" + name + "'");
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM usersettings WHERE username = ?");
+            preparedStatement.setString(1, name);
+            preparedStatement.execute();
             HotPlateApp.log.info("[Success] removing user: " + name);
             return true;
         } catch (Exception e){
@@ -201,10 +219,13 @@ public class LoadSQL {
             deleteAllCustomers();
             for (int i = 0; i < customerdata.size(); i++){
                 Customer customer = customerdata.get(i);
-                statement.execute("INSERT INTO customerdata VALUE ('" +
-                         customer.getName() + "','" + customer.getPartySize() +
-                        "','" + customer.getTimeWaited() + "','" + customer.getPhoneNumber() +
-                        "')");
+
+                PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO customerdata VALUE(?,?,?,?)");
+                preparedStatement.setString(1, customer.getName());
+                preparedStatement.setString(2,customer.getPartySize());
+                preparedStatement.setString(3, customer.getTimeWaited());
+                preparedStatement.setString(4, customer.getPhoneNumber());
+                System.out.println(preparedStatement.executeUpdate());
             }
             HotPlateApp.log.info("[Success] Saving customer data SQL");
         } catch (Exception e){

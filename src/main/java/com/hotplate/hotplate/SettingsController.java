@@ -58,12 +58,12 @@ public class SettingsController implements Initializable {
                 try {
                     HotPlateApp.log.warning("[Fail] User failed to enter the correct username");
                     AlertBox.createAlertBox("Error", "Username was already taken");
+                    return;
                 } catch (IOException e) {
                     HotPlateApp.log.severe("[Fail] Couldn't open alert box" + e);
                     HotPlateApp.launchLogError("[Fail] Couldn't open alert box: " + e);
                 }
             }
-            return;
         } else if (settingsPassword.getText().length() < 4){
             try {
                 HotPlateApp.log.warning("[Fail] User failed to enter the correct password");
@@ -74,7 +74,6 @@ public class SettingsController implements Initializable {
             }
             return;
         }
-
         if (HotPlateApp.customerData.size() != 0){
 
             SimpleDateFormat britishTime = new SimpleDateFormat("HH:mm");
@@ -106,7 +105,6 @@ public class SettingsController implements Initializable {
         HotPlateApp.userPassword = settingsPassword.getText();
         HotPlateApp.automaticallyLoadData = loadCheckBox.isSelected();
         HotPlateApp.britishTime = britishTimeSelection.isSelected();
-
         if (HotPlateApp.useSQL){
             HotPlateApp.loadSQL.saveSQLSettings();
         } else {
@@ -149,6 +147,7 @@ public class SettingsController implements Initializable {
             loadCheckBox.setSelected(true);
             loadCheckBox.setDisable(true);
             loadLabel.setTooltip(new Tooltip("Because SQL is enabled, auto load is always on."));
+            settingsUsername.setDisable(true);
         }
         else {
             deleteAccountLabel.setTooltip(new Tooltip("Button disabled because SQL is disabled"));

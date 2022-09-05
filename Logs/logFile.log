@@ -1,4 +1,4 @@
-Aug 25, 2022 3:46:40 PM com.hotplate.hotplate.PreLaunchCheck checkSpecs
+Sep 05, 2022 10:06:19 AM com.hotplate.hotplate.PreLaunchCheck checkSpecs
 INFO: 
 java.specification.version 15
 javafx.runtime.version 15.0.1+1
@@ -21,7 +21,7 @@ sun.cpu.endian little
 user.home C:\Users\Syste
 user.language en
 java.specification.vendor Oracle Corporation
-jdk.module.path C:\Users\Syste\.m2\repository\mysql\mysql-connector-java\8.0.30\mysql-connector-java-8.0.30.jar;C:\Users\Syste\.m2\repository\org\openjfx\javafx-fxml\15.0.1\javafx-fxml-15.0.1-win.jar;C:\Users\Syste\Documents\IdeaProjects\HotPlate-Waitlist-Managerweewew\target\classes;C:\Users\Syste\.m2\repository\org\openjfx\javafx-controls\15.0.1\javafx-controls-15.0.1-win.jar;C:\Users\Syste\.m2\repository\org\openjfx\javafx-base\15.0.1\javafx-base-15.0.1-win.jar;C:\Users\Syste\.m2\repository\org\openjfx\javafx-graphics\15.0.1\javafx-graphics-15.0.1-win.jar
+jdk.module.path C:\Users\Syste\.m2\repository\org\openjfx\javafx-controls\15.0.1\javafx-controls-15.0.1-win.jar;C:\Users\Syste\.m2\repository\mysql\mysql-connector-java\8.0.30\mysql-connector-java-8.0.30.jar;C:\Users\Syste\.m2\repository\org\openjfx\javafx-graphics\15.0.1\javafx-graphics-15.0.1-win.jar;C:\Users\Syste\Documents\IdeaProjects\HotPlate-Waitlist-Manager13131313\target\classes;C:\Users\Syste\.m2\repository\org\openjfx\javafx-base\15.0.1\javafx-base-15.0.1-win.jar;C:\Users\Syste\.m2\repository\org\openjfx\javafx-fxml\15.0.1\javafx-fxml-15.0.1-win.jar
 java.version.date 2021-01-19
 java.home C:\Users\Syste\.jdks\openjdk-15.0.2
 file.separator \
@@ -44,243 +44,157 @@ java.vm.name OpenJDK 64-Bit Server VM
 java.vendor.url.bug https://bugreport.java.com/bugreport/
 java.io.tmpdir C:\Users\Syste\AppData\Local\Temp\
 java.version 15.0.2
-user.dir C:\Users\Syste\Documents\IdeaProjects\HotPlate-Waitlist-Managerweewew
+user.dir C:\Users\Syste\Documents\IdeaProjects\HotPlate-Waitlist-Manager13131313
 os.arch amd64
 java.vm.specification.name Java Virtual Machine Specification
 sun.os.patch.level 
-java.library.path C:\Users\Syste\.jdks\openjdk-15.0.2\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\bin;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;D:\bin;C:\Windows\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\cmd;C:\Program Files\Microsoft\Azure Functions Core Tools\;C:\Program Files\Amazon\AWSSAMCLI\bin\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Program Files\Java\openjdk-11.0.16_8\bin\javac.exe;C:\Program Files (x86)\twilio-cli\bin;C:\Users\Syste\.dotnet\tools;.
+java.library.path C:\Users\Syste\.jdks\openjdk-15.0.2\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Microsoft\jdk-11.0.12.7-hotspot\bin;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;D:\bin;C:\Windows\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\cmd;C:\Program Files\Microsoft\Azure Functions Core Tools\;C:\Program Files\Amazon\AWSSAMCLI\bin\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Program Files\Java\openjdk-11.0.16_8\bin\javac.exe;C:\Program Files (x86)\twilio-cli\bin;C:\Users\Syste\.dotnet\tools;C:\Program Files\MySQL\MySQL Server 8.0\bin;;.
 java.vm.info mixed mode, sharing
 java.vendor Oracle Corporation
 java.vm.version 15.0.2+7-27
 sun.io.unicode.encoding UnicodeLittle
 java.class.version 59.0
-Free Memory: 513747728
+Free Memory: 513349928
 Total Memory: 536870912
 Max Memory: 8573157376
 Available Cores: 12
-Aug 25, 2022 3:46:40 PM com.hotplate.hotplate.PreLaunchCheck checkSpecs
+Sep 05, 2022 10:06:19 AM com.hotplate.hotplate.PreLaunchCheck checkSpecs
 INFO: [Success] Java version is up to date
-Aug 25, 2022 3:46:40 PM com.hotplate.hotplate.PreLaunchCheck checkFiles
+Sep 05, 2022 10:06:19 AM com.hotplate.hotplate.PreLaunchCheck checkFiles
 INFO: [Start] Scanning all required FXML Files
-Aug 25, 2022 3:46:40 PM com.hotplate.hotplate.PreLaunchCheck checkFiles
+Sep 05, 2022 10:06:19 AM com.hotplate.hotplate.PreLaunchCheck checkFiles
 INFO: [Success] All FXML files are present
-Aug 25, 2022 3:46:40 PM com.hotplate.hotplate.PreLaunchCheck checkFiles
+Sep 05, 2022 10:06:19 AM com.hotplate.hotplate.PreLaunchCheck checkFiles
 INFO: [Start] Scanning all required Java class files
-Aug 25, 2022 3:46:40 PM com.hotplate.hotplate.PreLaunchCheck checkFiles
+Sep 05, 2022 10:06:19 AM com.hotplate.hotplate.PreLaunchCheck checkFiles
 INFO: [Success] All Java class files are present
-Aug 25, 2022 3:46:40 PM com.hotplate.hotplate.HotPlateApp start
+Sep 05, 2022 10:06:19 AM com.hotplate.hotplate.HotPlateApp start
 INFO: [Starting] Hotplate
-Aug 25, 2022 3:46:40 PM com.hotplate.hotplate.ResourceManager load
-INFO: [Start] Initializing load
-Aug 25, 2022 3:46:40 PM com.hotplate.hotplate.ResourceManager load
-INFO: [Success] Initializing Load
-Aug 25, 2022 3:46:40 PM com.hotplate.hotplate.HotPlateApp start
-INFO: [Success] Loading User's Settings
-Aug 25, 2022 3:46:40 PM com.hotplate.hotplate.ResourceManager load
-INFO: [Start] Initializing load
-Aug 25, 2022 3:46:40 PM com.hotplate.hotplate.ResourceManager load
-INFO: [Success] Initializing Load
-Aug 25, 2022 3:46:40 PM com.hotplate.hotplate.HotPlateApp start
-INFO: [Success] Loading Customer's Data
-Aug 25, 2022 3:46:40 PM com.hotplate.hotplate.CustomerPortalController initialize
-INFO: [Customer Portal] Wait list Size: 1
-Aug 25, 2022 3:46:40 PM com.hotplate.hotplate.HotPlateApp launchCustomerPortal
+Sep 05, 2022 10:06:19 AM com.hotplate.hotplate.LoadSQL <init>
+INFO: [Starting] SQL Connection
+Sep 05, 2022 10:06:19 AM com.hotplate.hotplate.LoadSQL loadCustomerData
+INFO: [Starting] loading SQL customer data
+Sep 05, 2022 10:06:19 AM com.hotplate.hotplate.Customer <init>
+INFO: [Creation] New Customer Data Created: Steven,12,09:23 PM,6198182234
+Sep 05, 2022 10:06:19 AM com.hotplate.hotplate.Customer <init>
+INFO: [Creation] New Customer Data Created: Maverick,1,10:00 PM,6198182123
+Sep 05, 2022 10:06:19 AM com.hotplate.hotplate.Customer <init>
+INFO: [Creation] New Customer Data Created: Nguyen,3,10:12 PM,6198183342
+Sep 05, 2022 10:06:19 AM com.hotplate.hotplate.Customer <init>
+INFO: [Creation] New Customer Data Created: Frank,1,10:13 PM,6198184542
+Sep 05, 2022 10:06:19 AM com.hotplate.hotplate.Customer <init>
+INFO: [Creation] New Customer Data Created: Peter,2,10:15 PM,6198183342
+Sep 05, 2022 10:06:19 AM com.hotplate.hotplate.Customer <init>
+INFO: [Creation] New Customer Data Created: Ryan,3,10:32 PM,6196423332
+Sep 05, 2022 10:06:19 AM com.hotplate.hotplate.Customer <init>
+INFO: [Creation] New Customer Data Created: Gustavo,2,10:34 PM,6193943342
+Sep 05, 2022 10:06:19 AM com.hotplate.hotplate.LoadSQL loadCustomerData
+INFO: [Success] Loading SQL customer data
+Sep 05, 2022 10:06:19 AM com.hotplate.hotplate.LoadSQL loadCustomerData
+INFO: [Success] SQL Connection
+Sep 05, 2022 10:06:19 AM com.hotplate.hotplate.CustomerPortalController initialize
+INFO: [Customer Portal] Wait list Size: 7
+Sep 05, 2022 10:06:19 AM com.hotplate.hotplate.HotPlateApp launchCustomerPortal
 INFO: [Success] Loading Customer's Screen
-Aug 25, 2022 3:46:40 PM com.hotplate.hotplate.HotPlateApp start
+Sep 05, 2022 10:06:19 AM com.hotplate.hotplate.HotPlateApp start
 INFO: [Success] Starting HotPlate
-Aug 25, 2022 3:46:43 PM com.hotplate.hotplate.CustomerPortalController pressSignInButton
+Sep 05, 2022 10:06:21 AM com.hotplate.hotplate.CustomerPortalController pressSignInButton
 INFO: [Button] Clicked: Sign In Button
-Aug 25, 2022 3:46:43 PM com.hotplate.hotplate.AlertBox createAlertBox
-INFO: [Alert] Alert box was called!
-Aug 25, 2022 3:46:43 PM com.hotplate.hotplate.HotPlateApp launchSignInPage
+Sep 05, 2022 10:06:21 AM com.hotplate.hotplate.HotPlateApp launchSignInPage
 INFO: [Success] Loading Sign In Page
-Aug 25, 2022 3:46:44 PM com.hotplate.hotplate.AlertBoxController alertBoxOkClick
-INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@a5cd218[styleClass=button]'Ok']
-Aug 25, 2022 3:46:47 PM com.hotplate.hotplate.SignInController signInSubmitPress
-INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@758e5b6b[styleClass=button]'Submit']
-Aug 25, 2022 3:46:47 PM com.hotplate.hotplate.AdminController initialize
+Sep 05, 2022 10:06:23 AM com.hotplate.hotplate.SignInController signInSubmitPress
+INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@6289c8e6[styleClass=button]'Submit']
+Sep 05, 2022 10:06:23 AM com.hotplate.hotplate.LoadSQL userNameExist
+INFO: Searching for username (Primary key)
+Sep 05, 2022 10:06:23 AM com.hotplate.hotplate.LoadSQL loadSQLSettings
+INFO: [Success] User has entered the username and password successfully
+Sep 05, 2022 10:06:23 AM com.hotplate.hotplate.LoadSQL loadSQLSettings
+INFO: [Success] Loaded SQL Settings Data
+Sep 05, 2022 10:06:23 AM com.hotplate.hotplate.AdminController initialize
 INFO: [Start] Loading Customer's data to table
-Aug 25, 2022 3:46:47 PM com.hotplate.hotplate.AdminController setTime
+Sep 05, 2022 10:06:23 AM com.hotplate.hotplate.AdminController setTime
 INFO: Starting time
-Aug 25, 2022 3:46:47 PM com.hotplate.hotplate.AdminController initialize
+Sep 05, 2022 10:06:23 AM com.hotplate.hotplate.AdminController initialize
 INFO: [Success] Customer's data is successfully loaded
-Aug 25, 2022 3:46:48 PM com.hotplate.hotplate.HotPlateApp launchAdminPortal
+Sep 05, 2022 10:06:23 AM com.hotplate.hotplate.HotPlateApp launchAdminPortal
 INFO: [Success] Loading Admin Portal
-Aug 25, 2022 3:46:50 PM com.hotplate.hotplate.AdminController deleteToTable
-INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@71822155[styleClass=button]'Delete']
-Aug 25, 2022 3:46:50 PM com.hotplate.hotplate.AdminController addToTable
-INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@7d3701b[styleClass=button]'Add']
-Aug 25, 2022 3:46:50 PM com.hotplate.hotplate.HotPlateApp launchAdminAddToTable
-INFO: [Success] Loading Add To Table Menu
-Aug 25, 2022 3:46:56 PM com.hotplate.hotplate.AdminAddItemController adminCurrentTimeCheckBox
-INFO: [CheckBox] Clicked: javafx.event.ActionEvent[source=CheckBox[id=adminCheckBox, styleClass=check-box]'Current Time']
-Aug 25, 2022 3:47:00 PM com.hotplate.hotplate.AdminAddItemController adminSaveButton
-INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@46810a7a[styleClass=button]'Save']
-Aug 25, 2022 3:47:00 PM com.hotplate.hotplate.AdminAddItemController adminSaveButton
-INFO: [Saving] Data: Jeffery 6273829384 2 Checkbox:true
-Aug 25, 2022 3:47:00 PM com.hotplate.hotplate.AdminAddItemController adminSaveButton
-INFO: [Saving] Starting to save data
-Aug 25, 2022 3:47:00 PM com.hotplate.hotplate.AdminAddItemController adminSaveButton
-INFO: [Saving] [Success] Time is in the correct format
-Aug 25, 2022 3:47:00 PM com.hotplate.hotplate.Customer <init>
-INFO: [Creation] New Customer Data Created: Jeffery,2,03:47 PM,6273829384
-Aug 25, 2022 3:47:01 PM com.hotplate.hotplate.AdminController initialize
-INFO: [Start] Loading Customer's data to table
-Aug 25, 2022 3:47:01 PM com.hotplate.hotplate.AdminController setTime
-INFO: Starting time
-Aug 25, 2022 3:47:01 PM com.hotplate.hotplate.AdminController initialize
-INFO: [Success] Customer's data is successfully loaded
-Aug 25, 2022 3:47:01 PM com.hotplate.hotplate.HotPlateApp launchAdminPortal
-INFO: [Success] Loading Admin Portal
-Aug 25, 2022 3:47:01 PM com.hotplate.hotplate.AdminAddItemController adminSaveButton
-INFO: [Saving] [Success] All data was saved correctly
-Aug 25, 2022 3:47:02 PM com.hotplate.hotplate.AdminController addToTable
-INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@1bcd0829[styleClass=button]'Add']
-Aug 25, 2022 3:47:02 PM com.hotplate.hotplate.HotPlateApp launchAdminAddToTable
-INFO: [Success] Loading Add To Table Menu
-Aug 25, 2022 3:47:07 PM com.hotplate.hotplate.AdminAddItemController adminCurrentTimeCheckBox
-INFO: [CheckBox] Clicked: javafx.event.ActionEvent[source=CheckBox[id=adminCheckBox, styleClass=check-box]'Current Time']
-Aug 25, 2022 3:47:12 PM com.hotplate.hotplate.AdminAddItemController adminSaveButton
-INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@451f4c2a[styleClass=button]'Save']
-Aug 25, 2022 3:47:12 PM com.hotplate.hotplate.AdminAddItemController adminSaveButton
-INFO: [Saving] Data: Peter 6283847284 4 Checkbox:true
-Aug 25, 2022 3:47:12 PM com.hotplate.hotplate.AdminAddItemController adminSaveButton
-INFO: [Saving] Starting to save data
-Aug 25, 2022 3:47:12 PM com.hotplate.hotplate.AdminAddItemController adminSaveButton
-INFO: [Saving] [Success] Time is in the correct format
-Aug 25, 2022 3:47:12 PM com.hotplate.hotplate.Customer <init>
-INFO: [Creation] New Customer Data Created: Peter,4,03:47 PM,6283847284
-Aug 25, 2022 3:47:12 PM com.hotplate.hotplate.AdminController initialize
-INFO: [Start] Loading Customer's data to table
-Aug 25, 2022 3:47:12 PM com.hotplate.hotplate.AdminController setTime
-INFO: Starting time
-Aug 25, 2022 3:47:12 PM com.hotplate.hotplate.AdminController initialize
-INFO: [Success] Customer's data is successfully loaded
-Aug 25, 2022 3:47:12 PM com.hotplate.hotplate.HotPlateApp launchAdminPortal
-INFO: [Success] Loading Admin Portal
-Aug 25, 2022 3:47:12 PM com.hotplate.hotplate.AdminAddItemController adminSaveButton
-INFO: [Saving] [Success] All data was saved correctly
-Aug 25, 2022 3:47:13 PM com.hotplate.hotplate.AdminController addToTable
-INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@222b2707[styleClass=button]'Add']
-Aug 25, 2022 3:47:13 PM com.hotplate.hotplate.HotPlateApp launchAdminAddToTable
-INFO: [Success] Loading Add To Table Menu
-Aug 25, 2022 3:47:18 PM com.hotplate.hotplate.AdminAddItemController adminCurrentTimeCheckBox
-INFO: [CheckBox] Clicked: javafx.event.ActionEvent[source=CheckBox[id=adminCheckBox, styleClass=check-box]'Current Time']
-Aug 25, 2022 3:47:23 PM com.hotplate.hotplate.AdminAddItemController adminSaveButton
-INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@c936a30[styleClass=button]'Save']
-Aug 25, 2022 3:47:23 PM com.hotplate.hotplate.AdminAddItemController adminSaveButton
-INFO: [Saving] Data: Jeff 4837384738 2 Checkbox:true
-Aug 25, 2022 3:47:23 PM com.hotplate.hotplate.AdminAddItemController adminSaveButton
-INFO: [Saving] Starting to save data
-Aug 25, 2022 3:47:23 PM com.hotplate.hotplate.AdminAddItemController adminSaveButton
-INFO: [Saving] [Success] Time is in the correct format
-Aug 25, 2022 3:47:23 PM com.hotplate.hotplate.Customer <init>
-INFO: [Creation] New Customer Data Created: Jeff,2,03:47 PM,4837384738
-Aug 25, 2022 3:47:23 PM com.hotplate.hotplate.AdminController initialize
-INFO: [Start] Loading Customer's data to table
-Aug 25, 2022 3:47:23 PM com.hotplate.hotplate.AdminController setTime
-INFO: Starting time
-Aug 25, 2022 3:47:23 PM com.hotplate.hotplate.AdminController initialize
-INFO: [Success] Customer's data is successfully loaded
-Aug 25, 2022 3:47:23 PM com.hotplate.hotplate.HotPlateApp launchAdminPortal
-INFO: [Success] Loading Admin Portal
-Aug 25, 2022 3:47:23 PM com.hotplate.hotplate.AdminAddItemController adminSaveButton
-INFO: [Saving] [Success] All data was saved correctly
-Aug 25, 2022 3:47:25 PM com.hotplate.hotplate.AdminController transferToSave
-INFO: [Button] Clicked: javafx.event.ActionEvent[source=MenuItem@4a5f55db[styleClass=[menu-item]]]
-Aug 25, 2022 3:47:25 PM com.hotplate.hotplate.ResourceManager save
-INFO: [Start] Initializing save
-Aug 25, 2022 3:47:25 PM com.hotplate.hotplate.ResourceManager save
-INFO: [Success] Initializing Save
-Aug 25, 2022 3:47:26 PM com.hotplate.hotplate.AdminController transferToSettings
-INFO: [Button] Clicked: javafx.event.ActionEvent[source=MenuItem@15fc02de[styleClass=[menu-item]]]
-Aug 25, 2022 3:47:26 PM com.hotplate.hotplate.SettingsController initialize
+Sep 05, 2022 10:06:26 AM com.hotplate.hotplate.AdminController transferToSettings
+INFO: [Button] Clicked: javafx.event.ActionEvent[source=MenuItem@12f4f88[styleClass=[menu-item]]]
+Sep 05, 2022 10:06:26 AM com.hotplate.hotplate.SettingsController initialize
 INFO: [Start] Loading settings data
-Aug 25, 2022 3:47:26 PM com.hotplate.hotplate.SettingsController initialize
+Sep 05, 2022 10:06:26 AM com.hotplate.hotplate.SettingsController initialize
 INFO: [Success] Loading settings data
-Aug 25, 2022 3:47:26 PM com.hotplate.hotplate.HotPlateApp launchSettings
+Sep 05, 2022 10:06:26 AM com.hotplate.hotplate.HotPlateApp launchSettings
 INFO: [Success] Loading Settings Page
-Aug 25, 2022 3:47:36 PM com.hotplate.hotplate.SettingsController settingsSaveButton
-INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@6fe5ee14[styleClass=button]'Save']
-Aug 25, 2022 3:47:36 PM com.hotplate.hotplate.SettingsController settingsSaveButton
-INFO: [Start] Saving Settings Data
-Aug 25, 2022 3:47:36 PM com.hotplate.hotplate.SaveSettings <init>
-INFO: [Save] Saving Settings: jeff,Ernie's,true,Hi {name}, this is {restaurant}, your table will be ready within 5 minutes.,Hi {name}, this is {restaurant}, your table is ready.,Jeffery,1234,false
-Aug 25, 2022 3:47:36 PM com.hotplate.hotplate.ResourceManager save
-INFO: [Start] Initializing save
-Aug 25, 2022 3:47:36 PM com.hotplate.hotplate.ResourceManager save
-INFO: [Success] Initializing Save
-Aug 25, 2022 3:47:36 PM com.hotplate.hotplate.SettingsController settingsSaveButton
-INFO: [Success] Saving Settings Data
-Aug 25, 2022 3:47:36 PM com.hotplate.hotplate.AdminController initialize
-INFO: [Start] Loading Customer's data to table
-Aug 25, 2022 3:47:36 PM com.hotplate.hotplate.AdminController setTime
-INFO: Starting time
-Aug 25, 2022 3:47:36 PM com.hotplate.hotplate.AdminController initialize
-INFO: [Success] Customer's data is successfully loaded
-Aug 25, 2022 3:47:36 PM com.hotplate.hotplate.HotPlateApp launchAdminPortal
-INFO: [Success] Loading Admin Portal
-Aug 25, 2022 3:47:39 PM com.hotplate.hotplate.AdminController transferToSettings
-INFO: [Button] Clicked: javafx.event.ActionEvent[source=MenuItem@5a50d35c[styleClass=[menu-item]]]
-Aug 25, 2022 3:47:39 PM com.hotplate.hotplate.SettingsController initialize
-INFO: [Start] Loading settings data
-Aug 25, 2022 3:47:39 PM com.hotplate.hotplate.SettingsController initialize
-INFO: [Success] Loading settings data
-Aug 25, 2022 3:47:39 PM com.hotplate.hotplate.HotPlateApp launchSettings
-INFO: [Success] Loading Settings Page
-Aug 25, 2022 3:47:44 PM com.hotplate.hotplate.SettingsController settingsCancelButton
-INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@6edc76e6[styleClass=button]'Cancel']
-Aug 25, 2022 3:47:44 PM com.hotplate.hotplate.AdminController initialize
-INFO: [Start] Loading Customer's data to table
-Aug 25, 2022 3:47:44 PM com.hotplate.hotplate.AdminController setTime
-INFO: Starting time
-Aug 25, 2022 3:47:44 PM com.hotplate.hotplate.AdminController initialize
-INFO: [Success] Customer's data is successfully loaded
-Aug 25, 2022 3:47:44 PM com.hotplate.hotplate.HotPlateApp launchAdminPortal
-INFO: [Success] Loading Admin Portal
-Aug 25, 2022 3:47:48 PM com.hotplate.hotplate.AdminController transferToSettings
-INFO: [Button] Clicked: javafx.event.ActionEvent[source=MenuItem@32d1153a[styleClass=[menu-item]]]
-Aug 25, 2022 3:47:48 PM com.hotplate.hotplate.SettingsController initialize
-INFO: [Start] Loading settings data
-Aug 25, 2022 3:47:48 PM com.hotplate.hotplate.SettingsController initialize
-INFO: [Success] Loading settings data
-Aug 25, 2022 3:47:48 PM com.hotplate.hotplate.HotPlateApp launchSettings
-INFO: [Success] Loading Settings Page
-Aug 25, 2022 3:47:59 PM com.hotplate.hotplate.SettingsController settingsCancelButton
-INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@2dece5f1[styleClass=button]'Cancel']
-Aug 25, 2022 3:47:59 PM com.hotplate.hotplate.AdminController initialize
-INFO: [Start] Loading Customer's data to table
-Aug 25, 2022 3:47:59 PM com.hotplate.hotplate.AdminController setTime
-INFO: Starting time
-Aug 25, 2022 3:47:59 PM com.hotplate.hotplate.AdminController initialize
-INFO: [Success] Customer's data is successfully loaded
-Aug 25, 2022 3:47:59 PM com.hotplate.hotplate.HotPlateApp launchAdminPortal
-INFO: [Success] Loading Admin Portal
-Aug 25, 2022 3:48:01 PM com.hotplate.hotplate.AdminController transferToCustomer
-INFO: [Button] Clicked: javafx.event.ActionEvent[source=MenuItem@d380001[styleClass=[menu-item]]]
-Aug 25, 2022 3:48:01 PM com.hotplate.hotplate.YesNoBox createAlert
+Sep 05, 2022 10:06:32 AM com.hotplate.hotplate.YesNoBox createAlert
 INFO: [Success] Choice box was created
-Aug 25, 2022 3:48:06 PM com.hotplate.hotplate.AlertBoxController alertYesClick
-INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@15a8d288[styleClass=button]'Yes']User's choice: Yes
-Aug 25, 2022 3:48:06 PM com.hotplate.hotplate.CustomerPortalController initialize
-INFO: [Customer Portal] Wait list Size: 3
-Aug 25, 2022 3:48:06 PM com.hotplate.hotplate.HotPlateApp launchCustomerPortal
-INFO: [Success] Loading Customer's Screen
-Aug 25, 2022 3:48:08 PM com.hotplate.hotplate.CustomerPortalController pressCallWaiterButton
-INFO: [Button] Clicked: Call Waiter Button
-Aug 25, 2022 3:48:08 PM com.hotplate.hotplate.AlertBox createAlertBox
+Sep 05, 2022 10:06:33 AM com.hotplate.hotplate.AlertBoxController alertYesClick
+INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@c556abb[styleClass=button]'Yes']User's choice: Yes
+Sep 05, 2022 10:06:33 AM com.hotplate.hotplate.LoadSQL removeUser
+INFO: [Starting] removing user: 1234
+Sep 05, 2022 10:06:33 AM com.hotplate.hotplate.LoadSQL userNameExist
+INFO: Searching for username (Primary key)
+Sep 05, 2022 10:06:33 AM com.hotplate.hotplate.LoadSQL removeUser
+INFO: [Success] removing user: 1234
+Sep 05, 2022 10:06:33 AM com.hotplate.hotplate.HotPlateApp launchSignInPage
+INFO: [Success] Loading Sign In Page
+Sep 05, 2022 10:06:33 AM com.hotplate.hotplate.AlertBox createAlertBox
 INFO: [Alert] Alert box was called!
-Aug 25, 2022 3:48:09 PM com.hotplate.hotplate.AlertBoxController alertBoxOkClick
-INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@4a2e47d4[styleClass=button]'Ok']
-Aug 25, 2022 3:48:10 PM com.hotplate.hotplate.CustomerPortalController pressAboutButton
-INFO: [Button] Clicked: About Button
-Aug 25, 2022 3:48:10 PM com.hotplate.hotplate.HotPlateApp launchAboutMePage
-INFO: [Success] Loading About Me Page
-Aug 25, 2022 3:48:11 PM com.hotplate.hotplate.AboutMeController aboutMeOkButton
-INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@7972d038[styleClass=button]'Ok']
-Aug 25, 2022 3:48:11 PM com.hotplate.hotplate.CustomerPortalController initialize
-INFO: [Customer Portal] Wait list Size: 3
-Aug 25, 2022 3:48:11 PM com.hotplate.hotplate.HotPlateApp launchCustomerPortal
-INFO: [Success] Loading Customer's Screen
-Aug 25, 2022 3:48:13 PM com.hotplate.hotplate.AdminController lambda$initialize$2
+Sep 05, 2022 10:06:34 AM com.hotplate.hotplate.AlertBoxController alertBoxOkClick
+INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@29197496[styleClass=button]'Ok']
+Sep 05, 2022 10:06:40 AM com.hotplate.hotplate.HotPlateApp launchRegister
+INFO: [Success] Loading Settings Page
+Sep 05, 2022 10:06:44 AM com.hotplate.hotplate.LoadSQL userNameExist
+INFO: Searching for username (Primary key)
+Sep 05, 2022 10:06:44 AM com.hotplate.hotplate.LoadSQL createNewAccount
+INFO: [Starting] Creating a new account
+Sep 05, 2022 10:06:44 AM com.hotplate.hotplate.LoadSQL createNewAccount
+INFO: [Success] Creating a new account
+Sep 05, 2022 10:06:44 AM com.hotplate.hotplate.HotPlateApp launchSignInPage
+INFO: [Success] Loading Sign In Page
+Sep 05, 2022 10:06:44 AM com.hotplate.hotplate.AlertBox createAlertBox
+INFO: [Alert] Alert box was called!
+Sep 05, 2022 10:06:45 AM com.hotplate.hotplate.AlertBoxController alertBoxOkClick
+INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@cc1b767[styleClass=button]'Ok']
+Sep 05, 2022 10:06:51 AM com.hotplate.hotplate.SignInController signInSubmitPress
+INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@7fd9d0b[styleClass=button]'Submit']
+Sep 05, 2022 10:06:51 AM com.hotplate.hotplate.LoadSQL userNameExist
+INFO: Searching for username (Primary key)
+Sep 05, 2022 10:06:51 AM com.hotplate.hotplate.LoadSQL loadSQLSettings
+INFO: [Success] User has entered the username and password successfully
+Sep 05, 2022 10:06:51 AM com.hotplate.hotplate.LoadSQL loadSQLSettings
+INFO: [Success] Loaded SQL Settings Data
+Sep 05, 2022 10:06:51 AM com.hotplate.hotplate.AdminController initialize
+INFO: [Start] Loading Customer's data to table
+Sep 05, 2022 10:06:51 AM com.hotplate.hotplate.AdminController setTime
+INFO: Starting time
+Sep 05, 2022 10:06:51 AM com.hotplate.hotplate.AdminController initialize
+INFO: [Success] Customer's data is successfully loaded
+Sep 05, 2022 10:06:51 AM com.hotplate.hotplate.HotPlateApp launchAdminPortal
+INFO: [Success] Loading Admin Portal
+Sep 05, 2022 10:06:54 AM com.hotplate.hotplate.AdminController transferToSettings
+INFO: [Button] Clicked: javafx.event.ActionEvent[source=MenuItem@3d00ce99[styleClass=[menu-item]]]
+Sep 05, 2022 10:06:54 AM com.hotplate.hotplate.SettingsController initialize
+INFO: [Start] Loading settings data
+Sep 05, 2022 10:06:54 AM com.hotplate.hotplate.SettingsController initialize
+INFO: [Success] Loading settings data
+Sep 05, 2022 10:06:54 AM com.hotplate.hotplate.HotPlateApp launchSettings
+INFO: [Success] Loading Settings Page
+Sep 05, 2022 10:06:55 AM com.hotplate.hotplate.YesNoBox createAlert
+INFO: [Success] Choice box was created
+Sep 05, 2022 10:06:55 AM com.hotplate.hotplate.AlertBoxController alertYesClick
+INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@471c12fb[styleClass=button]'Yes']User's choice: Yes
+Sep 05, 2022 10:06:55 AM com.hotplate.hotplate.LoadSQL removeUser
+INFO: [Starting] removing user: 1234
+Sep 05, 2022 10:06:55 AM com.hotplate.hotplate.LoadSQL userNameExist
+INFO: Searching for username (Primary key)
+Sep 05, 2022 10:06:55 AM com.hotplate.hotplate.LoadSQL removeUser
+INFO: [Success] removing user: 1234
+Sep 05, 2022 10:06:55 AM com.hotplate.hotplate.HotPlateApp launchSignInPage
+INFO: [Success] Loading Sign In Page
+Sep 05, 2022 10:06:55 AM com.hotplate.hotplate.AlertBox createAlertBox
+INFO: [Alert] Alert box was called!
+Sep 05, 2022 10:06:56 AM com.hotplate.hotplate.AlertBoxController alertBoxOkClick
+INFO: [Button] Clicked: javafx.event.ActionEvent[source=Button@141de7e8[styleClass=button]'Ok']
+Sep 05, 2022 10:06:58 AM com.hotplate.hotplate.AdminController lambda$initialize$2
 INFO: [Closing] Program is closing

@@ -13,13 +13,13 @@ public class SQLSetup extends LoadSQL{
     // for more information.
 
     // Enable to true if you want to use SQL to store customer and user data
-    public static boolean useSQL = false;
+    public static boolean useSQL = true;
     // Put down your databaseURL. It should be in this format: jdbc:mysql://localhost:{PortNumber}/{databaseName}
     // if you are using local host and mySQL
-    protected static String databaseURL = "{Your URL}";
+    protected static String databaseURL = "jdbc:mysql://localhost:3306/hotplatedata";
     // Type down the sqlUsername and password to log in to your database
-    protected static String sqlUsername = "{Your Username}";
-    protected static String sqlPassword = "{Your Password}";
+    protected static String sqlUsername = "root";
+    protected static String sqlPassword = "123Nelca.";
     // At the time of this writing, I am using mySQL to store data for this program.
 
     // Instructions: After entering those 3 information, run main (below) one time. This will generate
@@ -27,18 +27,17 @@ public class SQLSetup extends LoadSQL{
     // To remove all the data including the 2 tables, just call the deleteEverything() method.
 
     // -------------------------------------------------------------------------------------------------
-
     public static void main(String[] args) throws SQLException {
-        LoadSQL loadSQL = new LoadSQL();
-        createDatabaseTables(loadSQL);
-        createSampleSettingData(loadSQL);
-        createSampleCustomerData(loadSQL);
-        deleteEverything(loadSQL);
+        SQLSetup sqlSetup = new SQLSetup();
+        sqlSetup.createDatabaseTables();
+        sqlSetup.createSampleSettingData();
+        sqlSetup.createSampleCustomerData();
+        //sqlSetup.deleteEverything();
     }
 
 
     //Creates two tables for you. CustomerData and UserSettings
-    public static void createDatabaseTables(LoadSQL loadSQL) throws SQLException {
+    public void createDatabaseTables() throws SQLException {
         statement.execute("CREATE TABLE `customerdata` (\n" +
                 "  `customerName` varchar(40) NOT NULL,\n" +
                 "  `customerPartySize` varchar(2) NOT NULL,\n" +
@@ -60,14 +59,14 @@ public class SQLSetup extends LoadSQL{
     }
 
     // Creates a sample of user data.
-    public static void createSampleSettingData(LoadSQL loadSQL){
+    public void createSampleSettingData(){
         createNewAccount("Andrew", "greaterGood123", "Andrew", "Ernies");
         createNewAccount("Jacob", "password432!", "Jacob Blake", "Ernies");
         createNewAccount("Gordan12", "Ramsey32", "Gordan Ramsey", "Prime Steak");
     }
 
     // Creates a sample of customer data
-    public static void createSampleCustomerData(LoadSQL loadSQL){
+    public void createSampleCustomerData(){
         ArrayList<Customer> customerdata = new ArrayList<>();
         customerdata.add(new Customer("Steven", "12","09:23 PM", "6198182234"));
         customerdata.add(new Customer("Maverick", "1","10:00 PM", "6198182123"));
@@ -77,11 +76,11 @@ public class SQLSetup extends LoadSQL{
         customerdata.add(new Customer("Ryan", "3","10:32 PM", "6196423332"));
         customerdata.add(new Customer("Gustavo", "2","10:34 PM", "6193943342"));
         HotPlateApp.customerData = customerdata;
-        loadSQL.saveCustomerData();
+        saveCustomerData();
     }
 
     // Deletes everything in the database including the two tables that was created.
-    public static void deleteEverything(LoadSQL loadSQL) throws SQLException {
+    public void deleteEverything() throws SQLException {
         deleteAllUsers();
         deleteAllCustomers();
         statement.execute("DROP TABLE `customerdata`;");
