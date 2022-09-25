@@ -10,7 +10,7 @@ import java.io.FileReader;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LogErrorPage implements Initializable {
+public final class LogErrorPage implements Initializable {
 
     @FXML
     private Label errorLabel;

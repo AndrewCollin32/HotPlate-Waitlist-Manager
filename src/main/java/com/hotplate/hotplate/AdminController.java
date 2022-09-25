@@ -19,7 +19,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-public class AdminController implements Initializable {
+public final class AdminController implements Initializable {
 
     @FXML
     public TableColumn<Customer, String> name;

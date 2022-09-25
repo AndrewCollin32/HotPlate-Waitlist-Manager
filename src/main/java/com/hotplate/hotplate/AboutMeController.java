@@ -7,7 +7,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 
-public class AboutMeController {
+public final class AboutMeController {
 
     @FXML
     void GitHubLink(ActionEvent event) throws URISyntaxException, IOException {

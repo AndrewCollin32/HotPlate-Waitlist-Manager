@@ -7,7 +7,7 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
-public class registerController {
+public final class registerController {
 
     @FXML
     private PasswordField passwordTextField;

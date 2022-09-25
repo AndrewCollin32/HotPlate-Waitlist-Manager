@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class PreLaunchCheck {
+public final class PreLaunchCheck {
     public static void checkSpecs(){
 
         final String[] total = {""};

@@ -6,7 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 
-public class AlertBoxController {
+public final class AlertBoxController {
 
     @FXML
     public VBox alertBoxVBox;

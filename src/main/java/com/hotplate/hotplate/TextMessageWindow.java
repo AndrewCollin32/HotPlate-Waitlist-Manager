@@ -8,7 +8,7 @@ import javafx.scene.control.Label;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class TextMessageWindow implements Initializable {
+public final class TextMessageWindow implements Initializable {
 
     @FXML
     public Label textMessage;

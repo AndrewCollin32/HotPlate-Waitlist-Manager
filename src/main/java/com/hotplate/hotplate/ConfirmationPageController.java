@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class ConfirmationPageController {
+public final class ConfirmationPageController {
 
     @FXML
     public Label confirmationWelcomeLabel;

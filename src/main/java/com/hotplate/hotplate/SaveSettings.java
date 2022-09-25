@@ -2,7 +2,7 @@ package com.hotplate.hotplate;
 
 import java.io.Serializable;
 
-public class SaveSettings implements Serializable {
+public final class SaveSettings implements Serializable {
     public String userUserName;
     public String restaurantName;
     public String username;

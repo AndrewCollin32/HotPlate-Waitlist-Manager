@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ReserveSeatPortalController implements Initializable {
+public final class ReserveSeatPortalController implements Initializable {
 
     @FXML
     public TextField reserveSeatNameInput;

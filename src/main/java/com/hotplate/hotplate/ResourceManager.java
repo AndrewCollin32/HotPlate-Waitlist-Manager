@@ -5,7 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.io.Serializable;
 
-public class ResourceManager {
+public final class ResourceManager {
 
     public static void save(Serializable data, String fileName){
         try {
@@ -25,16 +25,20 @@ public class ResourceManager {
 
     public static Object load(String fileName){
         HotPlateApp.log.info("[Start] Initializing load");
-        ObjectInputStream ois;
+        ObjectInputStream ois = null;
+        Object data = null;
         try{
             ois = new ObjectInputStream(Files.newInputStream(Paths.get(fileName)));
             HotPlateApp.log.info("[Success] Initializing Load");
-            return ois.readObject();
+            data = ois.readObject();
+            ois.close();
         }
         catch (Exception e){
             HotPlateApp.log.severe("[Fail] Initializing Load: " + e);
             HotPlateApp.launchLogError("[Fail] Initializing Load: " + e);
         }
-        return null;
+        finally {
+            return data;
+        }
     }
 }

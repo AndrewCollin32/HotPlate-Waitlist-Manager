@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CustomerPortalController implements Initializable {
+public final class CustomerPortalController implements Initializable {
 
     @FXML
     public Label customerPortalWaitListLabel;

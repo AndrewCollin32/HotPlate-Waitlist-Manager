@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class YesNoBox {
+public final class YesNoBox {
     public static Stage stage;
     public static boolean boxChoice;
 

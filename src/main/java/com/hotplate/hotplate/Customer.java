@@ -2,7 +2,7 @@ package com.hotplate.hotplate;
 
 import java.io.Serializable;
 
-public class Customer implements Serializable {
+public final class Customer implements Serializable {
 
     private String name;
     private String partySize;

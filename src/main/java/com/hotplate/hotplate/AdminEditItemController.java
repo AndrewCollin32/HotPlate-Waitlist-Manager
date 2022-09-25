@@ -14,7 +14,7 @@ import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class AdminEditItemController implements Initializable {
+public final class AdminEditItemController implements Initializable {
 
     @FXML
     public TextField adminAddName;

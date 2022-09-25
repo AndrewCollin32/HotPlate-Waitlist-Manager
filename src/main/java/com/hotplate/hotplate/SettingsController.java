@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-public class SettingsController implements Initializable {
+public final class SettingsController implements Initializable {
     @FXML
     private TextField settingsName;
 

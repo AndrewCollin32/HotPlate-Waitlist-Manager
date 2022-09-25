@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CustomMessageController implements Initializable {
+public final class CustomMessageController implements Initializable {
 
     @FXML
     private TextArea callMessage;

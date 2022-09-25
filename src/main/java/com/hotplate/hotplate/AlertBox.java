@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class AlertBox {
+public final class AlertBox {
     public static Stage stage;
     public static void createAlertBox(String title, String message) throws IOException {
         HotPlateApp.log.info("[Alert] Alert box was called!");
