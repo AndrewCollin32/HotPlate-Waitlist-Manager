@@ -3,7 +3,7 @@ package com.hotplate.hotplate;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class SQLSetup extends LoadSQL{
+public class SQLSetup{
 
     // -------------------------------------------------------------------------------------------------
 
@@ -26,6 +26,8 @@ public class SQLSetup extends LoadSQL{
     // the necessary tables for you. It will also give you a sample of users and customers.
     // To remove all the data including the 2 tables, just call the deleteEverything() method.
 
+    LoadSQL loadSQL = LoadSQL.getInstances();
+
     // -------------------------------------------------------------------------------------------------
     public static void main(String[] args) throws SQLException {
         SQLSetup sqlSetup = new SQLSetup();
@@ -38,14 +40,14 @@ public class SQLSetup extends LoadSQL{
 
     //Creates two tables for you. CustomerData and UserSettings
     public void createDatabaseTables() throws SQLException {
-        statement.execute("CREATE TABLE `customerdata` (\n" +
+        loadSQL.statement.execute("CREATE TABLE `customerdata` (\n" +
                 "  `customerName` varchar(40) NOT NULL,\n" +
                 "  `customerPartySize` varchar(2) NOT NULL,\n" +
                 "  `customerTime` varchar(10) NOT NULL,\n" +
                 "  `customerPhoneNumber` varchar(10) NOT NULL\n" +
                 ");");
 
-        statement.execute("CREATE TABLE `usersettings` (\n" +
+        loadSQL.statement.execute("CREATE TABLE `usersettings` (\n" +
                 "  `username` varchar(45) NOT NULL,\n" +
                 "  `password` varchar(45) NOT NULL,\n" +
                 "  `ownername` varchar(45) NOT NULL,\n" +
@@ -60,9 +62,9 @@ public class SQLSetup extends LoadSQL{
 
     // Creates a sample of user data.
     public void createSampleSettingData(){
-        createNewAccount("Andrew", "greaterGood123", "Andrew", "Ernies");
-        createNewAccount("Jacob", "password432!", "Jacob Blake", "Ernies");
-        createNewAccount("Gordan12", "Ramsey32", "Gordan Ramsey", "Prime Steak");
+        loadSQL.createNewAccount("Andrew", "greaterGood123", "Andrew", "Ernies");
+        loadSQL.createNewAccount("Jacob", "password432!", "Jacob Blake", "Ernies");
+        loadSQL.createNewAccount("Gordan12", "Ramsey32", "Gordan Ramsey", "Prime Steak");
     }
 
     // Creates a sample of customer data
@@ -76,14 +78,14 @@ public class SQLSetup extends LoadSQL{
         customerdata.add(new Customer("Ryan", "3","10:32 PM", "6196423332"));
         customerdata.add(new Customer("Gustavo", "2","10:34 PM", "6193943342"));
         HotPlateApp.customerData = customerdata;
-        saveCustomerData();
+        loadSQL.saveCustomerData();
     }
 
     // Deletes everything in the database including the two tables that was created.
     public void deleteEverything() throws SQLException {
-        deleteAllUsers();
-        deleteAllCustomers();
-        statement.execute("DROP TABLE `customerdata`;");
-        statement.execute("DROP TABLE `usersettings`;");
+        loadSQL.deleteAllUsers();
+        loadSQL.deleteAllCustomers();
+        loadSQL.statement.execute("DROP TABLE `customerdata`;");
+        loadSQL.statement.execute("DROP TABLE `usersettings`;");
     }
 }

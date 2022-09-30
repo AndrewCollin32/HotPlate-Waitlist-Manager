@@ -24,8 +24,6 @@ import java.util.logging.*;
 
 
 public class HotPlateApp extends Application {
-
-
     public boolean bypassSaveSettingsDeBug = false;
     public boolean bypassSaveCustomersDebug = false;
 
@@ -86,7 +84,7 @@ public class HotPlateApp extends Application {
         }
         log.info("[Starting] Hotplate");
         if (useSQL){
-            loadSQL = new LoadSQL();
+            loadSQL = LoadSQL.getInstances();
         }
         //Loading the user's settings into HotPlateApp
         if (!bypassSaveSettingsDeBug) {

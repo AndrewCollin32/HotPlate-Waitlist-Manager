@@ -11,7 +11,12 @@ public class LoadSQL {
     public static Statement statement;
     public Connection connection;
 
-    public LoadSQL(){
+    private static LoadSQL loadSQL = new LoadSQL();
+
+    public static LoadSQL getInstances(){
+        return loadSQL;
+    }
+    private LoadSQL(){
         HotPlateApp.log.info("[Starting] SQL Connection");
         Connection conn;
         Statement state;
@@ -248,6 +253,9 @@ public class LoadSQL {
         } catch (Exception e){
             e.printStackTrace();
         }
+    }
+    public void finalize() throws SQLException {
+        connection.close();
     }
 
 }
