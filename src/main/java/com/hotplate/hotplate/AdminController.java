@@ -151,7 +151,8 @@ public final class AdminController implements Initializable {
                     }
 
                     if (HotPlateApp.britishTime && !isBritishTime || !HotPlateApp.britishTime && isBritishTime) {
-                        for (int i = 0; i < HotPlateApp.customerData.size(); i++) {
+                        int size = HotPlateApp.customerData.size();
+                        for (int i = 0; i < size; i++) {
                             Customer customer = HotPlateApp.customerData.get(i);
                             String time = customer.getTimeWaited();
                             Date date = ((HotPlateApp.britishTime) ? americanTime : britishTime).parse(time);

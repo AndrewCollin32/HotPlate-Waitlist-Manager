@@ -40,7 +40,9 @@ public class LoadSQL {
             return false;
         }
         try {
-            rs = statement.executeQuery("SELECT * FROM userSettings WHERE username = '" + username.toLowerCase() + "'");
+            StringBuilder query = new StringBuilder("SELECT * FROM userSettings WHERE username = '");
+            query.append(username.toLowerCase() + "'");
+            rs = statement.executeQuery(query.toString());
         }
         catch (Exception e){
             HotPlateApp.log.warning(e.toString());
