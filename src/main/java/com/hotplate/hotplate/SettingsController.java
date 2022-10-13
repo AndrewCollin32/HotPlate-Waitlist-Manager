@@ -45,33 +45,18 @@ public final class SettingsController implements Initializable {
         if (settingsName.getText().length() == 0 ||
         settingsUsername.getText().length() == 0 || settingsPassword.getText().length() == 0 ||
         settingsRestaurant.getText().length() == 0){
-            try {
-                HotPlateApp.log.warning("[Fail] User failed to enter for one text field");
-                AlertBox.createAlertBox("Error", "One of the text fields are empty");
-            } catch (IOException e) {
-                HotPlateApp.log.severe("[Fail] Couldn't open alert box" + e);
-                HotPlateApp.launchLogError("[Fail] Couldn't open alert box: " + e);
-            }
+            HotPlateApp.log.warning("[Fail] User failed to enter for one text field");
+            AlertBox.createAlertBox("Error", "One of the text fields are empty");
             return;
         } else if (HotPlateApp.useSQL) {
             if (HotPlateApp.loadSQL.userNameExist(settingsUsername.getText()) && !HotPlateApp.userUsername.equals(settingsUsername.getText())) {
-                try {
-                    HotPlateApp.log.warning("[Fail] User failed to enter the correct username");
-                    AlertBox.createAlertBox("Error", "Username was already taken");
-                    return;
-                } catch (IOException e) {
-                    HotPlateApp.log.severe("[Fail] Couldn't open alert box" + e);
-                    HotPlateApp.launchLogError("[Fail] Couldn't open alert box: " + e);
-                }
+                HotPlateApp.log.warning("[Fail] User failed to enter the correct username");
+                AlertBox.createAlertBox("Error", "Username was already taken");
+                return;
             }
         } else if (settingsPassword.getText().length() < 4){
-            try {
-                HotPlateApp.log.warning("[Fail] User failed to enter the correct password");
-                AlertBox.createAlertBox("Error", "Please make sure that the password is at least 4 digits");
-            } catch (IOException e) {
-                HotPlateApp.log.severe("[Fail] Couldn't open alert box" + e);
-                HotPlateApp.launchLogError("[Fail] Couldn't open alert box: " + e);
-            }
+            HotPlateApp.log.warning("[Fail] User failed to enter the correct password");
+            AlertBox.createAlertBox("Error", "Please make sure that the password is at least 4 digits");
             return;
         }
         if (HotPlateApp.customerData.size() != 0){

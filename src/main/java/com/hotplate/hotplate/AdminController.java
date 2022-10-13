@@ -193,13 +193,8 @@ public final class AdminController implements Initializable {
         HotPlateApp.log.info("[Button] Clicked: " + event);
         ObservableList<TablePosition> oblist = AdminTable.getSelectionModel().getSelectedCells();
         if (oblist.size() == 0){
-            try {
-                HotPlateApp.log.warning("[Fail] User failed to make a selection");
-                AlertBox.createAlertBox("Error", "Please select the row you want to edit");
-            } catch (IOException e) {
-                HotPlateApp.log.severe("[Fail] Failed to open alert box: " + e);
-                HotPlateApp.launchLogError("[Fail] Failed to open alert box: " + e);
-            }
+            HotPlateApp.log.warning("[Fail] User failed to make a selection");
+            AlertBox.createAlertBox("Error", "Please select the row you want to edit");
             return;
         }
         HotPlateApp.selectedCustomer = AdminTable.getItems().get(oblist.get(0).getRow());

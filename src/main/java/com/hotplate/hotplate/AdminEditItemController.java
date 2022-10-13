@@ -67,12 +67,7 @@ public final class AdminEditItemController implements Initializable {
             Pattern timePattern = Pattern.compile((HotPlateApp.britishTime)? "^(2[0123]|[01]\\d):[012345]\\d$":"^[012]\\d:[012345]\\d\\s[P|A]M$");
             Matcher timeMatch = timePattern.matcher(adminCustomTimeText.getText());
             if (!timeMatch.matches()){
-                try {
-                    AlertBox.createAlertBox("Time Error", "Please enter a time in this format (hh:mm [PM or AM])");
-                } catch (IOException e) {
-                    HotPlateApp.log.severe("[Fail] Couldn't open alert box" + e);
-                    HotPlateApp.launchLogError("[Fail] Couldn't open alert box: " + e);
-                }
+                AlertBox.createAlertBox("Time Error", "Please enter a time in this format (hh:mm [PM or AM])");
                 return;
             }
         }
@@ -84,43 +79,23 @@ public final class AdminEditItemController implements Initializable {
             Integer.parseInt(adminAddPartySize.getText());
         }
         catch(Exception e){
-            try {
-                HotPlateApp.log.warning("[Fail] User failed to enter the correct party size: " +e );
-                AlertBox.createAlertBox("Number Error", "Please provide a party size for \n this reservation");
-                return;
-            } catch (IOException j) {
-                HotPlateApp.log.severe("[Fail] Couldn't open alert box" + j);
-                HotPlateApp.launchLogError("[Fail] Couldn't open alert box: " + j);
-            }
+            HotPlateApp.log.warning("[Fail] User failed to enter the correct party size: " +e );
+            AlertBox.createAlertBox("Number Error", "Please provide a party size for \n this reservation");
             return;
         }
         HotPlateApp.log.info("[Success] Party size successfully loaded");
         if (!match.matches()){
-            try {
-                HotPlateApp.log.warning("[Fail] User failed to enter the correct phone number format");
-                AlertBox.createAlertBox("Phone Number Error", "Please enter a valid phone number");
-            } catch (IOException e) {
-                HotPlateApp.log.severe("[Fail] Couldn't open alert box" + e);
-                HotPlateApp.launchLogError("[Fail] Couldn't open alert box: " + e);
-            }
+            HotPlateApp.log.warning("[Fail] User failed to enter the correct phone number format");
+            AlertBox.createAlertBox("Phone Number Error", "Please enter a valid phone number");
         }
         else if (adminAddName.getText().length() == 0){
-            try {
-                HotPlateApp.log.warning("[Fail] User didn't enter a name");
-                AlertBox.createAlertBox("Name Error", "Please provide a name for \n this reservation");
-            } catch (IOException e) {
-                HotPlateApp.log.severe("[Fail] Couldn't open alert box" + e);
-                HotPlateApp.launchLogError("[Fail] Couldn't open alert box: " + e);
-            }
+            HotPlateApp.log.warning("[Fail] User didn't enter a name");
+            AlertBox.createAlertBox("Name Error", "Please provide a name for \n this reservation");
+
         }
         else if (adminAddPartySize.getText().length() == 0) {
-            try {
-                HotPlateApp.log.warning("[Fail] User failed to enter party size");
-                AlertBox.createAlertBox("Party Size Error", "Please provide a valid integer for \n the party size");
-            } catch (IOException e) {
-                HotPlateApp.log.severe("[Fail] Couldn't open alert box" + e);
-                HotPlateApp.launchLogError("[Fail] Couldn't open alert box: " + e);
-            }
+            HotPlateApp.log.warning("[Fail] User failed to enter party size");
+            AlertBox.createAlertBox("Party Size Error", "Please provide a valid integer for \n the party size");
         }
         else{
             HotPlateApp.customerData.remove(HotPlateApp.selectedCustomer);
@@ -130,14 +105,9 @@ public final class AdminEditItemController implements Initializable {
             HotPlateApp.waitListSize++;
             HotPlateApp.adminEditToTableStage.close();
 
-            try {
-                HotPlateApp.endTime=true;
-                HotPlateApp.log.info("[Success] Customer's data was successfully saved");
-                HotPlateApp.launchAdminPortal();
-            } catch (IOException e) {
-                HotPlateApp.log.severe("[Fail] Couldn't open Admin Page" + e);
-                HotPlateApp.launchLogError("[Fail] Couldn't open Admin Page: " + e);
-            }
+            HotPlateApp.endTime=true;
+            HotPlateApp.log.info("[Success] Customer's data was successfully saved");
+            HotPlateApp.launchAdminPortal();
         }
     }
 

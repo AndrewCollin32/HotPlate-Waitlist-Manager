@@ -1,3 +1,6 @@
+
+// About Me Page. This page shows all the social media link of Andrew Collins
+
 package com.hotplate.hotplate;
 
 import javafx.event.ActionEvent;
@@ -8,17 +11,35 @@ import java.net.URISyntaxException;
 
 
 public final class AboutMeController {
-
-    @FXML
-    void GitHubLink(ActionEvent event) throws URISyntaxException, IOException {
-        //HostServices host = getHostServices().showDocument("https://github.com/AndrewCDiep");
-        HotPlateApp.log.info("[Button] Clicked: " + event.toString());
-        java.awt.Desktop.getDesktop().browse(new URI("https://github.com/AndrewCollin32/HotPlate-Waitlist-Manager"));
+    StringBuilder buttonClickedString = new StringBuilder("[Button] Clicked: ");
+    private void browseLink(String url, ActionEvent event){
+        try{
+            HotPlateApp.log.info(buttonClickedString.append(event.toString()).toString());
+            java.awt.Desktop.getDesktop().browse(new URI(url));
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
-
+    @FXML
+    void gitHubLink(ActionEvent event) throws URISyntaxException, IOException {
+        browseLink("https://github.com/AndrewCollin32/HotPlate-Waitlist-Manager", event);
+    }
+    @FXML
+    void facebookLink(ActionEvent event) throws URISyntaxException, IOException {
+        browseLink("https://www.facebook.com/System32Comics", event);
+    }
+    @FXML
+    void instagramLink(ActionEvent event) throws URISyntaxException, IOException {
+        browseLink("https://www.instagram.com/system32comics/", event);
+    }
+    @FXML
+    void twitterLink(ActionEvent event) throws URISyntaxException, IOException {
+        browseLink("https://twitter.com/System32Comics", event);
+    }
     @FXML
     void aboutMeOkButton(ActionEvent event) throws IOException {
-        HotPlateApp.log.info("[Button] Clicked: " + event.toString());
+        HotPlateApp.log.info(buttonClickedString.append(event.toString()).toString());
         if (HotPlateApp.aboutMeCustomerOrigin){
             HotPlateApp.launchCustomerPortal();
         }
@@ -26,23 +47,4 @@ public final class AboutMeController {
             HotPlateApp.launchAdminPortal();
         }
     }
-
-    @FXML
-    void facebookLink(ActionEvent event) throws URISyntaxException, IOException {
-        HotPlateApp.log.info("[Button] Clicked: " + event.toString());
-        java.awt.Desktop.getDesktop().browse(new URI("https://www.facebook.com/System32Comics"));
-    }
-
-    @FXML
-    void instagramLink(ActionEvent event) throws URISyntaxException, IOException {
-        HotPlateApp.log.info("[Button] Clicked: " + event.toString());
-        java.awt.Desktop.getDesktop().browse(new URI("https://www.instagram.com/system32comics/"));
-    }
-
-    @FXML
-    void twitterLink(ActionEvent event) throws URISyntaxException, IOException {
-        HotPlateApp.log.info("[Button] Clicked: " + event.toString());
-        java.awt.Desktop.getDesktop().browse(new URI("https://twitter.com/System32Comics"));
-    }
-
 }

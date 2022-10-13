@@ -57,11 +57,8 @@ public final class SignInController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if (!HotPlateApp.useSQL) {
-            try {
-                AlertBox.createAlertBox("UserInfo", "Your current username is: " + HotPlateApp.userUsername + "\n and your password is: " + HotPlateApp.userPassword);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            AlertBox.createAlertBox("UserInfo", "Your current username is: " + HotPlateApp.userUsername + "\n and your password is: " + HotPlateApp.userPassword);
+
         }
         /*
         try {

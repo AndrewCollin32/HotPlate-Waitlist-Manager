@@ -239,7 +239,7 @@ public class HotPlateApp extends Application {
         finally {log.info("[Success] Loading About Me Page");}
     }
 
-    public static void launchAdminPortal() throws IOException {
+    public static void launchAdminPortal() {
         try{
         FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("adminPage.fxml"));
         Scene adminPortalScene = new Scene(fxml.load(), 600, 600);
