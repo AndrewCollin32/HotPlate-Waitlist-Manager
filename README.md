@@ -274,3 +274,6 @@ Another solution is to go to <code>HotPlate.java</code> and change <code>public 
 
 # Future_Plans
 - Add JUnit Test
+- Use StringBuilder to fuse together strings for log management
+- Create a Log Management Class for universal log management
+- Convert AlertBox and YesNoBox to a Singleton
