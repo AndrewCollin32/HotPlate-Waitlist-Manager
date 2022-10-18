@@ -113,6 +113,12 @@ public final class AdminController implements Initializable {
     }
 
     @FXML
+    void transferToDeveloperSettings(ActionEvent event){
+        HotPlateApp.log.info("[Button] Clicked: " + event.toString());
+
+    }
+
+    @FXML
     void transferToExit(ActionEvent event) {
         HotPlateApp.log.info("[Button] Clicked: " + event.toString());
         if (YesNoBox.createAlert("Exit", "Are you sure you want to exit?")){
@@ -121,6 +127,7 @@ public final class AdminController implements Initializable {
             HotPlateApp.stage.close();
         }
     }
+
 
     @FXML
     public void transferToLoad(ActionEvent event) throws IOException{

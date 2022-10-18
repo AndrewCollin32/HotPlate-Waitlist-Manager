@@ -27,16 +27,16 @@ public final class AlertBoxController {
     @FXML
     boolean alertNoClick(ActionEvent event) {
         HotPlateApp.log.info("[Button] Clicked: " + event + "User's choice: No");
-        YesNoBox.stage.close();
-        YesNoBox.boxChoice = false;
+        YesNoBox.setBoxChoice(false);
+        YesNoBox.closeYesNoBox();
         return false;
     }
 
     @FXML
     boolean alertYesClick(ActionEvent event) {
         HotPlateApp.log.info("[Button] Clicked: " + event + "User's choice: Yes");
-        YesNoBox.boxChoice = true;
-        YesNoBox.stage.close();
+        YesNoBox.setBoxChoice(true);
+        YesNoBox.closeYesNoBox();
         return false;
     }
 

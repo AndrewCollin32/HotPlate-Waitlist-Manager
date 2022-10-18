@@ -8,17 +8,25 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public final class YesNoBox {
-    public static Stage stage;
-    public static boolean boxChoice;
+    private static Stage stage;
+    private static boolean boxChoice;
+    private static Scene scene;
 
-    public static boolean createAlert(String title, String message){
-        FXMLLoader fxml = new FXMLLoader(HotPlateApp.class.getResource("yesNoBox.fxml"));
-        Scene scene;
+    private static FXMLLoader fxml;
+
+    private static YesNoBox yesNoBox;
+    private YesNoBox(){
+        fxml = new FXMLLoader(HotPlateApp.class.getResource("yesNoBox.fxml"));
         try {
             scene = new Scene(fxml.load(), 400, 200);
         } catch (IOException e) {
+            HotPlateApp.log.severe("Couldn't open yesNoBox.fxml");
             throw new RuntimeException(e);
         }
+    }
+
+    public static boolean createAlert(String title, String message){
+        yesNoBox = new YesNoBox();
         AlertBoxController abc = fxml.getController();
         abc.YesNoBoxLabel.setText(message);
         stage = new Stage();
@@ -28,5 +36,11 @@ public final class YesNoBox {
         HotPlateApp.log.info("[Success] Choice box was created");
         stage.showAndWait();
         return boxChoice;
+    }
+    public static void closeYesNoBox(){
+        stage.close();
+    }
+    public static void setBoxChoice(boolean choice){
+        boxChoice = choice;
     }
 }

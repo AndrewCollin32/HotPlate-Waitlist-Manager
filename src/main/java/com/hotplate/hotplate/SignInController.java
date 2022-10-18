@@ -19,7 +19,7 @@ public final class SignInController implements Initializable {
     private TextField signInUsername;
 
     @FXML
-    void registerButtonPress(ActionEvent event) throws IOException {
+    void registerButtonPress(ActionEvent event) {
         if (HotPlateApp.useSQL) {
             HotPlateApp.launchRegister();
         }
@@ -29,13 +29,13 @@ public final class SignInController implements Initializable {
     }
 
     @FXML
-    void signInClosePress(ActionEvent event) throws IOException {
+    void signInClosePress(ActionEvent event) {
         HotPlateApp.log.info("[Button] Clicked: " + event);
         HotPlateApp.launchCustomerPortal();
     }
 
     @FXML
-    void signInSubmitPress(ActionEvent event) throws IOException {
+    void signInSubmitPress(ActionEvent event) {
 
         HotPlateApp.log.info("[Button] Clicked: " + event);
 
@@ -58,16 +58,7 @@ public final class SignInController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if (!HotPlateApp.useSQL) {
             AlertBox.createAlertBox("UserInfo", "Your current username is: " + HotPlateApp.userUsername + "\n and your password is: " + HotPlateApp.userPassword);
-
         }
-        /*
-        try {
-            AlertBox.createAlertBox("Your Sign In Information", "Your username is: " + HotPlateApp.userName + "\n" );
-        } catch (IOException e) {
-            HotPlateApp.log.severe("[Fail] Couldn't open alert box" + e);
-            HotPlateApp.launchLogError("[Fail] Couldn't open alert box: " + e);
-        }
-        */
     }
 }
 

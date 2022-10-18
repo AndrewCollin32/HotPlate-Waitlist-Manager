@@ -338,7 +338,7 @@ public class HotPlateApp extends Application {
         if (adminAddToTableStage != null){adminAddToTableStage.close();}
         if (adminEditToTableStage != null){adminEditToTableStage.close();}
         if (AlertBox.stage != null){AlertBox.stage.close();}
-        if (YesNoBox.stage != null){YesNoBox.stage.close();}
+        YesNoBox.closeYesNoBox();
         try {
             scene = new Scene(fxml.load(), 600, 600);
         } catch (IOException e) {

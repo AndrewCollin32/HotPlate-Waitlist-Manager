@@ -41,7 +41,7 @@
       </Label>
       <HBox alignment="CENTER" prefHeight="13.0" prefWidth="600.0">
          <children>
-            <Hyperlink onAction="#GitHubLink" text="GitHub">
+            <Hyperlink onAction="#gitHubLink" text="GitHub">
                <font>
                   <Font name="Arial Black" size="18.0" />
                </font>
